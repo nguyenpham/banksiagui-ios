@@ -9,11 +9,11 @@
 
 ## Screenshots
 - iPhone
-![iPhoneDemo](bsg.png | width=600)
+![iPhoneDemo](bsg.png=600x)
 
 - Apple watch
-![AppleWatchDemo](bsgwatch.png | width=600)
-![AppleWatchDemo2](watch.jpg | width=400)
+![AppleWatchDemo](bsgwatch.png=600x)
+![AppleWatchDemo2](watch.jpg=400x)
 
 
 ## Tech
@@ -25,15 +25,7 @@ The project is used the latest tech to develop:
 ## Engines
 Typically a chess engine can’t work independently (as an independent app) under iOS system. Thus it must be integrated to a chess GUI (BanksiaGUI) by coding, both the chess GUI and that engines code must be changed to. 
 
-Some chess engines are integrated and can run well under Banksia GUI:
-- Stockfish NNUE 13dev
-- LeelaChessZero
-- Ethereal
-- Xiphos
-- Rubichess
-- Laser
-- Defenchess
-- Igel
+Some chess engines are integrated and can run well under Banksia GUI. Their information is in Licenses/Credits.
 
 
 ## Release on AppStore
@@ -68,7 +60,7 @@ You may see the code of some engines come with BSG as examples.
 If you download and use BanksiaGUI app on AppStore you already help me. You may contribute to this project and/or donate (donate at https://banksiagui.com/download/) too.  All bug reports, suggestions, contributions, donations are more than welcome. 
 
 
-## License/Credits
+## Licenses/Credits
 
 Banksia GUI for iOS was written by Nguyen Pham (axchess at yahoo dot com). Banksia GUI for iOS is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
