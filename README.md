@@ -9,11 +9,11 @@
 
 ## Screenshots
 - iPhone
-![iPhoneDemo](bsg.png=600x)
+![iPhoneDemo](./bsg.png =600x)
 
 - Apple watch
-![AppleWatchDemo](bsgwatch.png=600x)
-![AppleWatchDemo2](watch.jpg=400x)
+![AppleWatchDemo](./bsgwatch.png =600x)
+![AppleWatchDemo2](./watch.jpg =400x)
 
 
 ## Tech
