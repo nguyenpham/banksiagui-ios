@@ -7,16 +7,18 @@
 - Banksia GUI for iOS is a light-open-source version of Banksia GUI to run on iOS devices (iPhone, iPad, Apple Watch). The source code released at https://github.com/nguyenpham/banksiagui-ios, the app released at https://apps.apple.com/us/app/banksiagui/id1534720619
 
 
-## Screens
+## Screenshots
 - iPhone
-![iPhoneDemo](bsgs.png)
+![iPhoneDemo](bsg.png | width=600)
 
 - Apple watch
-![AppleWatchDemo](bsgwatch.png)
-![AppleWatchDemo2](watch.jpg)
+![AppleWatchDemo](bsgwatch.png | width=600)
+![AppleWatchDemo2](watch.jpg | width=400)
 
 
 ## Tech
+The project is used the latest tech to develop:
+
 - Switf + SwitfUI
 
 
@@ -63,12 +65,7 @@ You may see the code of some engines come with BSG as examples.
 
 
 ## You can help
-If you download and use Banksia you already help me. All bug reports, suggestions, contributions are more than welcome!
-
-Below are some features/functions we need someone helps too:
-- Elo and error margin: to show when a tournament completed
-- Profile for Linux and macOS: for Linux, I don’t know how to get memory/cpu usages without calling some external programs which are too slow to sample chess engines; for macOS, the security requires some complicated code/steps and not easy to implement
-- All parameters in command line (not using JSON files): I am not a fan of having long command lines. However if you think it may be useful and willing to help us to make it work, please go ahead
+If you download and use BanksiaGUI app on AppStore you already help me. You may contribute to this project and/or donate (donate at https://banksiagui.com/download/) too.  All bug reports, suggestions, contributions, donations are more than welcome. 
 
 
 ## License/Credits
