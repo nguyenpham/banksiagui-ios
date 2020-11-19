@@ -1,0 +1,85 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, shrink-to-fit=YES">
+</head>
+<body>
+<p><strong>Make move:</strong> Use one of two ways:</p>
+<ul>
+  <li>drag and drop: drag the piece you want and drop it to the new position</li>
+  <li>tap-tap: first tap will mark the piece you want to move, second tap is the new one</li>
+</ul>
+
+<p><strong>Castling moves:</strong> Move the King to his target squares or to drag the King and drop to the Rook (King captures his own Rooks)</p>
+
+<p><strong>Enlarge board:</strong> Long tap (press and hole about 1 second) to enlarge the board. Long tap again to reduce the board size into normal one. When the board is enlarged, you may use a finger to move board around to see hidden parts.
+
+<p><strong>Menu Game</strong></p>
+<ul>
+<li>New game: create a new game</li>
+<li>Paste: paste a new game in FEN or PGN</li>
+<li>Copy/Email: can copy/email current position in FEN or image, or whole game in PGN format</li>
+<li>Flip: flip the board</li>
+<li>Edit position: Edit the current position</li>
+</ul>
+
+<p><strong>Edit position</strong></p>
+<ul>
+<li>Move or add pieces: drag pieces inside the board or in bottom bar and drop into new positions</li>
+<li>Remove pieces: drag pieces inside and drop outside the board</li>
+<li>Clear button: clear the board to empty</li>
+<li>Startpos button: set the board to start position</li>
+<li>Cancel button: discard all changed and stop editing</li>
+<li>Done button: accept the edited position and stop editing</li>
+</ul>
+
+<p><strong>Level</strong></p>
+<ul>
+<li>Analyse on fly: if it is on, the engine will continue computing and you are freely to visit any move (go first, prev, next, last move) or make new moves. Whenever the current displaying position changed, the engine will be updated immediately and starts computing with new positions. You can see it's computing info via analysis displaying, analysis arrows. When the function is on, all items in right below section will be disabled (can't select)</li>
+<li>Human white, computer black: you play white, chess engine plays black side</li>
+<li>Human black, computer white: you play black, chess engine plays white side</li>
+<li>Human both: you play both sides</li>
+
+<li>Timer: you can choose one from different timers: </li>
+<li>Standard: time-move-increment. If move number is zero, it becomes Fischer timer</li>
+<li>Depth: set maximum depth for engine. </li>
+<li>Move time: set max time for one side to make move</li>
+<li>Nodes: set limits nodes for engines</li>
+
+<p><strong>Note:</strong> For depth and node modes: Human (you) won't have any limits.</p>
+
+<p>Strength</p>
+<li>Threads: set maximum number of threads the engine can use for computing. Typically it should be set below the number of total physical cores</li>
+<li>Skill levels (for Stockfish only): select from 20 (max, strongest) to 0</li>
+<li>NNUE mode (for Stockfish only): select between modes of using NNUE</li>
+
+<li>Use opening book: if it is on, the app will use moves from a small book as many as possible. If it's out of the book it will let the engine starts computing</li>
+<li>Benchmark (Stockfish only): let Stockfish to calculate benchmark</li>
+</ul>
+
+<p><strong>Menu Move</strong></p>
+<ul>
+<li>Go first: go to the first move</li>
+<li>Go previous: go to the previous move</li>
+<li>Go next: go to the next move</li>
+<li>Go last: go to the last move</li>
+<li>Takeback: takeback the last move</li>
+</ul>
+
+<p><strong>Options</strong></p>
+<ul>
+<li>Show coordinate: on/off displaying board coordination</li>
+<li>Show legal moves: if it is on, whenever you start dragging or select a piece, the app will display all legal positions you can move that piece to</li>
+<li>Show analysis: if it is on, when an engine starts computing, the app will display all computing information such as speed (NPS), score, node, pv...</li>
+<li>Show analysis arrow: show arrow on the move the engine is considering to make</li>
+<li>Show analysis on move list: if is on, the app will collect and display computing information from the engine and display them on the move list as comments. The format is {node/speed time}</li>
+
+<li>Sound: if it's not off, the app will make sound whenever a move is made. The sounds could be simple ones or human void</li>
+
+<li>Piece set: select piece style from 5</li>
+<li>Board colour: select board colour from 3</li>
+<li>About: about this app and engines</li>
+<li>Help: this help</li>
+</ul>
+
+</body>
+</html>

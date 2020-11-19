@@ -1,0 +1,100 @@
+#
+# Start MSVC Command prompt for x64 native tools and
+# for fast binaries build:	nmake /f Makefile.clang release
+# for a quick build:		nmake /f Makefile.clang all
+
+
+
+# General settings
+CLANGVER=9
+LLVMInstallDir="C:\Program Files\LLVM$(CLANGVER)""
+CXX=$(LLVMInstallDir)\bin\clang-cl.exe
+LD=$(LLVMInstallDir)\bin\lld-link.exe
+PROFDATATOOLEXE=$(LLVMInstallDir)\bin\llvm-profdata
+SOURCE=*.cpp
+OBJ=*.obj
+RELDIR=Release-clang
+CXXFLAGS=/GX /O2 /Oi /Ot /c -flto -fuse-ld=lld
+LDFLAGS=/OPT:REF /OPT:ICF
+PROFEXE=RubiChess-Prof
+
+# BMI2-build
+BMI2EXE=RubiChess-BMI2
+BMI2CPUFEATURE=-DUSE_BMI2 -DUSE_AVX2 -DUSE_SSSE3 -DUSE_SSE2 -DUSE_MMX -DUSE_POPCNT
+BMI2ARCHFLAGS=-mbmi2 -mavx2 -mssse3 -msse2 -mmmx -mpopcnt
+
+# AVX2-build
+AVX2EXE=RubiChess-AVX2
+AVX2CPUFEATURE=-DUSE_AVX2 -DUSE_SSSE3 -DUSE_SSE2 -DUSE_MMX -DUSE_POPCNT
+AVX2ARCHFLAGS=-mavx2 -mssse3 -msse2 -mmmx -mpopcnt
+
+# Modern-build
+MODERNEXE=RubiChess
+MODERNCPUFEATURE=-DUSE_SSSE3 -DUSE_SSE2 -DUSE_MMX -DUSE_POPCNT
+MODERNARCHFLAGS=-mssse3 -msse2 -mmmx -mpopcnt
+
+# Legacy-build
+LEGACYEXE=RubiChess-Legacy
+LEGACYCPUFEATURE=-D CPUFEATURE=CPULEGACY
+LEGACYARCHFLAGS=
+
+all: RubiChess-bmi2 RubiChess-avx2 RubiChess-modern RubiChess-Legacy
+
+$(RELDIR):
+	mkdir $(RELDIR)
+
+build:
+!IFDEF EXE
+	@echo Compiling $(EXE) ...
+	@$(CXX) $(CXXFLAGS) $(ARCHFLAGS) $(SOURCE) $(PROFILEFLAGS) $(CPUFEATURE)
+!IFDEF PROFLIB
+	@echo Linking $(EXE) (profiling build)...
+	@$(LD) $(LDFLAGS) /OUT:$(PROFEXE).exe $(OBJ) "$(PROFLIB)"
+!ELSE
+	@echo Linking $(EXE) ...
+	@$(LD) $(LDFLAGS) /OUT:$(RELDIR)\$(EXE).exe $(OBJ) "$(PROFLIB)"
+!ENDIF
+!ELSE
+	@echo EXE is not defined.
+!ENDIF
+
+rubichess-bmi2: $(RELDIR)
+	@nmake -c -f Makefile.clang build EXE=$(BMI2EXE) CPUFEATURE="$(BMI2CPUFEATURE)" ARCHFLAGS="$(BMI2ARCHFLAGS)"
+
+rubichess-avx2: $(RELDIR)
+	@nmake -c -f Makefile.clang build EXE=$(AVX2EXE) CPUFEATURE="$(AVX2CPUFEATURE)" ARCHFLAGS="$(AVX2ARCHFLAGS)"
+
+rubichess-modern: $(RELDIR)
+	@nmake -c -f Makefile.clang build EXE=$(MODERNEXE) CPUFEATURE="$(MODERNCPUFEATURE)" ARCHFLAGS="$(MODERNARCHFLAGS)"
+
+rubichess-legacy: $(RELDIR)
+	@nmake -c -f Makefile.clang build EXE=$(LEGACYEXE) CPUFEATURE="$(LEGACYCPUFEATURE)" ARCHFLAGS="$(LEGACYARCHFLAGS)"
+
+profile-build-one:
+!IFDEF PR
+	@echo Creating profile build for $(PR)...
+	@nmake -c -f Makefile.clang $(PR) PROFILEFLAGS=-fprofile-instr-generate=$(PROFEXE).clangprof-raw PROFLIB=$(LLVMInstallDir)\lib\clang\$(CLANGVER).0.0\lib\windows\clang_rt.profile-x86_64.lib
+	@echo Bench to generate profiling data...
+	@$(PROFEXE) -bench > nul
+	@$(PROFDATATOOLEXE) merge -output=$(PROFEXE).clangprof $(PROFEXE).clangprof-raw
+	@nmake -c -f Makefile.clang $(PR) PROFILEFLAGS=-fprofile-instr-use=$(PROFEXE).clangprof
+!ENDIF
+
+profile-build:
+	@nmake -c -f Makefile.clang profile-build-one PR=rubichess-bmi2
+	@nmake -c -f Makefile.clang profile-build-one PR=rubichess-avx2
+	@nmake -c -f Makefile.clang profile-build-one PR=rubichess-modern
+	@nmake -c -f Makefile.clang profile-build-one PR=rubichess-legacy
+
+release: profile-build profile-clean
+
+profile-clean:
+	@del $(PROFEXE)*
+	@del *.obj
+
+clean: profile-clean
+	@del $(RELDIR)\RubiChess-oldcpu.exe
+	@del $(RELDIR)\$(BMI2EXE).exe
+	@del $(RELDIR)\$(AVX2EXE).exe
+	@del $(RELDIR)\$(MODERNEXE).exe
+	@del $(RELDIR)\$(LEGACYEXE).exe

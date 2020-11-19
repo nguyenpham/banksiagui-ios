@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RfN-V7-9rk" userLabel="CentralView">
+                                <rect key="frame" x="174" y="354" width="66" height="28"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="9gx-mz-SVM"/>
+                                    <constraint firstAttribute="height" constant="28" id="f3z-8S-aeb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banksia GUI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVe-f7-KDF">
+                                <rect key="frame" x="101.66666666666669" y="261" width="211" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="STt-El-QdE"/>
+                                    <constraint firstAttribute="width" constant="211" id="yFS-eL-FFI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bsflower" translatesAutoresizingMaskIntoConstraints="NO" id="7BE-dJ-0BG">
+                                <rect key="frame" x="0.0" y="336" width="283.66666666666669" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7BE-dJ-0BG" secondAttribute="height" multiplier="86:97" constant="-70.917525773195848" id="0Qv-pM-c9Q"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RfN-V7-9rk" firstAttribute="top" secondItem="rVe-f7-KDF" secondAttribute="bottom" constant="47" id="7o8-Ou-pmI"/>
+                            <constraint firstItem="7BE-dJ-0BG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KUw-lb-v0P"/>
+                            <constraint firstItem="rVe-f7-KDF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Nmo-wC-KBg"/>
+                            <constraint firstItem="7BE-dJ-0BG" firstAttribute="top" secondItem="RfN-V7-9rk" secondAttribute="bottom" constant="-46" id="V8k-pQ-eKO"/>
+                            <constraint firstItem="RfN-V7-9rk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Y7s-MJ-mWA"/>
+                            <constraint firstItem="7BE-dJ-0BG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="k5g-Lg-hOF"/>
+                            <constraint firstItem="RfN-V7-9rk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lzK-ve-XfX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="51.5625" y="374.23133235724742"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bsflower" width="400" height="386.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
