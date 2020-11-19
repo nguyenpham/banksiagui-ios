@@ -9,7 +9,7 @@
 
 ## Screenshots
 - iPhone
-<img src="bsg.png" width="600">
+<img src="bsg.png" width="800">
 
 - Apple watch
 <img src="bsgwatch.png" width="600">
