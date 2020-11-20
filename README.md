@@ -34,22 +34,21 @@ It is totally freeware.
 
 
 ## Add new chess engines 
-You are welcome to add new engines to Banksia GUI for iOS. The conditions to add a new engine:
-- it is open source with free lincess (such as GPL/MIT, free or similar) or
+You are welcome to add new chess engines to Banksia GUI for iOS. The conditions to add a new chess engine:
+- it is open source with a free license (such as GPL/MIT, free or similar) or
 - you are the authors or 
-- you got writen permission from authors
+- you got writen permission from its authors
 - it is written with C/C++ and can be compiled with C++17 compiler/libraries
 - it should be UCI protocol or you need to complete some extra work
 
 The integration process glancely as the following:
 - write a function to initiate chess. For example, the function stockfish_init
-- remove the main loop
-- Create a function to process UCI commands as strings
-- Instead of printing out info, bestmoves to screen, call a function from BSG library
-- Compile BSG with new engine code, solve all problems such as code folders, compiling/linking flags, conflicts between other engines’ code and the new one. For example, it may conflict if it uses some Fathom library code
-- Modify BSG code thus it knows there is a new engine and how to call
-
-- Reduce compiling warnings
+- remove the main loop of the app (no loop, no waiting for input)
+- create a function to process UCI commands as input strings
+- instead of printing out info, bestmoves... to the console, call a function from BSG library
+- compile BSG with new engine code, solve all problems such as code paths, compiling/linking flags, conflicts between the new one and other engines’ code. For example, it may conflict if it uses some Fathom library code
+- modify BSG code thus it knows there is a new engine and how to use it
+- reduce compiling warnings
 
 You may see the code of some engines come with BSG as examples.
 
@@ -63,8 +62,8 @@ If you download and use BanksiaGUI app on AppStore you already help me. You may 
 Banksia GUI for iOS was written by Nguyen Pham (axchess at yahoo dot com). Banksia GUI for iOS is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 All integrated chess engines are open-source with GNU license or similar:
-- Stockfish, version: 13Dev, authosr: Stockfish team, link: https://github.com/official-stockfish/Stockfish
-- LeelaChessZero, version:  0.26.3, authors: LeelaChessZero team, link: https://github.com/LeelaChessZero/lc0
+- Stockfish, version: 13dev, authosr: Stockfish team, link: https://github.com/official-stockfish/Stockfish
+- LeelaChess Zero (Lc0), version: 0.26.3, authors: LeelaChessZero team, link: https://github.com/LeelaChessZero/lc0
 - Ethereal, version: 12.50, authors: Andrew Grant, link: https://github.com/AndyGrant/Ethereal
 - Xiphos, version: 0.5, authors: Milos Tatarevic, link: https://github.com/milostatarevic/xiphos
 - Defenchess, version: 2.2, authors: Can Cetin, Dogac Eldenk, link: https://github.com/cetincan0/Defenchess
