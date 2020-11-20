@@ -13,13 +13,11 @@
 
 - Apple watch
 <img src="bsgwatch.png" width="600">
-<img src="watch.jpg" width="400">
+<img src="watch.jpg" width="300">
 
 
 ## Tech
-The project is used the latest tech to develop:
-
-- Switf + SwitfUI
+The project uses Swift + Swiftui - the latest technology which could be used to develop user interface for all Apple platforms (iOS, macOS, Apple Watch)
 
 
 ## Engines
