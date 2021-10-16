@@ -54,8 +54,10 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/Banksia">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B1C02B9C25294BEA00665CA6"
@@ -63,7 +65,7 @@
             BlueprintName = "BanksiaWatch"
             ReferencedContainer = "container:BanksiaIOS.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -71,8 +73,10 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/Banksia">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B1C02B9C25294BEA00665CA6"
@@ -80,7 +84,16 @@
             BlueprintName = "BanksiaWatch"
             ReferencedContainer = "container:BanksiaIOS.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B1C02B9C25294BEA00665CA6"
+            BuildableName = "BanksiaWatch.app"
+            BlueprintName = "BanksiaWatch"
+            ReferencedContainer = "container:BanksiaIOS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

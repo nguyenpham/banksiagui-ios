@@ -23,7 +23,7 @@ struct AboutView: View {
     VStack {
       Text("Banksia GUI for iOS, version \(ContentView.version)")
         .bold()
-      Text("by Nguyen Pham, 2020")
+      Text("by Nguyen Pham, 2020, 2021")
         .italic()
       #if STOCKFISHONLY
       Text("Stockfish NNUE, version \(version_stockfish)")

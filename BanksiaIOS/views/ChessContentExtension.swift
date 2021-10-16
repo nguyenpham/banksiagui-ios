@@ -226,7 +226,7 @@ extension ContentView {
         assert(game.chessBoard.histList.last?.es.elapsedInMillisecond == moveElapseInMillisecond)
       }
 
-      setupForNewMove()
+      setupForNewMove(autoGo: true)
       playSound(move: game.chessBoard.histList.last?.move ?? MoveFull.illegalMoveFull, sanString:  game.chessBoard.histList.last?.sanString ?? "")
       return true
     }
@@ -237,16 +237,17 @@ extension ContentView {
   
   func newGame() {
     if game.expectingBestmove {
-      return delayTask(.new)
+        game.sendUciStop()
+        return delayTask(.new)
     }
     computingTask.removeAll()
     game.expectingBestmove = false
     computingTask.removeAll()
     game.newGame()
-    newGame_complete()
+    newGame_complete(autoGo: true)
   }
 
-  func newGame_complete() {
+  func newGame_complete(autoGo: Bool) {
     hasEngineOutput = false
     pvString = ""
     scoreString = ""
@@ -261,7 +262,7 @@ extension ContentView {
     nodes = 0
     nps = 0
 
-    setupForNewMove()
+    setupForNewMove(autoGo: autoGo)
   }
 
   func computerGo() {
@@ -316,7 +317,7 @@ extension ContentView {
 
     let moveElapseInMillisecond = Int((CFAbsoluteTimeGetCurrent() - startMoveTime) * 1000)
     game.takeBack(moveElapseInMillisecond: moveElapseInMillisecond)
-    setupForNewMove()
+    setupForNewMove(autoGo: true)
     game.savePGNGame()
 //    game.chessBoard.printBoard()
   }

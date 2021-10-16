@@ -46,10 +46,10 @@ extension ContentView {
           }
           .background(Color.white)
         }
-        
+
         /// Board & pieces
         create_BoardView(size: size)
-        
+
         /// Moves, controllers
         if !flipSize {
           if editing {
@@ -224,7 +224,7 @@ extension ContentView {
 
         case .cancel:
           break
-          
+
         case .paste:
           if let string = UIPasteboard.general.string, !string.isEmpty {
             game.paste(string: string)

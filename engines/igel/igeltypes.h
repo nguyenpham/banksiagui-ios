@@ -158,26 +158,26 @@ struct Pair
 
 inline Pair operator*(int x, const Pair& p) { return Pair(x * p.mid, x * p.end); }
 
-#define SQUARE_ZERO 0
-#define SQUARE_NB   64
+//#define SQUARE_ZERO 0
+#define IGEL_SQUARE_NB   64
 
 // unique number for each piece type on each square
 enum PieceSquare : uint32_t {
     PS_NONE = 0,
     PS_W_PAWN = 1,
-    PS_B_PAWN = 1 * SQUARE_NB + 1,
-    PS_W_KNIGHT = 2 * SQUARE_NB + 1,
-    PS_B_KNIGHT = 3 * SQUARE_NB + 1,
-    PS_W_BISHOP = 4 * SQUARE_NB + 1,
-    PS_B_BISHOP = 5 * SQUARE_NB + 1,
-    PS_W_ROOK = 6 * SQUARE_NB + 1,
-    PS_B_ROOK = 7 * SQUARE_NB + 1,
-    PS_W_QUEEN = 8 * SQUARE_NB + 1,
-    PS_B_QUEEN = 9 * SQUARE_NB + 1,
-    PS_W_KING = 10 * SQUARE_NB + 1,
+    PS_B_PAWN = 1 * IGEL_SQUARE_NB + 1,
+    PS_W_KNIGHT = 2 * IGEL_SQUARE_NB + 1,
+    PS_B_KNIGHT = 3 * IGEL_SQUARE_NB + 1,
+    PS_W_BISHOP = 4 * IGEL_SQUARE_NB + 1,
+    PS_B_BISHOP = 5 * IGEL_SQUARE_NB + 1,
+    PS_W_ROOK = 6 * IGEL_SQUARE_NB + 1,
+    PS_B_ROOK = 7 * IGEL_SQUARE_NB + 1,
+    PS_W_QUEEN = 8 * IGEL_SQUARE_NB + 1,
+    PS_B_QUEEN = 9 * IGEL_SQUARE_NB + 1,
+    PS_W_KING = 10 * IGEL_SQUARE_NB + 1,
     PS_END = PS_W_KING, // pieces without kings (pawns included)
-    PS_B_KING = 11 * SQUARE_NB + 1,
-    PS_END2 = 12 * SQUARE_NB + 1
+    PS_B_KING = 11 * IGEL_SQUARE_NB + 1,
+    PS_END2 = 12 * IGEL_SQUARE_NB + 1
 };
 
 // An ID used to track the pieces. Max. 32 pieces on board.
@@ -219,10 +219,10 @@ enum Value : int {
     MidgameLimit = 15258, EndgameLimit = 3915
 };
 
-#define COLOR_NB 2
+#define IGEL_COLOR_NB 2
 
 struct ExtPieceSquare {
-    PieceSquare from[COLOR_NB];
+    PieceSquare from[IGEL_COLOR_NB];
 };
 
 enum Piece {
@@ -261,7 +261,7 @@ public:
     static const int MAX_LENGTH = 32;
 
     // Array that holds the piece id for the pieces on the board
-    PieceId piece_id_list[SQUARE_NB];
+    PieceId piece_id_list[IGEL_SQUARE_NB];
 
     // List of pieces, separate from White and Black POV
     PieceSquare* piece_list_fw() const { return const_cast<PieceSquare*>(pieceListFw); }

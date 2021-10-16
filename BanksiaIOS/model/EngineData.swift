@@ -18,10 +18,10 @@
 
 import SwiftUI
 
-let version_stockfish = "13 dev"
+let version_stockfish = "14 dev"
 let version_lc0 = "0.26.3"
 
-let network_nnue = "nn-03744f8d56d8.nnue"
+let network_nnue = "nn-9e3c6298299a.nnue"
 let network_lc0 = "703810.pb.gz"
 
 struct EngineInfo : Hashable {
@@ -52,8 +52,8 @@ let rubichessEngineInfo = EngineInfo(name: "RubiChess", shortName: "Rb", version
 let laserEngineInfo = EngineInfo(name: "Laser", shortName: "Ls", version: "1.6", author: "Jeffrey An, Michael An",
                                  frc: true, idNumb: laser, elo: 3288, nnue: false, bench: false)
 
-let igelEngineInfo = EngineInfo(name: "Igel", shortName: "Ig", version: "2.6", author: "Medvedev, Shcherbyna",
-                                frc: true, idNumb: igel, elo: 3240, nnue: true, bench: false)
+//let igelEngineInfo = EngineInfo(name: "Igel", shortName: "Ig", version: "2.6", author: "Medvedev, Shcherbyna",
+//                                frc: true, idNumb: igel, elo: 3240, nnue: true, bench: false)
 
 //let nemorinoEngineInfo = EngineInfo(name: "Nemorino", shortName: "Nm", version: "6", author: "Christian Günther",
 //                                    frc: true, idNumb: nemorino, elo: 3149, nnue: true, bench: false)
@@ -76,7 +76,7 @@ final class EngineData: ObservableObject {
   let allEngines = [
     stockfishEngineInfo,
     lc0EngineInfo,
-    igelEngineInfo,
+//    igelEngineInfo,
 //    nemorinoEngineInfo
   ]
   #else
@@ -88,7 +88,7 @@ final class EngineData: ObservableObject {
     rubichessEngineInfo,
     laserEngineInfo,
     defenchessEngineInfo,
-    igelEngineInfo,
+//    igelEngineInfo,
 //    nemorinoEngineInfo,
 //    fruitEngineInfo
   ]

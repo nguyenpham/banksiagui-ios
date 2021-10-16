@@ -21,7 +21,7 @@ import UIKit
 
 
 struct ContentView: View {
-  static let version = "1.0"
+  static let version = "1.1"
 
   @EnvironmentObject var userData: UserData
   @EnvironmentObject var game: Game
@@ -194,13 +194,13 @@ struct ContentView: View {
     self.initDone = true
     
     game.variantChanged = variantChanged
-    newGame_complete()
+    newGame_complete(autoGo: false)
   }
   
   func variantChanged(varEnum: VarEnum) {
     switch varEnum {
     case .turn:
-      turnChanged()
+      turnChanged(autoGo: true)
     case .analysicOnFly:
       print("main analysicOnFly", self.game.analysicOnFlyMode)
       
@@ -361,22 +361,22 @@ struct ContentView: View {
     promotionDest = -1
   }
   
-  func setupForNewMove() {
+  func setupForNewMove(autoGo: Bool) {
     legalSet.removeAll()
     clearAllMarks()
     
     showingPopup_promotion = false
 
-    turnChanged()
+    turnChanged(autoGo: autoGo)
   }
   
-  func turnChanged() {
+  func turnChanged(autoGo: Bool) {
     game.setupClocksBeforeThinking(newGame: game.chessBoard.histList.isEmpty)
     startMoveTime = CFAbsoluteTimeGetCurrent()
     
     let isHumanTurn = game.analysicOnFlyMode || game.isHumanTurn()
     humanTurn = game.chessBoard.result.isNone() && isHumanTurn ? self.game.chessBoard.side : Side.none
-    if !isHumanTurn || game.analysicOnFlyMode {
+    if autoGo && (!isHumanTurn || game.analysicOnFlyMode) {
       computerGo()
     }
   }

@@ -618,12 +618,12 @@ final class Game: ObservableObject {
   }
   
   func computerGo() {
+    self.expectingBestmove = true
     DispatchQueue.global(qos: .userInitiated).async {
       self.initCurrentEngine();
       self.sendToEngine(cmd: self.uciPosition())
       self.sendToEngine(cmd: self.uciGo())
     }
-    self.expectingBestmove = true
   }
   
   func benchmark(core: Int) {

@@ -209,7 +209,7 @@ struct GameSetup: View {
     .navigationBarTitle("Level", displayMode: .inline)
     .onAppear {
       nodeString = "\(game.timer_nodes)"
-      self.isNavigationBarHidden = false
+//      self.isNavigationBarHidden = false
     }
     .onDisappear() {
       self.game.write()

@@ -158,7 +158,7 @@ struct OptionView: View {
     }
     .navigationBarTitle("Options", displayMode: .inline)
     .onAppear {
-      self.isNavigationBarHidden = false
+//      self.isNavigationBarHidden = false
     }
     .onDisappear() {
       self.userData.write()

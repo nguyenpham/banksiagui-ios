@@ -115,8 +115,8 @@ void laser_uci_cmd(const char* str);
 
 #endif
 
-void igel_initialize();
-void igel_uci_cmd(const char* str);
+//void igel_initialize();
+//void igel_uci_cmd(const char* str);
 
 //void nemorino_initialize();
 //void nemorino_uci_cmd(const char* str);
@@ -177,10 +177,10 @@ void engine_initialize(int eid, int coreNumber, int skillLevel, int nnueMode)
 
 #if !(defined STOCKFISHONLY || defined LC0ONLY)
         
-      case igel:
-        igel_initialize();  /// Threads, Hash, Ponder, EvalFile, Skill level
-        sendOptionNNUE(eid);
-        break;
+//      case igel:
+//        igel_initialize();  /// Threads, Hash, Ponder, EvalFile, Skill level
+//        sendOptionNNUE(eid);
+//        break;
         
 //      case nemorino:
 //        nemorino_initialize();  /// Threads, Hash, Ponder, EvalFile
@@ -287,9 +287,9 @@ void engine_cmd(int eid, const char *cmd)
       
 #endif /// #ifndef NNONLY
 
-    case igel:
-      igel_uci_cmd(cmd);
-      break;
+//    case igel:
+//      igel_uci_cmd(cmd);
+//      break;
 
 //    case nemorino:
 //      nemorino_uci_cmd(cmd);

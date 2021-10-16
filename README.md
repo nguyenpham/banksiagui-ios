@@ -26,6 +26,11 @@ Typically a chess engine can’t work independently (as an independent app) unde
 Some chess engines are integrated and can run well under Banksia GUI. Their information is in Licenses/Credits.
 
 
+## Compile
+### Simulators
+Simulators can't be compiled with flag -DUSE_NEON. Remove that flag for both iOS and AppleWatch before compiling.
+
+
 ## Release on AppStore
 We planned to publish BanksiaGUI as several apps, based on which engines released with. For example, Lc0 would be Lc0 engine + BanksiaGUI. However, AppStore did not allow to release some apps with quite similar functions. Thus we have published only Banksia GUI app with all available engines at:
 https://github.com/nguyenpham/banksiagui-ios

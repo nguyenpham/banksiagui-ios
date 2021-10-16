@@ -27,7 +27,7 @@ enum {
   rubichess,
   laser,
   defenchess,
-  igel,
+//  igel,
 //  nemorino,
 //  fruit
 };

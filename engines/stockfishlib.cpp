@@ -26,20 +26,28 @@
 #include "stockfish/thread.h"
 
 
-void stockfish_cmd(const char *cmd)
-{
-  UCI::cmd(cmd);
-}
+namespace Stockfish {
 
 extern const char* StartFEN;
 extern bool benchworking;
 
+
 void setoption(std::istringstream& is);
-void go(Position& pos, std::istringstream& is, StateListPtr& states);
-void bench(Position& pos, std::istream& args, StateListPtr& states);
-void position(Position& pos, std::istringstream& is, StateListPtr& states);
-void trace_eval(Position& pos);
+void go(Stockfish::Position& pos, std::istringstream& is, Stockfish::StateListPtr& states);
+void bench(Stockfish::Position& pos, std::istream& args, Stockfish::StateListPtr& states);
+void position(Stockfish::Position& pos, std::istringstream& is, Stockfish::StateListPtr& states);
+void trace_eval(Stockfish::Position& pos);
+}
+
 void _stockfish_initialize();
+
+
+using namespace Stockfish;
+
+void stockfish_cmd(const char *cmd)
+{
+    UCI::cmd(cmd);
+}
 
 
 void stockfish_initialize() {

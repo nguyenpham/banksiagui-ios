@@ -1,6 +1,6 @@
 /*
   Stockfish, a UCI chess playing engine derived from Glaurung 2.1
-  Copyright (C) 2004-2020 The Stockfish developers (see AUTHORS file)
+  Copyright (C) 2004-2021 The Stockfish developers (see AUTHORS file)
 
   Stockfish is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -32,21 +32,25 @@
 #include "uci.h"
 #include "syzygy/tbprobe.h"
 
+
+// Added for BanksiaGUI
 #include "engineids.h"
 void engine_message(int eid, const std::string& s);
 
 using namespace std;
 
+namespace Stockfish {
+
 extern vector<string> setup_bench(const Position&, istream&);
-//void search_message(const std::string& str);
 
 //namespace {
 
   // FEN string of the initial position, normal chess
   const char* StartFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
-  bool benchworking = false;
 
+  // Added by BanksiaGUI
+  bool benchworking = false;
 
   // position() is called when engine receives the "position" UCI command.
   // The function sets up the position described in the given FEN string ("fen")
@@ -91,7 +95,7 @@ extern vector<string> setup_bench(const Position&, istream&);
     Position p;
     p.set(pos.fen(), Options["UCI_Chess960"], &states->back(), Threads.main());
 
-    Eval::verify_NNUE();
+    Eval::NNUE::verify();
 
     sync_cout << "\n" << Eval::trace(p) << sync_endl;
   }
@@ -169,12 +173,8 @@ extern vector<string> setup_bench(const Position&, istream&);
 
     TimePoint elapsed = now();
 
-    benchworking = true;
     for (const auto& cmd : list)
     {
-      if (!benchworking) {
-        break;
-      }
         istringstream is(cmd);
         is >> skipws >> token;
 
@@ -194,21 +194,27 @@ extern vector<string> setup_bench(const Position&, istream&);
         else if (token == "position")   position(pos, is, states);
         else if (token == "ucinewgame") { Search::clear(); elapsed = now(); } // Search::clear() may take some while
     }
-    benchworking = false;
+
     elapsed = now() - elapsed + 1; // Ensure positivity to avoid a 'divide by zero'
 
     dbg_print(); // Just before exiting
 
-    auto s = "Total time (ms) : " + std::to_string(elapsed)
-    + "\nNodes searched  : " + std::to_string(nodes)
-    + "\nNodes/second    : " + std::to_string(1000 * nodes / elapsed);
-    engine_message(stockfish, s);
-    
-    cerr << "\n===========================\n" << s << std::endl;
-    
-    s = "bench END";
-    std::cout << s << std::endl;
-    engine_message(stockfish, s);
+//    cerr << "\n==========================="
+//         << "\nTotal time (ms) : " << elapsed
+//         << "\nNodes searched  : " << nodes
+//         << "\nNodes/second    : " << 1000 * nodes / elapsed << endl;
+      
+      // Added for BanksiaGUI
+      auto s = "Total time (ms) : " + std::to_string(elapsed)
+      + "\nNodes searched  : " + std::to_string(nodes)
+      + "\nNodes/second    : " + std::to_string(1000 * nodes / elapsed);
+      engine_message(stockfish, s);
+      
+      cerr << "\n===========================\n" << s << std::endl;
+      
+      s = "bench END";
+      std::cout << s << std::endl;
+      engine_message(stockfish, s);
   }
 
   // The win rate model returns the probability (per mille) of winning given an eval
@@ -221,13 +227,13 @@ extern vector<string> setup_bench(const Position&, istream&);
      // Coefficients of a 3rd order polynomial fit based on fishtest data
      // for two parameters needed to transform eval to the argument of a
      // logistic function.
-     double as[] = {-8.24404295, 64.23892342, -95.73056462, 153.86478679};
-     double bs[] = {-3.37154371, 28.44489198, -56.67657741,  72.05858751};
+     double as[] = {-3.68389304,  30.07065921, -60.52878723, 149.53378557};
+     double bs[] = {-2.0181857,   15.85685038, -29.83452023,  47.59078827};
      double a = (((as[0] * m + as[1]) * m + as[2]) * m) + as[3];
      double b = (((bs[0] * m + bs[1]) * m + bs[2]) * m) + bs[3];
 
      // Transform eval to centipawns with limited range
-     double x = std::clamp(double(100 * v) / PawnValueEg, -1000.0, 1000.0);
+     double x = std::clamp(double(100 * v) / PawnValueEg, -2000.0, 2000.0);
 
      // Return win rate in per mille (rounded to nearest)
      return int(0.5 + 1000 / (1 + std::exp((a - x) / b)));
@@ -263,9 +269,8 @@ void UCI::loop(int argc, char* argv[]) {
       is >> skipws >> token;
 
       if (    token == "quit"
-          ||  token == "stop") {
+          ||  token == "stop")
           Threads.stop = true;
-      }
 
       // The GUI sends 'ponderhit' to tell us the user has played the expected move.
       // So 'ponderhit' will be sent if we were told to ponder on the same move the
@@ -292,7 +297,15 @@ void UCI::loop(int argc, char* argv[]) {
       else if (token == "d")        sync_cout << pos << sync_endl;
       else if (token == "eval")     trace_eval(pos);
       else if (token == "compiler") sync_cout << compiler_info() << sync_endl;
-      else
+      else if (token == "export_net")
+      {
+          std::optional<std::string> filename;
+          std::string f;
+          if (is >> skipws >> f)
+              filename = f;
+          Eval::NNUE::save_eval(filename);
+      }
+      else if (!token.empty() && token[0] != '#')
           sync_cout << "Unknown command: " << cmd << sync_endl;
 
   } while (token != "quit" && argc == 1); // Command line args are one-shot
@@ -386,3 +399,5 @@ Move UCI::to_move(const Position& pos, string& str) {
 
   return MOVE_NONE;
 }
+
+} // namespace Stockfish
