@@ -54,17 +54,6 @@ void stockfish_initialize() {
   _stockfish_initialize();
 }
 
-//static std::vector<std::string> splitString(const std::string &s, char delim)
-//{
-//    std::vector<std::string> vec;
-//    std::stringstream ss;
-//    ss.str(s);
-//    std::string item;
-//    while (std::getline(ss, item, delim)) {
-//        if (!item.empty()) vec.push_back(item);
-//    }
-//    return vec;
-//}
 
 int UCI::cmd(const std::string& cmd) {
   static Position pos;

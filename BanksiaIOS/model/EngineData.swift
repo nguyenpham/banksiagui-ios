@@ -18,10 +18,18 @@
 
 import SwiftUI
 
-let version_stockfish = "14 dev"
 let version_lc0 = "0.26.3"
 
+// Warning: watchOS limit the app size only 75MB, the new net makes the app over that limit (108MB)
+// we must use the older net to reduce the size
+#if os(watchOS)
+let version_stockfish = "13 dev"
+let network_nnue = "nn-03744f8d56d8.nnue"
+#else
+let version_stockfish = "14 dev"
 let network_nnue = "nn-9e3c6298299a.nnue"
+#endif
+
 let network_lc0 = "703810.pb.gz"
 
 struct EngineInfo : Hashable {
@@ -47,6 +55,8 @@ let xiphosEngineInfo = EngineInfo(name: "Xiphos", shortName: "Xp", version: "0.5
                                   frc: true, idNumb: xiphos, elo: 3339, nnue: false, bench: false)
 let defenchessEngineInfo = EngineInfo(name: "Defenchess", shortName: "Dc", version: "2.2", author: "Can Cetin, Dogac Eldenk",
                                       frc: true, idNumb: defenchess, elo: 3280, nnue: false, bench: false)
+
+
 let rubichessEngineInfo = EngineInfo(name: "RubiChess", shortName: "Rb", version: "1.8", author: "Andreas Matthies",
                                      frc: true, idNumb: rubichess, elo: 3296, nnue: false, bench: false)
 let laserEngineInfo = EngineInfo(name: "Laser", shortName: "Ls", version: "1.6", author: "Jeffrey An, Michael An",
@@ -86,6 +96,7 @@ final class EngineData: ObservableObject {
     etherealEngineInfo,
     xiphosEngineInfo,
     rubichessEngineInfo,
+    
     laserEngineInfo,
     defenchessEngineInfo,
 //    igelEngineInfo,

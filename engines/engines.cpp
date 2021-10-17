@@ -104,11 +104,11 @@ extern "C" void ethereal_uci_cmd(const char* str);
 extern "C" void xiphos_initialize();
 extern "C" void xiphos_uci_cmd(const char* str);
 
-void depenchess_initialize();
-void depenchess_uci_cmd(const char* str);
-
 void rubichess_initialize();
 void rubichess_uci_cmd(const char* str);
+
+void depenchess_initialize();
+void depenchess_uci_cmd(const char* str);
 
 void laser_initialize();
 void laser_uci_cmd(const char* str);
@@ -207,7 +207,7 @@ void engine_initialize(int eid, int coreNumber, int skillLevel, int nnueMode)
       case defenchess:
         depenchess_initialize();  /// Threads, Hash, Ponder
         break;
-                
+            
 //      case fruit:
 //        fruit_initialize();  /// Hash Ponder, no threads
 //        break;
@@ -284,7 +284,7 @@ void engine_cmd(int eid, const char *cmd)
     case defenchess:
       depenchess_uci_cmd(cmd);
       break;
-      
+          
 #endif /// #ifndef NNONLY
 
 //    case igel:
