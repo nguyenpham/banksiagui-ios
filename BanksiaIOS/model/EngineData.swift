@@ -22,13 +22,16 @@ let version_lc0 = "0.26.3"
 
 // Warning: watchOS limit the app size only 75MB, the new net makes the app over that limit (108MB)
 // we must use the older net to reduce the size
-#if os(watchOS)
-let version_stockfish = "13 dev"
-let network_nnue = "nn-03744f8d56d8.nnue"
-#else
-let version_stockfish = "14 dev"
-let network_nnue = "nn-9e3c6298299a.nnue"
-#endif
+//#if os(watchOS)
+//let version_stockfish = "13 dev"
+//let network_nnue = "nn-03744f8d56d8.nnue"
+//#else
+//let version_stockfish = "14 dev"
+//let network_nnue = "nn-9e3c6298299a.nnue"
+//#endif
+
+let version_stockfish = "16"
+let network_nnue = "nn-5af11540bbfe.nnue"
 
 let network_lc0 = "703810.pb.gz"
 

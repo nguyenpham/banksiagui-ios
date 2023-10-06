@@ -25,89 +25,73 @@
 #include "stockfish/position.h"
 #include "stockfish/thread.h"
 
-
-namespace Stockfish {
-
-extern const char* StartFEN;
-extern bool benchworking;
-
-
-void setoption(std::istringstream& is);
-void go(Stockfish::Position& pos, std::istringstream& is, Stockfish::StateListPtr& states);
-void bench(Stockfish::Position& pos, std::istream& args, Stockfish::StateListPtr& states);
-void position(Stockfish::Position& pos, std::istringstream& is, Stockfish::StateListPtr& states);
-void trace_eval(Stockfish::Position& pos);
-}
-
-void _stockfish_initialize();
-
-
-using namespace Stockfish;
+//extern bool benchworking;
+//bool benchworking = false;
 
 void stockfish_cmd(const char *cmd)
 {
-    UCI::cmd(cmd);
+    Stockfish::UCI::cmd(cmd);
 }
+
+//extern const char* Stockfish::StartFEN;
+void _stockfish_initialize();
 
 
 void stockfish_initialize() {
+  // this function is located in main.cpp
   _stockfish_initialize();
 }
 
-
-int UCI::cmd(const std::string& cmd) {
-  static Position pos;
-  static StateListPtr states(new std::deque<StateInfo>(1));
-  static bool first = true;
-  
-  if (first) {
-    first = false;
-    pos.set(StartFEN, false, &states->back(), Threads.main());
-  }
-  
-//  auto vec = splitString(cmd, '\n');
-//
-//  for(auto && s : vec) {
-    std::istringstream is(cmd);
-    
-    std::string token; // Avoid a stale if getline() returns empty or blank line
-    is >> std::skipws >> token;
-    
-    
-    if (    token == "quit"
-        ||  token == "stop") {
-      Threads.stop = true;
-      benchworking = false;
-    }
-    
-    // The GUI sends 'ponderhit' to tell us the user has played the expected move.
-    // So 'ponderhit' will be sent if we were told to ponder on the same move the
-    // user has played. We should continue searching but switch from pondering to
-    // normal search.
-    else if (token == "ponderhit")
-      Threads.main()->ponder = false; // Switch to normal search
-    
-    else if (token == "uci")
-      sync_cout << "id name " << engine_info(true)
-      << "\n"       << Options
-      << "\nuciok"  << sync_endl;
-    
-    else if (token == "setoption")  setoption(is);
-    else if (token == "go")         go(pos, is, states);
-    else if (token == "position")   position(pos, is, states);
-    else if (token == "ucinewgame") Search::clear();
-    else if (token == "isready")    sync_cout << "readyok" << sync_endl;
-    
-    // Additional custom non-UCI commands, mainly for debugging.
-    // Do not use these commands during a search!
-    else if (token == "flip")     pos.flip();
-    else if (token == "bench")    bench(pos, is, states);
-    else if (token == "d")        sync_cout << pos << sync_endl;
-    else if (token == "eval")     trace_eval(pos);
-    else if (token == "compiler") sync_cout << compiler_info() << sync_endl;
-    else
-      sync_cout << "Unknown command: " << cmd << sync_endl;
+//int Stockfish::UCI::cmd(const std::string& cmd) {
+//  static Stockfish::Position pos;
+//  static Stockfish::StateListPtr states(new std::deque<StateInfo>(1));
+//  static bool first = true;
+//  
+//  if (first) {
+//    first = false;
+//    pos.set(StartFEN, false, &states->back(), Threads.main());
 //  }
-  
-  return 1;
-}
+//  
+//    std::istringstream is(cmd);
+//    
+//    std::string token; // Avoid a stale if getline() returns empty or blank line
+//    is >> std::skipws >> token;
+//    
+//    
+//    if (    token == "quit"
+//        ||  token == "stop") {
+//      Threads.stop = true;
+//      benchworking = false;
+//    }
+//    
+//    // The GUI sends 'ponderhit' to tell us the user has played the expected move.
+//    // So 'ponderhit' will be sent if we were told to ponder on the same move the
+//    // user has played. We should continue searching but switch from pondering to
+//    // normal search.
+//    else if (token == "ponderhit")
+//      Threads.main()->ponder = false; // Switch to normal search
+//    
+//    else if (token == "uci")
+//      sync_cout << "id name " << engine_info(true)
+//      << "\n"       << Options
+//      << "\nuciok"  << sync_endl;
+//    
+//    else if (token == "setoption")  setoption(is);
+//    else if (token == "go")         go(pos, is, states);
+//    else if (token == "position")   position(pos, is, states);
+//    else if (token == "ucinewgame") Search::clear();
+//    else if (token == "isready")    sync_cout << "readyok" << sync_endl;
+//    
+//    // Additional custom non-UCI commands, mainly for debugging.
+//    // Do not use these commands during a search!
+//    else if (token == "flip")     pos.flip();
+//    else if (token == "bench")    bench(pos, is, states);
+//    else if (token == "d")        sync_cout << pos << sync_endl;
+//    else if (token == "eval")     Stockfish::UCI::trace_eval(pos);
+//    else if (token == "compiler") sync_cout << compiler_info() << sync_endl;
+//    else
+//      sync_cout << "Unknown command: " << cmd << sync_endl;
+////  }
+//  
+//  return 1;
+//}

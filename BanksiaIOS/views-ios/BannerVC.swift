@@ -17,7 +17,8 @@
 */
 
 import SwiftUI
-import GoogleMobileAds
+
+//import GoogleMobileAds
 import UIKit
 
 var hasAd = false
@@ -26,45 +27,44 @@ struct BannerVC: UIViewControllerRepresentable  {
   @Binding var hasAd: Bool
 
   func makeUIViewController(context: Context) -> UIViewController {
-    let banner = GADBannerView(adSize: kGADAdSizeBanner)
+//    let banner = GADBannerView(adSize: kGADAdSizeBanner)
     
     let viewController = UIViewController()
-    banner.rootViewController = viewController
-    //    banner.delegate = viewController
-    banner.delegate = context.coordinator
+//    banner.rootViewController = viewController
+//    banner.delegate = context.coordinator
 
-    viewController.view.addSubview(banner)
-    viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
-    if let bannerUnitID = Bundle.main.object(forInfoDictionaryKey: "GADBannerUnitID") as? String {
-      banner.adUnitID = bannerUnitID
-      banner.load(GADRequest())
-    }
+//    viewController.view.addSubview(banner)
+//    viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeBanner.size)
+//    if let bannerUnitID = Bundle.main.object(forInfoDictionaryKey: "GADBannerUnitID") as? String {
+//      banner.adUnitID = bannerUnitID
+//      banner.load(GADRequest())
+//    }
     return viewController
   }
 
   func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 
-  func makeCoordinator() -> BannerVC.Coordinator {
-    Coordinator(self)
-  }
-
-  class Coordinator: NSObject, GADBannerViewDelegate {
-    var parent: BannerVC
-
-    init(_ bannerVC: BannerVC) {
-      self.parent = bannerVC
-    }
-
-    func adViewDidReceiveAd(_ bannerView: GADBannerView){
-      print("adViewDidReceiveAd")
-      parent.hasAd = true
-    }
-
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-      print(error)
-      parent.hasAd = false
-    }
-  }
+//  func makeCoordinator() -> BannerVC.Coordinator {
+//    Coordinator(self)
+//  }
+//
+//  class Coordinator: NSObject, GADBannerViewDelegate {
+//    var parent: BannerVC
+//
+//    init(_ bannerVC: BannerVC) {
+//      self.parent = bannerVC
+//    }
+//
+//    func adViewDidReceiveAd(_ bannerView: GADBannerView){
+//      print("adViewDidReceiveAd")
+//      parent.hasAd = true
+//    }
+//
+//    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+//      print(error)
+//      parent.hasAd = false
+//    }
+//  }
 }
 
 //extension UIViewController: GADBannerViewDelegate {

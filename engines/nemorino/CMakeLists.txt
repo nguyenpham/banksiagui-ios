@@ -1,6 +1,0 @@
-cmake_minimum_required (VERSION 3.14)
-project (Nemorino)
-set(SOURCES Nemorino.cpp board.cpp book.cpp evaluation.cpp tbprobe.cpp utils.cpp hashtables.cpp bbEndings.cpp Material.cpp position.cpp search.cpp settings.cpp test.cpp timemanager.cpp uci.cpp xboard.cpp board.h book.h evaluation.h tbprobe.h utils.h hashtables.h bbEndings.h material.h position.h search.h settings.h test.h timemanager.h types.h uci.h version.h xboard.h )
-message("CMAKE_CXX_FLAGS_DEBUG is ${CMAKE_CXX_FLAGS_DEBUG}")
-message("CMAKE_CXX_FLAGS_RELEASE is ${CMAKE_CXX_FLAGS_RELEASE}")
-add_executable(nemorino ${SOURCES})
