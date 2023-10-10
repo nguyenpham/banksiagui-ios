@@ -30,8 +30,9 @@
 static std::map<int, std::vector<std::string>> searchMsgMap;
 static std::map<int, int> coreMap;
 
-static std::string nnuepath;
-std::string lc0netpath;
+static std::map<int, std::string> networkMap;
+
+//std::string lc0netpath;
 static std::set<int> initSet;
 static std::map<int, int> skillLevelMap;
 
@@ -77,29 +78,15 @@ extern "C" void engine_clearAllMessages(int eid)
   }
 }
 
-#ifndef LC0ONLY
 void stockfish_initialize();
 void stockfish_cmd(const char *cmd);
-#endif
+void stockfish_cleanup();
 
-#ifndef STOCKFISHONLY
 void lc0_initialize();
 void lc0_cmd(const char *cmd);
-#endif
-
-#ifndef NNONLY
-void stockfish_initialize();
-void stockfish_cmd(const char *cmd);
-
-void stockfish_initialize();
-void stockfish_cmd(const char *cmd);
-
-#endif
+void lc0_cleanup();
 
 
-#if !defined STOCKFISHONLY && !defined LC0ONLY
-
-#ifndef NNONLY
 extern "C" void ethereal_initialize();
 extern "C" void ethereal_uci_cmd(const char* str);
 extern "C" void xiphos_initialize();
@@ -107,14 +94,13 @@ extern "C" void xiphos_uci_cmd(const char* str);
 
 void rubichess_initialize();
 void rubichess_uci_cmd(const char* str);
+void rubichess_cleanup();
 
 void depenchess_initialize();
 void depenchess_uci_cmd(const char* str);
 
 void laser_initialize();
 void laser_uci_cmd(const char* str);
-
-#endif
 
 //void igel_initialize();
 //void igel_uci_cmd(const char* str);
@@ -125,29 +111,35 @@ void laser_uci_cmd(const char* str);
 //void fruit_initialize();
 //void fruit_uci_cmd(const char* str);
 
-#endif
 
-extern "C" void setStockfishNNUEPath(const char *path) {
-  nnuepath = path;
+extern "C" void setNetworkPath(int eid, const char *path) {
+  networkMap[eid] = path;
 }
 
-extern "C" void setLc0NetPath(const char *path) {
-  lc0netpath = path;
-}
 
 void sendOptionLc0Network(int eid)
 {
+  auto lc0netpath = networkMap[lc0];
   assert(!lc0netpath.empty());
   auto cmd = "setoption name WeightsFile value " + lc0netpath;
   engine_cmd(eid, cmd.c_str());
 }
 
 
-void sendOptionNNUE(int eid)
+void sendOptionNNUE_SF()
 {
-  assert(!nnuepath.empty());
-  auto cmd = "setoption name EvalFile value " + nnuepath;
-  engine_cmd(eid, cmd.c_str());
+  auto path = networkMap[stockfish];
+  assert(!path.empty());
+  auto cmd = "setoption name EvalFile value " + path;
+  engine_cmd(stockfish, cmd.c_str());
+}
+
+void sendOptionNNUE_Rubi()
+{
+  auto path = networkMap[rubi];
+  assert(!path.empty());
+  auto cmd = "setoption name NNUENetpath value " + path;
+  engine_cmd(rubi, cmd.c_str());
 }
 
 void sendSkillLevel(int eid, int skillLevel)
@@ -162,22 +154,22 @@ void engine_initialize(int eid, int coreNumber, int skillLevel, int nnueMode)
     initSet.insert(eid);
     
     switch (eid) {
-#ifndef LC0ONLY
       case stockfish:
         stockfish_initialize();  /// Threads, Hash, Ponder, EvalFile, Skill level
-        sendOptionNNUE(eid);
+        sendOptionNNUE_SF();
         break;
-#endif
-        
-#ifndef STOCKFISHONLY
+            
       case lc0:
         lc0_initialize();  /// Threads, Hash, Ponder, EvalFile, Skill level
         sendOptionLc0Network(eid);
         break;
-#endif
-
-#if !(defined STOCKFISHONLY || defined LC0ONLY)
         
+      case rubi:
+        rubichess_initialize();  /// Threads, Hash, Ponder
+        sendOptionNNUE_Rubi();
+        break;
+          
+
 //      case igel:
 //        igel_initialize();  /// Threads, Hash, Ponder, EvalFile, Skill level
 //        sendOptionNNUE(eid);
@@ -188,17 +180,12 @@ void engine_initialize(int eid, int coreNumber, int skillLevel, int nnueMode)
 //        sendOptionNNUE(eid);
 //        break;
 
-#ifndef NNONLY
       case ethereal:
         ethereal_initialize();  /// Threads, Hash, Ponder
         break;
         
       case xiphos:
         xiphos_initialize();  /// Threads, Hash, Ponder
-        break;
-        
-      case rubichess:
-        rubichess_initialize();  /// Threads, Hash, Ponder
         break;
         
       case laser:
@@ -209,11 +196,6 @@ void engine_initialize(int eid, int coreNumber, int skillLevel, int nnueMode)
         depenchess_initialize();  /// Threads, Hash, Ponder
         break;
             
-//      case fruit:
-//        fruit_initialize();  /// Hash Ponder, no threads
-//        break;
-#endif /// #ifndef NNONLY
-#endif
 
       default:
         break;
@@ -230,7 +212,6 @@ void engine_initialize(int eid, int coreNumber, int skillLevel, int nnueMode)
     engine_cmd(eid, cmd.c_str());
   }
 
-#ifndef LC0ONLY
   if (eid == stockfish) {
     if (skillLevelMap.find(eid) == skillLevelMap.end() || skillLevelMap[eid] != skillLevel) {
       skillLevelMap[eid] = skillLevel;
@@ -244,28 +225,20 @@ void engine_initialize(int eid, int coreNumber, int skillLevel, int nnueMode)
       engine_cmd(eid, cmd.c_str());
     }
   }
-#endif
   
 }
 
 void engine_cmd(int eid, const char *cmd)
 {
   switch (eid) {
-#ifndef LC0ONLY
     case stockfish:
       stockfish_cmd(cmd);
       break;
-#endif
-      
-#ifndef STOCKFISHONLY
-      case lc0:
+
+    case lc0:
         lc0_cmd(cmd);
         break;
-#endif
-
-#if !(defined STOCKFISHONLY || defined LC0ONLY)
-
-#ifndef NNONLY
+          
     case ethereal:
       ethereal_uci_cmd(cmd);
       break;
@@ -274,7 +247,7 @@ void engine_cmd(int eid, const char *cmd)
       xiphos_uci_cmd(cmd);
       break;
       
-    case rubichess:
+    case rubi:
       rubichess_uci_cmd(cmd);
       break;
       
@@ -286,8 +259,6 @@ void engine_cmd(int eid, const char *cmd)
       depenchess_uci_cmd(cmd);
       break;
           
-#endif /// #ifndef NNONLY
-
 //    case igel:
 //      igel_uci_cmd(cmd);
 //      break;
@@ -299,7 +270,6 @@ void engine_cmd(int eid, const char *cmd)
 //    case fruit:
 //      fruit_uci_cmd(cmd);
 //      break;
-#endif
 
     default:
       break;

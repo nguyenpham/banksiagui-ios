@@ -39,17 +39,23 @@
 lczero::EngineLoop *engineLoop = nullptr;
 lczero::Benchmark* benchmark = nullptr;
 
-extern std::string lc0netpath;
+//extern std::string lc0netpath;
 
 void lc0_cmd(const char *cmd)
 {
   if (memcmp(cmd, "bench", strlen("bench")) == 0) {
     if (benchmark) delete benchmark;
     benchmark = new lczero::Benchmark();
-    benchmark->Run(lc0netpath);
+      
+      // warning
+//    benchmark->Run(lc0netpath);
   } else {
     engineLoop->RunCmd(cmd);
   }
+}
+
+void lc0_cleanup() {
+    
 }
 
 void lc0_initialize() {

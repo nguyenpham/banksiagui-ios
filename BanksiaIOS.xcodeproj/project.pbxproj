@@ -183,10 +183,6 @@
 		B14A8DE72528C8E000B5704C /* gen.c in Sources */ = {isa = PBXBuildFile; fileRef = B14A8CDE2528C8E000B5704C /* gen.c */; };
 		B14A8DE82528C8E000B5704C /* bitboard.c in Sources */ = {isa = PBXBuildFile; fileRef = B14A8CE12528C8E000B5704C /* bitboard.c */; };
 		B14A8DE92528C8E000B5704C /* engines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B14A8CE52528C8E000B5704C /* engines.cpp */; };
-		B18F08272ACF87DE004DFD4C /* nn-5af11540bbfe.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B18F08252ACF87DE004DFD4C /* nn-5af11540bbfe.nnue */; };
-		B18F08282ACF87DE004DFD4C /* nn-9e3c6298299a.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B18F08262ACF87DE004DFD4C /* nn-9e3c6298299a.nnue */; };
-		B18F10A42ACF8869004DFD4C /* nn-5af11540bbfe.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B18F0FA52ACF8867004DFD4C /* nn-5af11540bbfe.nnue */; };
-		B18F10A52ACF8869004DFD4C /* nn-9e3c6298299a.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B18F0FA62ACF8867004DFD4C /* nn-9e3c6298299a.nnue */; };
 		B18F13CC2ACF8A22004DFD4C /* movegen.c in Sources */ = {isa = PBXBuildFile; fileRef = B18F12792ACF8A20004DFD4C /* movegen.c */; };
 		B18F13CD2ACF8A22004DFD4C /* zobrist.c in Sources */ = {isa = PBXBuildFile; fileRef = B18F127A2ACF8A20004DFD4C /* zobrist.c */; };
 		B18F13CE2ACF8A22004DFD4C /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = B18F127B2ACF8A20004DFD4C /* thread.c */; };
@@ -262,16 +258,6 @@
 		B18F141E2ACF8A23004DFD4C /* gen.c in Sources */ = {isa = PBXBuildFile; fileRef = B18F13252ACF8A21004DFD4C /* gen.c */; };
 		B18F141F2ACF8A23004DFD4C /* bitboard.c in Sources */ = {isa = PBXBuildFile; fileRef = B18F13282ACF8A21004DFD4C /* bitboard.c */; };
 		B18F14202ACF8A23004DFD4C /* engines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F132C2ACF8A21004DFD4C /* engines.cpp */; };
-		B18F14212ACF8A23004DFD4C /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F132E2ACF8A21004DFD4C /* utils.cpp */; };
-		B18F14232ACF8A23004DFD4C /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F13302ACF8A21004DFD4C /* board.cpp */; };
-		B18F14242ACF8A23004DFD4C /* tbprobe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F13322ACF8A21004DFD4C /* tbprobe.cpp */; };
-		B18F14252ACF8A23004DFD4C /* nnue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F13332ACF8A21004DFD4C /* nnue.cpp */; };
-		B18F14262ACF8A23004DFD4C /* Makefile.clang in Resources */ = {isa = PBXBuildFile; fileRef = B18F13342ACF8A21004DFD4C /* Makefile.clang */; };
-		B18F14272ACF8A23004DFD4C /* search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F13352ACF8A21004DFD4C /* search.cpp */; };
-		B18F14282ACF8A23004DFD4C /* transposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F13362ACF8A21004DFD4C /* transposition.cpp */; };
-		B18F14292ACF8A23004DFD4C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F13392ACF8A21004DFD4C /* main.cpp */; };
-		B18F142A2ACF8A23004DFD4C /* eval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F133A2ACF8A21004DFD4C /* eval.cpp */; };
-		B18F142B2ACF8A23004DFD4C /* uci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F133B2ACF8A21004DFD4C /* uci.cpp */; };
 		B18F142C2ACF8A23004DFD4C /* thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F13402ACF8A21004DFD4C /* thread.cpp */; };
 		B18F142D2ACF8A23004DFD4C /* timeman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F13422ACF8A21004DFD4C /* timeman.cpp */; };
 		B18F142E2ACF8A23004DFD4C /* ucioption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F13432ACF8A21004DFD4C /* ucioption.cpp */; };
@@ -370,15 +356,6 @@
 		B18F17BD2ACF8A3A004DFD4C /* gen.c in Sources */ = {isa = PBXBuildFile; fileRef = B18F16C42ACF8A38004DFD4C /* gen.c */; };
 		B18F17BE2ACF8A3A004DFD4C /* bitboard.c in Sources */ = {isa = PBXBuildFile; fileRef = B18F16C72ACF8A38004DFD4C /* bitboard.c */; };
 		B18F17BF2ACF8A3A004DFD4C /* engines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16CB2ACF8A38004DFD4C /* engines.cpp */; };
-		B18F17C02ACF8A3A004DFD4C /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16CD2ACF8A38004DFD4C /* utils.cpp */; };
-		B18F17C22ACF8A3A004DFD4C /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16CF2ACF8A38004DFD4C /* board.cpp */; };
-		B18F17C32ACF8A3A004DFD4C /* tbprobe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16D12ACF8A38004DFD4C /* tbprobe.cpp */; };
-		B18F17C42ACF8A3A004DFD4C /* nnue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16D22ACF8A38004DFD4C /* nnue.cpp */; };
-		B18F17C62ACF8A3A004DFD4C /* search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16D42ACF8A38004DFD4C /* search.cpp */; };
-		B18F17C72ACF8A3A004DFD4C /* transposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16D52ACF8A38004DFD4C /* transposition.cpp */; };
-		B18F17C82ACF8A3A004DFD4C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16D82ACF8A38004DFD4C /* main.cpp */; };
-		B18F17C92ACF8A3A004DFD4C /* eval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16D92ACF8A38004DFD4C /* eval.cpp */; };
-		B18F17CA2ACF8A3A004DFD4C /* uci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16DA2ACF8A38004DFD4C /* uci.cpp */; };
 		B18F17CB2ACF8A3A004DFD4C /* thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16DF2ACF8A38004DFD4C /* thread.cpp */; };
 		B18F17CC2ACF8A3A004DFD4C /* timeman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16E12ACF8A38004DFD4C /* timeman.cpp */; };
 		B18F17CD2ACF8A3A004DFD4C /* ucioption.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B18F16E22ACF8A38004DFD4C /* ucioption.cpp */; };
@@ -439,7 +416,6 @@
 		B18F194D2AD0406D004DFD4C /* factory.cc in Sources */ = {isa = PBXBuildFile; fileRef = B18F190E2AD0406B004DFD4C /* factory.cc */; };
 		B18F194E2AD0406D004DFD4C /* encoder.cc in Sources */ = {isa = PBXBuildFile; fileRef = B18F190F2AD0406B004DFD4C /* encoder.cc */; };
 		B18F194F2AD0406D004DFD4C /* cache.cc in Sources */ = {isa = PBXBuildFile; fileRef = B18F19102AD0406B004DFD4C /* cache.cc */; };
-		B18F19502AD0406E004DFD4C /* version.inc in Sources */ = {isa = PBXBuildFile; fileRef = B18F19132AD0406B004DFD4C /* version.inc */; };
 		B18F19512AD0406E004DFD4C /* node.cc in Sources */ = {isa = PBXBuildFile; fileRef = B18F19152AD0406B004DFD4C /* node.cc */; };
 		B18F19522AD0406E004DFD4C /* search.cc in Sources */ = {isa = PBXBuildFile; fileRef = B18F19182AD0406B004DFD4C /* search.cc */; };
 		B18F19532AD0406E004DFD4C /* stoppers.cc in Sources */ = {isa = PBXBuildFile; fileRef = B18F191A2AD0406B004DFD4C /* stoppers.cc */; };
@@ -500,15 +476,6 @@
 		B18F1A032AD04087004DFD4C /* legacy.cc in Sources */ = {isa = PBXBuildFile; fileRef = B18F19D12AD04085004DFD4C /* legacy.cc */; };
 		B18F1A042AD04087004DFD4C /* params.cc in Sources */ = {isa = PBXBuildFile; fileRef = B18F19D22AD04085004DFD4C /* params.cc */; };
 		B18F1A052AD04087004DFD4C /* version.cc in Sources */ = {isa = PBXBuildFile; fileRef = B18F19D42AD04085004DFD4C /* version.cc */; };
-		B19AE9C02540D6460037B09E /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19AE96D2540D6460037B09E /* utils.cpp */; };
-		B19AE9C22540D6460037B09E /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19AE96F2540D6460037B09E /* board.cpp */; };
-		B19AE9C32540D6460037B09E /* tbprobe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19AE9712540D6460037B09E /* tbprobe.cpp */; };
-		B19AE9C42540D6460037B09E /* nnue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19AE9722540D6460037B09E /* nnue.cpp */; };
-		B19AE9C62540D6460037B09E /* search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19AE9742540D6460037B09E /* search.cpp */; };
-		B19AE9C72540D6460037B09E /* transposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19AE9752540D6460037B09E /* transposition.cpp */; };
-		B19AE9C82540D6460037B09E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19AE9782540D6460037B09E /* main.cpp */; };
-		B19AE9C92540D6460037B09E /* eval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19AE9792540D6460037B09E /* eval.cpp */; };
-		B19AE9CA2540D6460037B09E /* uci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B19AE97A2540D6460037B09E /* uci.cpp */; };
 		B1A5A6D42532ED6D0007A258 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A5A6C22532ED6C0007A258 /* AboutView.swift */; };
 		B1A5A6D52532ED6D0007A258 /* Benchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A5A6C32532ED6C0007A258 /* Benchmark.swift */; };
 		B1A5A6D62532ED6D0007A258 /* OptionPieceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A5A6C42532ED6C0007A258 /* OptionPieceStyle.swift */; };
@@ -564,6 +531,70 @@
 		B1B6FEB3254423A8002B3E61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE97254423A7002B3E61 /* ContentView.swift */; };
 		B1C02B092528D43600665CA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C02B072528D43600665CA6 /* LaunchScreen.storyboard */; };
 		B1C02BA725294BEE00665CA6 /* BanksiaWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B1C02BA625294BEE00665CA6 /* BanksiaWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B1D816FB2AD4071600203462 /* rubichess_engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816EA2AD4071600203462 /* rubichess_engine.cpp */; };
+		B1D816FC2AD4071600203462 /* rubichess_search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816EB2AD4071600203462 /* rubichess_search.cpp */; };
+		B1D816FD2AD4071600203462 /* rubichess_cputest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816EC2AD4071600203462 /* rubichess_cputest.cpp */; };
+		B1D816FE2AD4071600203462 /* rubichess_tbprobe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816ED2AD4071600203462 /* rubichess_tbprobe.cpp */; };
+		B1D817002AD4071600203462 /* rubichess_transposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816EF2AD4071600203462 /* rubichess_transposition.cpp */; };
+		B1D817012AD4071600203462 /* rubichess_book.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816F02AD4071600203462 /* rubichess_book.cpp */; };
+		B1D817022AD4071600203462 /* rubichess_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816F12AD4071600203462 /* rubichess_main.cpp */; };
+		B1D817032AD4071600203462 /* rubichess_learn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816F22AD4071600203462 /* rubichess_learn.cpp */; };
+		B1D817042AD4071600203462 /* rubichess_eval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816F32AD4071600203462 /* rubichess_eval.cpp */; };
+		B1D817052AD4071600203462 /* rubichess_board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816F42AD4071600203462 /* rubichess_board.cpp */; };
+		B1D817062AD4071600203462 /* rubichess_texel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816F62AD4071600203462 /* rubichess_texel.cpp */; };
+		B1D817072AD4071600203462 /* rubichess_move.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816F72AD4071600203462 /* rubichess_move.cpp */; };
+		B1D817082AD4071600203462 /* rubichess_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816F82AD4071600203462 /* rubichess_utils.cpp */; };
+		B1D817092AD4071600203462 /* rubichess_nnue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D816F92AD4071600203462 /* rubichess_nnue.cpp */; };
+		B1D8171C2AD408EF00203462 /* rubichess_engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D8170B2AD408EE00203462 /* rubichess_engine.cpp */; };
+		B1D8171D2AD408EF00203462 /* rubichess_search.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D8170C2AD408EE00203462 /* rubichess_search.cpp */; };
+		B1D8171E2AD408EF00203462 /* rubichess_cputest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D8170D2AD408EE00203462 /* rubichess_cputest.cpp */; };
+		B1D8171F2AD408EF00203462 /* rubichess_tbprobe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D8170E2AD408EE00203462 /* rubichess_tbprobe.cpp */; };
+		B1D817212AD408EF00203462 /* rubichess_transposition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D817102AD408EE00203462 /* rubichess_transposition.cpp */; };
+		B1D817222AD408EF00203462 /* rubichess_book.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D817112AD408EE00203462 /* rubichess_book.cpp */; };
+		B1D817232AD408EF00203462 /* rubichess_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D817122AD408EE00203462 /* rubichess_main.cpp */; };
+		B1D817242AD408EF00203462 /* rubichess_learn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D817132AD408EE00203462 /* rubichess_learn.cpp */; };
+		B1D817252AD408EF00203462 /* rubichess_eval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D817142AD408EE00203462 /* rubichess_eval.cpp */; };
+		B1D817262AD408EF00203462 /* rubichess_board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D817152AD408EE00203462 /* rubichess_board.cpp */; };
+		B1D817272AD408EF00203462 /* rubichess_texel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D817172AD408EE00203462 /* rubichess_texel.cpp */; };
+		B1D817282AD408EF00203462 /* rubichess_move.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D817182AD408EE00203462 /* rubichess_move.cpp */; };
+		B1D817292AD408EF00203462 /* rubichess_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D817192AD408EE00203462 /* rubichess_utils.cpp */; };
+		B1D8172A2AD408EF00203462 /* rubichess_nnue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1D8171A2AD408EE00203462 /* rubichess_nnue.cpp */; };
+		B1D817382AD43ED600203462 /* nn-5af11540bbfe.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1D817352AD43ED600203462 /* nn-5af11540bbfe.nnue */; };
+		B1D817392AD43ED600203462 /* nn-9e3c6298299a.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1D817362AD43ED600203462 /* nn-9e3c6298299a.nnue */; };
+		B1D8173A2AD43ED600203462 /* nn-c257b2ebf1-20230812.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1D817372AD43ED600203462 /* nn-c257b2ebf1-20230812.nnue */; };
+		B1D8173F2AD43EF600203462 /* nn-5af11540bbfe.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1D8173C2AD43EF600203462 /* nn-5af11540bbfe.nnue */; };
+		B1D817402AD43EF600203462 /* nn-9e3c6298299a.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1D8173D2AD43EF600203462 /* nn-9e3c6298299a.nnue */; };
+		B1D817412AD43EF600203462 /* nn-c257b2ebf1-20230812.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1D8173E2AD43EF600203462 /* nn-c257b2ebf1-20230812.nnue */; };
+		B1D817DD2AD4ADFA00203462 /* inflate.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817C52AD4ADFA00203462 /* inflate.c */; };
+		B1D817DE2AD4ADFA00203462 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817C62AD4ADFA00203462 /* compress.c */; };
+		B1D817DF2AD4ADFA00203462 /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817C72AD4ADFA00203462 /* deflate.c */; };
+		B1D817E02AD4ADFA00203462 /* gzread.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817C92AD4ADFA00203462 /* gzread.c */; };
+		B1D817E12AD4ADFA00203462 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817CC2AD4ADFA00203462 /* crc32.c */; };
+		B1D817E22AD4ADFA00203462 /* infback.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817CD2AD4ADFA00203462 /* infback.c */; };
+		B1D817E32AD4ADFA00203462 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817CE2AD4ADFA00203462 /* zutil.c */; };
+		B1D817E42AD4ADFA00203462 /* gzlib.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817D22AD4ADFA00203462 /* gzlib.c */; };
+		B1D817E52AD4ADFB00203462 /* inftrees.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817D42AD4ADFA00203462 /* inftrees.c */; };
+		B1D817E62AD4ADFB00203462 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817D52AD4ADFA00203462 /* uncompr.c */; };
+		B1D817E72AD4ADFB00203462 /* gzwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817D62AD4ADFA00203462 /* gzwrite.c */; };
+		B1D817E82AD4ADFB00203462 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817D72AD4ADFA00203462 /* trees.c */; };
+		B1D817E92AD4ADFB00203462 /* gzclose.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817D82AD4ADFA00203462 /* gzclose.c */; };
+		B1D817EA2AD4ADFB00203462 /* inffast.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817DA2AD4ADFA00203462 /* inffast.c */; };
+		B1D817EB2AD4ADFB00203462 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817DB2AD4ADFA00203462 /* adler32.c */; };
+		B1D818072AD4B1F700203462 /* inflate.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817EF2AD4B1F700203462 /* inflate.c */; };
+		B1D818082AD4B1F700203462 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817F02AD4B1F700203462 /* compress.c */; };
+		B1D818092AD4B1F700203462 /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817F12AD4B1F700203462 /* deflate.c */; };
+		B1D8180A2AD4B1F700203462 /* gzread.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817F32AD4B1F700203462 /* gzread.c */; };
+		B1D8180B2AD4B1F700203462 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817F62AD4B1F700203462 /* crc32.c */; };
+		B1D8180C2AD4B1F700203462 /* infback.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817F72AD4B1F700203462 /* infback.c */; };
+		B1D8180D2AD4B1F700203462 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817F82AD4B1F700203462 /* zutil.c */; };
+		B1D8180E2AD4B1F700203462 /* gzlib.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817FC2AD4B1F700203462 /* gzlib.c */; };
+		B1D8180F2AD4B1F700203462 /* inftrees.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817FE2AD4B1F700203462 /* inftrees.c */; };
+		B1D818102AD4B1F700203462 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D817FF2AD4B1F700203462 /* uncompr.c */; };
+		B1D818112AD4B1F700203462 /* gzwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D818002AD4B1F700203462 /* gzwrite.c */; };
+		B1D818122AD4B1F700203462 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D818012AD4B1F700203462 /* trees.c */; };
+		B1D818132AD4B1F700203462 /* gzclose.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D818022AD4B1F700203462 /* gzclose.c */; };
+		B1D818142AD4B1F700203462 /* inffast.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D818042AD4B1F700203462 /* inffast.c */; };
+		B1D818152AD4B1F700203462 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = B1D818052AD4B1F700203462 /* adler32.c */; };
 		B1DA819C255DE8530021C5DC /* GExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA8194255DE8520021C5DC /* GExtensions.swift */; };
 		B1DA819D255DE8530021C5DC /* ContentViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA8195255DE8520021C5DC /* ContentViewExtension.swift */; };
 		B1DA819E255DE8530021C5DC /* BannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA8196255DE8520021C5DC /* BannerVC.swift */; };
@@ -997,10 +1028,6 @@
 		B14A8CE52528C8E000B5704C /* engines.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engines.cpp; sourceTree = "<group>"; };
 		B14A8D182528C8E000B5704C /* engines-bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "engines-bridging-header.h"; sourceTree = "<group>"; };
 		B14A8D192528C8E000B5704C /* engineids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engineids.h; sourceTree = "<group>"; };
-		B18F08252ACF87DE004DFD4C /* nn-5af11540bbfe.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-5af11540bbfe.nnue"; sourceTree = "<group>"; };
-		B18F08262ACF87DE004DFD4C /* nn-9e3c6298299a.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-9e3c6298299a.nnue"; sourceTree = "<group>"; };
-		B18F0FA52ACF8867004DFD4C /* nn-5af11540bbfe.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-5af11540bbfe.nnue"; sourceTree = "<group>"; };
-		B18F0FA62ACF8867004DFD4C /* nn-9e3c6298299a.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-9e3c6298299a.nnue"; sourceTree = "<group>"; };
 		B18F12782ACF8A20004DFD4C /* time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
 		B18F12792ACF8A20004DFD4C /* movegen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movegen.c; sourceTree = "<group>"; };
 		B18F127A2ACF8A20004DFD4C /* zobrist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zobrist.c; sourceTree = "<group>"; };
@@ -1174,20 +1201,6 @@
 		B18F132A2ACF8A21004DFD4C /* hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
 		B18F132B2ACF8A21004DFD4C /* position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = position.h; sourceTree = "<group>"; };
 		B18F132C2ACF8A21004DFD4C /* engines.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engines.cpp; sourceTree = "<group>"; };
-		B18F132E2ACF8A21004DFD4C /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
-		B18F132F2ACF8A21004DFD4C /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		B18F13302ACF8A21004DFD4C /* board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
-		B18F13312ACF8A21004DFD4C /* RubiChess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubiChess.h; sourceTree = "<group>"; };
-		B18F13322ACF8A21004DFD4C /* tbprobe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tbprobe.cpp; sourceTree = "<group>"; };
-		B18F13332ACF8A21004DFD4C /* nnue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nnue.cpp; sourceTree = "<group>"; };
-		B18F13342ACF8A21004DFD4C /* Makefile.clang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.clang; sourceTree = "<group>"; };
-		B18F13352ACF8A21004DFD4C /* search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = search.cpp; sourceTree = "<group>"; };
-		B18F13362ACF8A21004DFD4C /* transposition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = transposition.cpp; sourceTree = "<group>"; };
-		B18F13372ACF8A21004DFD4C /* tbcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbcore.h; sourceTree = "<group>"; };
-		B18F13382ACF8A21004DFD4C /* rubichesstbcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubichesstbcore.h; sourceTree = "<group>"; };
-		B18F13392ACF8A21004DFD4C /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		B18F133A2ACF8A21004DFD4C /* eval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eval.cpp; sourceTree = "<group>"; };
-		B18F133B2ACF8A21004DFD4C /* uci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uci.cpp; sourceTree = "<group>"; };
 		B18F133C2ACF8A21004DFD4C /* engines-bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "engines-bridging-header.h"; sourceTree = "<group>"; };
 		B18F133D2ACF8A21004DFD4C /* engineids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engineids.h; sourceTree = "<group>"; };
 		B18F133F2ACF8A21004DFD4C /* endgame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endgame.h; sourceTree = "<group>"; };
@@ -1420,20 +1433,6 @@
 		B18F16C92ACF8A38004DFD4C /* hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
 		B18F16CA2ACF8A38004DFD4C /* position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = position.h; sourceTree = "<group>"; };
 		B18F16CB2ACF8A38004DFD4C /* engines.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engines.cpp; sourceTree = "<group>"; };
-		B18F16CD2ACF8A38004DFD4C /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
-		B18F16CE2ACF8A38004DFD4C /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		B18F16CF2ACF8A38004DFD4C /* board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
-		B18F16D02ACF8A38004DFD4C /* RubiChess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RubiChess.h; sourceTree = "<group>"; };
-		B18F16D12ACF8A38004DFD4C /* tbprobe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tbprobe.cpp; sourceTree = "<group>"; };
-		B18F16D22ACF8A38004DFD4C /* nnue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nnue.cpp; sourceTree = "<group>"; };
-		B18F16D32ACF8A38004DFD4C /* Makefile.clang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.clang; sourceTree = "<group>"; };
-		B18F16D42ACF8A38004DFD4C /* search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = search.cpp; sourceTree = "<group>"; };
-		B18F16D52ACF8A38004DFD4C /* transposition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = transposition.cpp; sourceTree = "<group>"; };
-		B18F16D62ACF8A38004DFD4C /* tbcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbcore.h; sourceTree = "<group>"; };
-		B18F16D72ACF8A38004DFD4C /* rubichesstbcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubichesstbcore.h; sourceTree = "<group>"; };
-		B18F16D82ACF8A38004DFD4C /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		B18F16D92ACF8A38004DFD4C /* eval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = eval.cpp; sourceTree = "<group>"; };
-		B18F16DA2ACF8A38004DFD4C /* uci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uci.cpp; sourceTree = "<group>"; };
 		B18F16DB2ACF8A38004DFD4C /* engines-bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "engines-bridging-header.h"; sourceTree = "<group>"; };
 		B18F16DC2ACF8A38004DFD4C /* engineids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engineids.h; sourceTree = "<group>"; };
 		B18F16DE2ACF8A38004DFD4C /* endgame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = endgame.h; sourceTree = "<group>"; };
@@ -1782,6 +1781,96 @@
 		B1C02B9D25294BEA00665CA6 /* BanksiaWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BanksiaWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C02BA625294BEE00665CA6 /* BanksiaWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BanksiaWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C03317252996F200665CA6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B1D816EA2AD4071600203462 /* rubichess_engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_engine.cpp; sourceTree = "<group>"; };
+		B1D816EB2AD4071600203462 /* rubichess_search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_search.cpp; sourceTree = "<group>"; };
+		B1D816EC2AD4071600203462 /* rubichess_cputest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_cputest.cpp; sourceTree = "<group>"; };
+		B1D816ED2AD4071600203462 /* rubichess_tbprobe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_tbprobe.cpp; sourceTree = "<group>"; };
+		B1D816EF2AD4071600203462 /* rubichess_transposition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_transposition.cpp; sourceTree = "<group>"; };
+		B1D816F02AD4071600203462 /* rubichess_book.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_book.cpp; sourceTree = "<group>"; };
+		B1D816F12AD4071600203462 /* rubichess_main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_main.cpp; sourceTree = "<group>"; };
+		B1D816F22AD4071600203462 /* rubichess_learn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_learn.cpp; sourceTree = "<group>"; };
+		B1D816F32AD4071600203462 /* rubichess_eval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_eval.cpp; sourceTree = "<group>"; };
+		B1D816F42AD4071600203462 /* rubichess_board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_board.cpp; sourceTree = "<group>"; };
+		B1D816F52AD4071600203462 /* rubichess_RubiChess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubichess_RubiChess.h; sourceTree = "<group>"; };
+		B1D816F62AD4071600203462 /* rubichess_texel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_texel.cpp; sourceTree = "<group>"; };
+		B1D816F72AD4071600203462 /* rubichess_move.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_move.cpp; sourceTree = "<group>"; };
+		B1D816F82AD4071600203462 /* rubichess_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_utils.cpp; sourceTree = "<group>"; };
+		B1D816F92AD4071600203462 /* rubichess_nnue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_nnue.cpp; sourceTree = "<group>"; };
+		B1D816FA2AD4071600203462 /* rubichess_tbcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubichess_tbcore.h; sourceTree = "<group>"; };
+		B1D8170B2AD408EE00203462 /* rubichess_engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_engine.cpp; sourceTree = "<group>"; };
+		B1D8170C2AD408EE00203462 /* rubichess_search.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_search.cpp; sourceTree = "<group>"; };
+		B1D8170D2AD408EE00203462 /* rubichess_cputest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_cputest.cpp; sourceTree = "<group>"; };
+		B1D8170E2AD408EE00203462 /* rubichess_tbprobe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_tbprobe.cpp; sourceTree = "<group>"; };
+		B1D817102AD408EE00203462 /* rubichess_transposition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_transposition.cpp; sourceTree = "<group>"; };
+		B1D817112AD408EE00203462 /* rubichess_book.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_book.cpp; sourceTree = "<group>"; };
+		B1D817122AD408EE00203462 /* rubichess_main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_main.cpp; sourceTree = "<group>"; };
+		B1D817132AD408EE00203462 /* rubichess_learn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_learn.cpp; sourceTree = "<group>"; };
+		B1D817142AD408EE00203462 /* rubichess_eval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_eval.cpp; sourceTree = "<group>"; };
+		B1D817152AD408EE00203462 /* rubichess_board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_board.cpp; sourceTree = "<group>"; };
+		B1D817162AD408EE00203462 /* rubichess_RubiChess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubichess_RubiChess.h; sourceTree = "<group>"; };
+		B1D817172AD408EE00203462 /* rubichess_texel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_texel.cpp; sourceTree = "<group>"; };
+		B1D817182AD408EE00203462 /* rubichess_move.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_move.cpp; sourceTree = "<group>"; };
+		B1D817192AD408EE00203462 /* rubichess_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_utils.cpp; sourceTree = "<group>"; };
+		B1D8171A2AD408EE00203462 /* rubichess_nnue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rubichess_nnue.cpp; sourceTree = "<group>"; };
+		B1D8171B2AD408EE00203462 /* rubichess_tbcore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubichess_tbcore.h; sourceTree = "<group>"; };
+		B1D817352AD43ED600203462 /* nn-5af11540bbfe.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-5af11540bbfe.nnue"; sourceTree = "<group>"; };
+		B1D817362AD43ED600203462 /* nn-9e3c6298299a.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-9e3c6298299a.nnue"; sourceTree = "<group>"; };
+		B1D817372AD43ED600203462 /* nn-c257b2ebf1-20230812.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-c257b2ebf1-20230812.nnue"; sourceTree = "<group>"; };
+		B1D8173C2AD43EF600203462 /* nn-5af11540bbfe.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-5af11540bbfe.nnue"; sourceTree = "<group>"; };
+		B1D8173D2AD43EF600203462 /* nn-9e3c6298299a.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-9e3c6298299a.nnue"; sourceTree = "<group>"; };
+		B1D8173E2AD43EF600203462 /* nn-c257b2ebf1-20230812.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-c257b2ebf1-20230812.nnue"; sourceTree = "<group>"; };
+		B1D817C32AD4ADFA00203462 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
+		B1D817C42AD4ADFA00203462 /* inftrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inftrees.h; sourceTree = "<group>"; };
+		B1D817C52AD4ADFA00203462 /* inflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inflate.c; sourceTree = "<group>"; };
+		B1D817C62AD4ADFA00203462 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compress.c; sourceTree = "<group>"; };
+		B1D817C72AD4ADFA00203462 /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflate.c; sourceTree = "<group>"; };
+		B1D817C82AD4ADFA00203462 /* inffixed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inffixed.h; sourceTree = "<group>"; };
+		B1D817C92AD4ADFA00203462 /* gzread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzread.c; sourceTree = "<group>"; };
+		B1D817CA2AD4ADFA00203462 /* trees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trees.h; sourceTree = "<group>"; };
+		B1D817CB2AD4ADFA00203462 /* inffast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inffast.h; sourceTree = "<group>"; };
+		B1D817CC2AD4ADFA00203462 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
+		B1D817CD2AD4ADFA00203462 /* infback.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = infback.c; sourceTree = "<group>"; };
+		B1D817CE2AD4ADFA00203462 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
+		B1D817CF2AD4ADFA00203462 /* deflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deflate.h; sourceTree = "<group>"; };
+		B1D817D02AD4ADFA00203462 /* gzguts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gzguts.h; sourceTree = "<group>"; };
+		B1D817D12AD4ADFA00203462 /* zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
+		B1D817D22AD4ADFA00203462 /* gzlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzlib.c; sourceTree = "<group>"; };
+		B1D817D32AD4ADFA00203462 /* inflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inflate.h; sourceTree = "<group>"; };
+		B1D817D42AD4ADFA00203462 /* inftrees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inftrees.c; sourceTree = "<group>"; };
+		B1D817D52AD4ADFA00203462 /* uncompr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = uncompr.c; sourceTree = "<group>"; };
+		B1D817D62AD4ADFA00203462 /* gzwrite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzwrite.c; sourceTree = "<group>"; };
+		B1D817D72AD4ADFA00203462 /* trees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trees.c; sourceTree = "<group>"; };
+		B1D817D82AD4ADFA00203462 /* gzclose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzclose.c; sourceTree = "<group>"; };
+		B1D817D92AD4ADFA00203462 /* crc32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crc32.h; sourceTree = "<group>"; };
+		B1D817DA2AD4ADFA00203462 /* inffast.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inffast.c; sourceTree = "<group>"; };
+		B1D817DB2AD4ADFA00203462 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
+		B1D817DC2AD4ADFA00203462 /* zconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zconf.h; sourceTree = "<group>"; };
+		B1D817ED2AD4B1F700203462 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
+		B1D817EE2AD4B1F700203462 /* inftrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inftrees.h; sourceTree = "<group>"; };
+		B1D817EF2AD4B1F700203462 /* inflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inflate.c; sourceTree = "<group>"; };
+		B1D817F02AD4B1F700203462 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compress.c; sourceTree = "<group>"; };
+		B1D817F12AD4B1F700203462 /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflate.c; sourceTree = "<group>"; };
+		B1D817F22AD4B1F700203462 /* inffixed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inffixed.h; sourceTree = "<group>"; };
+		B1D817F32AD4B1F700203462 /* gzread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzread.c; sourceTree = "<group>"; };
+		B1D817F42AD4B1F700203462 /* trees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trees.h; sourceTree = "<group>"; };
+		B1D817F52AD4B1F700203462 /* inffast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inffast.h; sourceTree = "<group>"; };
+		B1D817F62AD4B1F700203462 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
+		B1D817F72AD4B1F700203462 /* infback.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = infback.c; sourceTree = "<group>"; };
+		B1D817F82AD4B1F700203462 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
+		B1D817F92AD4B1F700203462 /* deflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deflate.h; sourceTree = "<group>"; };
+		B1D817FA2AD4B1F700203462 /* gzguts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gzguts.h; sourceTree = "<group>"; };
+		B1D817FB2AD4B1F700203462 /* zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zlib.h; sourceTree = "<group>"; };
+		B1D817FC2AD4B1F700203462 /* gzlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzlib.c; sourceTree = "<group>"; };
+		B1D817FD2AD4B1F700203462 /* inflate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inflate.h; sourceTree = "<group>"; };
+		B1D817FE2AD4B1F700203462 /* inftrees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inftrees.c; sourceTree = "<group>"; };
+		B1D817FF2AD4B1F700203462 /* uncompr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = uncompr.c; sourceTree = "<group>"; };
+		B1D818002AD4B1F700203462 /* gzwrite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzwrite.c; sourceTree = "<group>"; };
+		B1D818012AD4B1F700203462 /* trees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trees.c; sourceTree = "<group>"; };
+		B1D818022AD4B1F700203462 /* gzclose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gzclose.c; sourceTree = "<group>"; };
+		B1D818032AD4B1F700203462 /* crc32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crc32.h; sourceTree = "<group>"; };
+		B1D818042AD4B1F700203462 /* inffast.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inffast.c; sourceTree = "<group>"; };
+		B1D818052AD4B1F700203462 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
+		B1D818062AD4B1F700203462 /* zconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zconf.h; sourceTree = "<group>"; };
 		B1DA8194255DE8520021C5DC /* GExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GExtensions.swift; sourceTree = "<group>"; };
 		B1DA8195255DE8520021C5DC /* ContentViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewExtension.swift; sourceTree = "<group>"; };
 		B1DA8196255DE8520021C5DC /* BannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerVC.swift; sourceTree = "<group>"; };
@@ -2050,8 +2139,8 @@
 		B1026E8B2543AADD00603CC7 /* BanksiaWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B1D8173B2AD43EF600203462 /* nnuenets */,
 				B18F14452ACF8A37004DFD4C /* engines */,
-				B18F0FA42ACF8867004DFD4C /* nnuenets */,
 				B1B60260254423EB002B3E61 /* lc0net */,
 				B1B6FE75254423A7002B3E61 /* chess */,
 				B1B6FE7E254423A7002B3E61 /* data */,
@@ -2191,8 +2280,8 @@
 		B14A8A9B2528C48900B5704C /* BanksiaIOS */ = {
 			isa = PBXGroup;
 			children = (
+				B1D817342AD43ED600203462 /* nnuenets */,
 				B18F10A62ACF8A1D004DFD4C /* engines */,
-				B18F08242ACF87DE004DFD4C /* nnuenets */,
 				B14A8B3C2528C76500B5704C /* views */,
 				B1DA8193255DE8520021C5DC /* views-ios */,
 				B1B6060625446320002B3E61 /* lc0net */,
@@ -2581,27 +2670,10 @@
 			path = fathom;
 			sourceTree = "<group>";
 		};
-		B18F08242ACF87DE004DFD4C /* nnuenets */ = {
-			isa = PBXGroup;
-			children = (
-				B18F08252ACF87DE004DFD4C /* nn-5af11540bbfe.nnue */,
-				B18F08262ACF87DE004DFD4C /* nn-9e3c6298299a.nnue */,
-			);
-			path = nnuenets;
-			sourceTree = SOURCE_ROOT;
-		};
-		B18F0FA42ACF8867004DFD4C /* nnuenets */ = {
-			isa = PBXGroup;
-			children = (
-				B18F0FA52ACF8867004DFD4C /* nn-5af11540bbfe.nnue */,
-				B18F0FA62ACF8867004DFD4C /* nn-9e3c6298299a.nnue */,
-			);
-			path = nnuenets;
-			sourceTree = SOURCE_ROOT;
-		};
 		B18F10A62ACF8A1D004DFD4C /* engines */ = {
 			isa = PBXGroup;
 			children = (
+				B1D816E92AD4071600203462 /* rubichess */,
 				B18F18B22AD0406A004DFD4C /* lc0 */,
 				B18F12772ACF8A20004DFD4C /* ethereal */,
 				B18F12AE2ACF8A20004DFD4C /* defenchess */,
@@ -2609,7 +2681,6 @@
 				B18F12E32ACF8A20004DFD4C /* laser */,
 				B18F12FC2ACF8A20004DFD4C /* xiphos */,
 				B18F132C2ACF8A21004DFD4C /* engines.cpp */,
-				B18F132D2ACF8A21004DFD4C /* rubichess */,
 				B18F133C2ACF8A21004DFD4C /* engines-bridging-header.h */,
 				B18F133D2ACF8A21004DFD4C /* engineids.h */,
 				B18F133E2ACF8A21004DFD4C /* stockfish */,
@@ -2856,27 +2927,6 @@
 			path = fathom;
 			sourceTree = "<group>";
 		};
-		B18F132D2ACF8A21004DFD4C /* rubichess */ = {
-			isa = PBXGroup;
-			children = (
-				B18F132E2ACF8A21004DFD4C /* utils.cpp */,
-				B18F132F2ACF8A21004DFD4C /* Makefile */,
-				B18F13302ACF8A21004DFD4C /* board.cpp */,
-				B18F13312ACF8A21004DFD4C /* RubiChess.h */,
-				B18F13322ACF8A21004DFD4C /* tbprobe.cpp */,
-				B18F13332ACF8A21004DFD4C /* nnue.cpp */,
-				B18F13342ACF8A21004DFD4C /* Makefile.clang */,
-				B18F13352ACF8A21004DFD4C /* search.cpp */,
-				B18F13362ACF8A21004DFD4C /* transposition.cpp */,
-				B18F13372ACF8A21004DFD4C /* tbcore.h */,
-				B18F13382ACF8A21004DFD4C /* rubichesstbcore.h */,
-				B18F13392ACF8A21004DFD4C /* main.cpp */,
-				B18F133A2ACF8A21004DFD4C /* eval.cpp */,
-				B18F133B2ACF8A21004DFD4C /* uci.cpp */,
-			);
-			path = rubichess;
-			sourceTree = "<group>";
-		};
 		B18F133E2ACF8A21004DFD4C /* stockfish */ = {
 			isa = PBXGroup;
 			children = (
@@ -2984,6 +3034,7 @@
 		B18F14452ACF8A37004DFD4C /* engines */ = {
 			isa = PBXGroup;
 			children = (
+				B1D8170A2AD408EE00203462 /* rubichess */,
 				B18F195C2AD04084004DFD4C /* lc0 */,
 				B18F16162ACF8A38004DFD4C /* ethereal */,
 				B18F164D2ACF8A38004DFD4C /* defenchess */,
@@ -2991,7 +3042,6 @@
 				B18F16822ACF8A38004DFD4C /* laser */,
 				B18F169B2ACF8A38004DFD4C /* xiphos */,
 				B18F16CB2ACF8A38004DFD4C /* engines.cpp */,
-				B18F16CC2ACF8A38004DFD4C /* rubichess */,
 				B18F16DB2ACF8A38004DFD4C /* engines-bridging-header.h */,
 				B18F16DC2ACF8A38004DFD4C /* engineids.h */,
 				B18F16DD2ACF8A38004DFD4C /* stockfish */,
@@ -3236,27 +3286,6 @@
 				B18F16C02ACF8A38004DFD4C /* tbprobe.h */,
 			);
 			path = fathom;
-			sourceTree = "<group>";
-		};
-		B18F16CC2ACF8A38004DFD4C /* rubichess */ = {
-			isa = PBXGroup;
-			children = (
-				B18F16CD2ACF8A38004DFD4C /* utils.cpp */,
-				B18F16CE2ACF8A38004DFD4C /* Makefile */,
-				B18F16CF2ACF8A38004DFD4C /* board.cpp */,
-				B18F16D02ACF8A38004DFD4C /* RubiChess.h */,
-				B18F16D12ACF8A38004DFD4C /* tbprobe.cpp */,
-				B18F16D22ACF8A38004DFD4C /* nnue.cpp */,
-				B18F16D32ACF8A38004DFD4C /* Makefile.clang */,
-				B18F16D42ACF8A38004DFD4C /* search.cpp */,
-				B18F16D52ACF8A38004DFD4C /* transposition.cpp */,
-				B18F16D62ACF8A38004DFD4C /* tbcore.h */,
-				B18F16D72ACF8A38004DFD4C /* rubichesstbcore.h */,
-				B18F16D82ACF8A38004DFD4C /* main.cpp */,
-				B18F16D92ACF8A38004DFD4C /* eval.cpp */,
-				B18F16DA2ACF8A38004DFD4C /* uci.cpp */,
-			);
-			path = rubichess;
 			sourceTree = "<group>";
 		};
 		B18F16DD2ACF8A38004DFD4C /* stockfish */ = {
@@ -3945,6 +3974,140 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		B1D816E92AD4071600203462 /* rubichess */ = {
+			isa = PBXGroup;
+			children = (
+				B1D817C22AD4ADFA00203462 /* zlib */,
+				B1D816EA2AD4071600203462 /* rubichess_engine.cpp */,
+				B1D816EB2AD4071600203462 /* rubichess_search.cpp */,
+				B1D816EC2AD4071600203462 /* rubichess_cputest.cpp */,
+				B1D816ED2AD4071600203462 /* rubichess_tbprobe.cpp */,
+				B1D816EF2AD4071600203462 /* rubichess_transposition.cpp */,
+				B1D816F02AD4071600203462 /* rubichess_book.cpp */,
+				B1D816F12AD4071600203462 /* rubichess_main.cpp */,
+				B1D816F22AD4071600203462 /* rubichess_learn.cpp */,
+				B1D816F32AD4071600203462 /* rubichess_eval.cpp */,
+				B1D816F42AD4071600203462 /* rubichess_board.cpp */,
+				B1D816F52AD4071600203462 /* rubichess_RubiChess.h */,
+				B1D816F62AD4071600203462 /* rubichess_texel.cpp */,
+				B1D816F72AD4071600203462 /* rubichess_move.cpp */,
+				B1D816F82AD4071600203462 /* rubichess_utils.cpp */,
+				B1D816F92AD4071600203462 /* rubichess_nnue.cpp */,
+				B1D816FA2AD4071600203462 /* rubichess_tbcore.h */,
+			);
+			path = rubichess;
+			sourceTree = "<group>";
+		};
+		B1D8170A2AD408EE00203462 /* rubichess */ = {
+			isa = PBXGroup;
+			children = (
+				B1D817EC2AD4B1F700203462 /* zlib */,
+				B1D8170B2AD408EE00203462 /* rubichess_engine.cpp */,
+				B1D8170C2AD408EE00203462 /* rubichess_search.cpp */,
+				B1D8170D2AD408EE00203462 /* rubichess_cputest.cpp */,
+				B1D8170E2AD408EE00203462 /* rubichess_tbprobe.cpp */,
+				B1D817102AD408EE00203462 /* rubichess_transposition.cpp */,
+				B1D817112AD408EE00203462 /* rubichess_book.cpp */,
+				B1D817122AD408EE00203462 /* rubichess_main.cpp */,
+				B1D817132AD408EE00203462 /* rubichess_learn.cpp */,
+				B1D817142AD408EE00203462 /* rubichess_eval.cpp */,
+				B1D817152AD408EE00203462 /* rubichess_board.cpp */,
+				B1D817162AD408EE00203462 /* rubichess_RubiChess.h */,
+				B1D817172AD408EE00203462 /* rubichess_texel.cpp */,
+				B1D817182AD408EE00203462 /* rubichess_move.cpp */,
+				B1D817192AD408EE00203462 /* rubichess_utils.cpp */,
+				B1D8171A2AD408EE00203462 /* rubichess_nnue.cpp */,
+				B1D8171B2AD408EE00203462 /* rubichess_tbcore.h */,
+			);
+			path = rubichess;
+			sourceTree = "<group>";
+		};
+		B1D817342AD43ED600203462 /* nnuenets */ = {
+			isa = PBXGroup;
+			children = (
+				B1D817352AD43ED600203462 /* nn-5af11540bbfe.nnue */,
+				B1D817362AD43ED600203462 /* nn-9e3c6298299a.nnue */,
+				B1D817372AD43ED600203462 /* nn-c257b2ebf1-20230812.nnue */,
+			);
+			path = nnuenets;
+			sourceTree = SOURCE_ROOT;
+		};
+		B1D8173B2AD43EF600203462 /* nnuenets */ = {
+			isa = PBXGroup;
+			children = (
+				B1D8173C2AD43EF600203462 /* nn-5af11540bbfe.nnue */,
+				B1D8173D2AD43EF600203462 /* nn-9e3c6298299a.nnue */,
+				B1D8173E2AD43EF600203462 /* nn-c257b2ebf1-20230812.nnue */,
+			);
+			path = nnuenets;
+			sourceTree = SOURCE_ROOT;
+		};
+		B1D817C22AD4ADFA00203462 /* zlib */ = {
+			isa = PBXGroup;
+			children = (
+				B1D817C32AD4ADFA00203462 /* zutil.h */,
+				B1D817C42AD4ADFA00203462 /* inftrees.h */,
+				B1D817C52AD4ADFA00203462 /* inflate.c */,
+				B1D817C62AD4ADFA00203462 /* compress.c */,
+				B1D817C72AD4ADFA00203462 /* deflate.c */,
+				B1D817C82AD4ADFA00203462 /* inffixed.h */,
+				B1D817C92AD4ADFA00203462 /* gzread.c */,
+				B1D817CA2AD4ADFA00203462 /* trees.h */,
+				B1D817CB2AD4ADFA00203462 /* inffast.h */,
+				B1D817CC2AD4ADFA00203462 /* crc32.c */,
+				B1D817CD2AD4ADFA00203462 /* infback.c */,
+				B1D817CE2AD4ADFA00203462 /* zutil.c */,
+				B1D817CF2AD4ADFA00203462 /* deflate.h */,
+				B1D817D02AD4ADFA00203462 /* gzguts.h */,
+				B1D817D12AD4ADFA00203462 /* zlib.h */,
+				B1D817D22AD4ADFA00203462 /* gzlib.c */,
+				B1D817D32AD4ADFA00203462 /* inflate.h */,
+				B1D817D42AD4ADFA00203462 /* inftrees.c */,
+				B1D817D52AD4ADFA00203462 /* uncompr.c */,
+				B1D817D62AD4ADFA00203462 /* gzwrite.c */,
+				B1D817D72AD4ADFA00203462 /* trees.c */,
+				B1D817D82AD4ADFA00203462 /* gzclose.c */,
+				B1D817D92AD4ADFA00203462 /* crc32.h */,
+				B1D817DA2AD4ADFA00203462 /* inffast.c */,
+				B1D817DB2AD4ADFA00203462 /* adler32.c */,
+				B1D817DC2AD4ADFA00203462 /* zconf.h */,
+			);
+			path = zlib;
+			sourceTree = "<group>";
+		};
+		B1D817EC2AD4B1F700203462 /* zlib */ = {
+			isa = PBXGroup;
+			children = (
+				B1D817ED2AD4B1F700203462 /* zutil.h */,
+				B1D817EE2AD4B1F700203462 /* inftrees.h */,
+				B1D817EF2AD4B1F700203462 /* inflate.c */,
+				B1D817F02AD4B1F700203462 /* compress.c */,
+				B1D817F12AD4B1F700203462 /* deflate.c */,
+				B1D817F22AD4B1F700203462 /* inffixed.h */,
+				B1D817F32AD4B1F700203462 /* gzread.c */,
+				B1D817F42AD4B1F700203462 /* trees.h */,
+				B1D817F52AD4B1F700203462 /* inffast.h */,
+				B1D817F62AD4B1F700203462 /* crc32.c */,
+				B1D817F72AD4B1F700203462 /* infback.c */,
+				B1D817F82AD4B1F700203462 /* zutil.c */,
+				B1D817F92AD4B1F700203462 /* deflate.h */,
+				B1D817FA2AD4B1F700203462 /* gzguts.h */,
+				B1D817FB2AD4B1F700203462 /* zlib.h */,
+				B1D817FC2AD4B1F700203462 /* gzlib.c */,
+				B1D817FD2AD4B1F700203462 /* inflate.h */,
+				B1D817FE2AD4B1F700203462 /* inftrees.c */,
+				B1D817FF2AD4B1F700203462 /* uncompr.c */,
+				B1D818002AD4B1F700203462 /* gzwrite.c */,
+				B1D818012AD4B1F700203462 /* trees.c */,
+				B1D818022AD4B1F700203462 /* gzclose.c */,
+				B1D818032AD4B1F700203462 /* crc32.h */,
+				B1D818042AD4B1F700203462 /* inffast.c */,
+				B1D818052AD4B1F700203462 /* adler32.c */,
+				B1D818062AD4B1F700203462 /* zconf.h */,
+			);
+			path = zlib;
+			sourceTree = "<group>";
+		};
 		B1DA8193255DE8520021C5DC /* views-ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -4064,7 +4227,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14A8B862528C76500B5704C /* alert2.wav in Resources */,
-				B18F08282ACF87DE004DFD4C /* nn-9e3c6298299a.nnue in Resources */,
 				B1B6060825446321002B3E61 /* 703810.pb.gz in Resources */,
 				B18F19462AD0406D004DFD4C /* README.md in Resources */,
 				B14A8B892528C76500B5704C /* error.wav in Resources */,
@@ -4074,16 +4236,17 @@
 				B14A8B872528C76500B5704C /* alert1.wav in Resources */,
 				B1C02B092528D43600665CA6 /* LaunchScreen.storyboard in Resources */,
 				B14A8B822528C76500B5704C /* help.html in Resources */,
-				B18F14262ACF8A23004DFD4C /* Makefile.clang in Resources */,
 				B14A8B852528C76500B5704C /* move.wav in Resources */,
+				B1D817382AD43ED600203462 /* nn-5af11540bbfe.nnue in Resources */,
 				B14A8B842528C76500B5704C /* win.wav in Resources */,
 				B14A8B902528C76500B5704C /* pieces.xcassets in Resources */,
 				B18F19422AD0406D004DFD4C /* winograd_transform.ispc in Resources */,
+				B1D817392AD43ED600203462 /* nn-9e3c6298299a.nnue in Resources */,
 				B14A8B882528C76500B5704C /* check.wav in Resources */,
 				B14A8D872528C8E000B5704C /* pknet_224x32x1.net in Resources */,
 				B14A8B812528C76500B5704C /* credit.html in Resources */,
-				B18F08272ACF87DE004DFD4C /* nn-5af11540bbfe.nnue in Resources */,
 				B14A8B772528C76500B5704C /* BsIcon.xcassets in Resources */,
+				B1D8173A2AD43ED600203462 /* nn-c257b2ebf1-20230812.nnue in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4105,16 +4268,17 @@
 				B1B6FEA3254423A8002B3E61 /* alert2.wav in Resources */,
 				B1B6FEA5254423A8002B3E61 /* check.wav in Resources */,
 				B1B6FEA1254423A8002B3E61 /* win.wav in Resources */,
-				B18F10A42ACF8869004DFD4C /* nn-5af11540bbfe.nnue in Resources */,
 				B1B6FEA6254423A8002B3E61 /* error.wav in Resources */,
+				B1D8173F2AD43EF600203462 /* nn-5af11540bbfe.nnue in Resources */,
 				B1B6FE602544237F002B3E61 /* Preview Assets.xcassets in Resources */,
+				B1D817402AD43EF600203462 /* nn-9e3c6298299a.nnue in Resources */,
 				B1B6FEA7254423A8002B3E61 /* cap.wav in Resources */,
 				B18F19EC2AD04086004DFD4C /* winograd_transform.ispc in Resources */,
 				B18F19F02AD04086004DFD4C /* README.md in Resources */,
 				B1B6FEB1254423A8002B3E61 /* pieces.xcassets in Resources */,
+				B1D817412AD43EF600203462 /* nn-c257b2ebf1-20230812.nnue in Resources */,
 				B1B6FEA4254423A8002B3E61 /* alert1.wav in Resources */,
 				B1B6FEA0254423A8002B3E61 /* fruit.bin in Resources */,
-				B18F10A52ACF8869004DFD4C /* nn-9e3c6298299a.nnue in Resources */,
 				B1B60381254423ED002B3E61 /* 703810.pb.gz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4126,6 +4290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D817E42AD4ADFA00203462 /* gzlib.c in Sources */,
 				B14A8DA22528C8E000B5704C /* search.cpp in Sources */,
 				B14A8D7D2528C8E000B5704C /* movegen.c in Sources */,
 				B18F13D72ACF8A22004DFD4C /* evaluate.c in Sources */,
@@ -4136,7 +4301,6 @@
 				B1026C3D2543268200603CC7 /* factory.cc in Sources */,
 				B1DA819C255DE8530021C5DC /* GExtensions.swift in Sources */,
 				B18F193B2AD0406C004DFD4C /* filesystem.posix.cc in Sources */,
-				B18F19502AD0406E004DFD4C /* version.inc in Sources */,
 				B14A8B942528C76500B5704C /* GBoard.swift in Sources */,
 				B18F14202ACF8A23004DFD4C /* engines.cpp in Sources */,
 				B18F19432AD0406D004DFD4C /* winograd_convolution3.cc in Sources */,
@@ -4171,7 +4335,6 @@
 				B14A8DE52528C8E000B5704C /* pawn_eval.c in Sources */,
 				B1026BFD2543268200603CC7 /* string.cc in Sources */,
 				B1044BE926A65E560032A27F /* pawns.cpp in Sources */,
-				B19AE9CA2540D6460037B09E /* uci.cpp in Sources */,
 				B18F14102ACF8A23004DFD4C /* util.c in Sources */,
 				B18F14342ACF8A23004DFD4C /* psqt.cpp in Sources */,
 				B18F140F2ACF8A23004DFD4C /* move_list.c in Sources */,
@@ -4196,15 +4359,15 @@
 				B14A8B6B2528C76500B5704C /* Book.swift in Sources */,
 				B18F14142ACF8A23004DFD4C /* search.c in Sources */,
 				B1044BF226A65E560032A27F /* endgame.cpp in Sources */,
+				B1D817092AD4071600203462 /* rubichess_nnue.cpp in Sources */,
 				B18F19302AD0406C004DFD4C /* numa.cc in Sources */,
 				B1026C492543268200603CC7 /* timemgr.cc in Sources */,
 				B14A8DAC2528C8E000B5704C /* tb.cpp in Sources */,
 				B18F19522AD0406E004DFD4C /* search.cc in Sources */,
 				B18F13FA2ACF8A23004DFD4C /* eval.cpp in Sources */,
-				B19AE9C22540D6460037B09E /* board.cpp in Sources */,
 				B14A8DDD2528C8E000B5704C /* search.c in Sources */,
 				B14A8DAB2528C8E000B5704C /* eval.cpp in Sources */,
-				B18F142A2ACF8A23004DFD4C /* eval.cpp in Sources */,
+				B1D817082AD4071600203462 /* rubichess_utils.cpp in Sources */,
 				B18F14112ACF8A23004DFD4C /* position.c in Sources */,
 				B1DA81A3255DE8530021C5DC /* EditView.swift in Sources */,
 				B18F142F2ACF8A23004DFD4C /* evaluate_nnue.cpp in Sources */,
@@ -4212,11 +4375,9 @@
 				B18F13E32ACF8A22004DFD4C /* windows.c in Sources */,
 				B1044BDD26A65E560032A27F /* misc.cpp in Sources */,
 				B14A8DD72528C8E000B5704C /* tables.c in Sources */,
-				B18F14272ACF8A23004DFD4C /* search.cpp in Sources */,
 				B18F13CF2ACF8A22004DFD4C /* network.c in Sources */,
 				B1026C4A2543268200603CC7 /* factory.cc in Sources */,
 				B18F13FB2ACF8A23004DFD4C /* tb.cpp in Sources */,
-				B18F14252ACF8A23004DFD4C /* nnue.cpp in Sources */,
 				B14A8DDA2528C8E000B5704C /* position.c in Sources */,
 				B18F141A2ACF8A23004DFD4C /* tbprobe.c in Sources */,
 				B14A8DAF2528C8E000B5704C /* params.cpp in Sources */,
@@ -4224,6 +4385,7 @@
 				B18F13CE2ACF8A22004DFD4C /* thread.c in Sources */,
 				B14A8B912528C76500B5704C /* ArrowView.swift in Sources */,
 				B14A8B692528C76500B5704C /* Result.swift in Sources */,
+				B1D817EA2AD4ADFB00203462 /* inffast.c in Sources */,
 				B1044BEA26A65E560032A27F /* movegen.cpp in Sources */,
 				B18F14002ACF8A23004DFD4C /* common.cpp in Sources */,
 				B1026C282543268200603CC7 /* syzygy.cc in Sources */,
@@ -4233,7 +4395,10 @@
 				B14A8DA52528C8E000B5704C /* tbprobe.cpp in Sources */,
 				B18F13EB2ACF8A22004DFD4C /* move_utils.cpp in Sources */,
 				B14A8DDC2528C8E000B5704C /* uci.c in Sources */,
+				B1D817DF2AD4ADFA00203462 /* deflate.c in Sources */,
+				B1D817E52AD4ADFB00203462 /* inftrees.c in Sources */,
 				B1026C4B2543268200603CC7 /* legacy.cc in Sources */,
+				B1D817E12AD4ADFA00203462 /* crc32.c in Sources */,
 				B18F143B2ACF8A23004DFD4C /* search.cpp in Sources */,
 				B18F19572AD0406E004DFD4C /* timemgr.cc in Sources */,
 				B18F19472AD0406D004DFD4C /* fully_connected_layer.cc in Sources */,
@@ -4270,30 +4435,35 @@
 				B14A8D992528C8E000B5704C /* magic.cpp in Sources */,
 				B18F13D52ACF8A22004DFD4C /* board.c in Sources */,
 				B14A8B6A2528C76500B5704C /* ExtensionLib.swift in Sources */,
+				B1D817032AD4071600203462 /* rubichess_learn.cpp in Sources */,
+				B1D817E02AD4ADFA00203462 /* gzread.c in Sources */,
+				B1D817072AD4071600203462 /* rubichess_move.cpp in Sources */,
 				B1DA819E255DE8530021C5DC /* BannerVC.swift in Sources */,
 				B1026C322543268200603CC7 /* network_blas.cc in Sources */,
 				B18F13F52ACF8A22004DFD4C /* target.cpp in Sources */,
 				B1026C082543268200603CC7 /* optionsdict.cc in Sources */,
+				B1D817E32AD4ADFA00203462 /* zutil.c in Sources */,
 				B18F140E2ACF8A23004DFD4C /* tables.c in Sources */,
 				B14A8B8D2528C76500B5704C /* UserData.swift in Sources */,
 				B14A8D8B2528C8E000B5704C /* syzygy.c in Sources */,
 				B1044BE126A65E560032A27F /* psqt.cpp in Sources */,
 				B14A8B8E2528C76500B5704C /* SoundMng.swift in Sources */,
-				B19AE9C92540D6460037B09E /* eval.cpp in Sources */,
 				B1A5A6D62532ED6D0007A258 /* OptionPieceStyle.swift in Sources */,
 				B18F13F62ACF8A22004DFD4C /* movegen.cpp in Sources */,
 				B14A8DD32528C8E000B5704C /* move_eval.c in Sources */,
-				B19AE9C82540D6460037B09E /* main.cpp in Sources */,
 				B14A8DE62528C8E000B5704C /* tablebases.c in Sources */,
 				B1026C452543268200603CC7 /* stoppers.cc in Sources */,
 				B18F14402ACF8A23004DFD4C /* tt.cpp in Sources */,
 				B1026C2A2543268200603CC7 /* position.cc in Sources */,
 				B14A8DA82528C8E000B5704C /* tt.cpp in Sources */,
+				B1D817DE2AD4ADFA00203462 /* compress.c in Sources */,
 				B1026BF92543268200603CC7 /* backendbench.cc in Sources */,
 				B1026C422543268200603CC7 /* version.inc in Sources */,
 				B14A8D9E2528C8E000B5704C /* data.cpp in Sources */,
 				B1026C442543268200603CC7 /* search.cc in Sources */,
 				B18F14392ACF8A23004DFD4C /* bitbase.cpp in Sources */,
+				B1D817022AD4071600203462 /* rubichess_main.cpp in Sources */,
+				B1D817E62AD4ADFB00203462 /* uncompr.c in Sources */,
 				B14A8D8C2528C8E000B5704C /* uci.c in Sources */,
 				B1026C472543268200603CC7 /* smooth.cc in Sources */,
 				B18F13EF2ACF8A22004DFD4C /* see.cpp in Sources */,
@@ -4302,7 +4472,6 @@
 				B14A8D932528C8E000B5704C /* masks.c in Sources */,
 				B1044BE326A65E560032A27F /* movepick.cpp in Sources */,
 				B14A8D982528C8E000B5704C /* thread.cpp in Sources */,
-				B18F14212ACF8A23004DFD4C /* utils.cpp in Sources */,
 				B1044BEE26A65E560032A27F /* tt.cpp in Sources */,
 				B14A8B8B2528C76500B5704C /* BanksiaApp.swift in Sources */,
 				B14A8D902528C8E000B5704C /* movepicker.c in Sources */,
@@ -4311,12 +4480,12 @@
 				B14A8DA62528C8E000B5704C /* target.cpp in Sources */,
 				B18F13E62ACF8A22004DFD4C /* timecontrol.cpp in Sources */,
 				B18F193E2AD0406C004DFD4C /* position.cc in Sources */,
-				B18F14292ACF8A23004DFD4C /* main.cpp in Sources */,
 				B1044BF126A65E560032A27F /* uci.cpp in Sources */,
 				B18F14012ACF8A23004DFD4C /* moveorder.cpp in Sources */,
 				B1026C292543268200603CC7 /* bitboard.cc in Sources */,
 				B14A8D922528C8E000B5704C /* cmdline.c in Sources */,
 				B1026C482543268200603CC7 /* alphazero.cc in Sources */,
+				B1D817052AD4071600203462 /* rubichess_board.cpp in Sources */,
 				B18F13D02ACF8A22004DFD4C /* history.c in Sources */,
 				B14A8DCF2528C8E000B5704C /* search.cpp in Sources */,
 				B14A8DCA2528C8E000B5704C /* moveorder.cpp in Sources */,
@@ -4329,12 +4498,15 @@
 				B1026C3B2543268200603CC7 /* loader.cc in Sources */,
 				B18F195B2AD0406E004DFD4C /* version.cc in Sources */,
 				B14A8DE82528C8E000B5704C /* bitboard.c in Sources */,
+				B1D817E92AD4ADFB00203462 /* gzclose.c in Sources */,
+				B1D817E82AD4ADFB00203462 /* trees.c in Sources */,
 				B18F14052ACF8A23004DFD4C /* tbprobe.cpp in Sources */,
 				B18F19552AD0406E004DFD4C /* smooth.cc in Sources */,
 				B14A8B682528C76500B5704C /* Piece.swift in Sources */,
 				B18F14092ACF8A23004DFD4C /* uci.cpp in Sources */,
 				B14A8B6C2528C76500B5704C /* Types.swift in Sources */,
 				B18F13E02ACF8A22004DFD4C /* tuner.c in Sources */,
+				B1D817002AD4071600203462 /* rubichess_transposition.cpp in Sources */,
 				B18F192F2AD0406B004DFD4C /* string.cc in Sources */,
 				B18F140B2ACF8A23004DFD4C /* eval.c in Sources */,
 				B18F13D82ACF8A22004DFD4C /* attacks.c in Sources */,
@@ -4350,16 +4522,18 @@
 				B1A5A6D52532ED6D0007A258 /* Benchmark.swift in Sources */,
 				B14A8D7F2528C8E000B5704C /* thread.c in Sources */,
 				B18F143C2ACF8A23004DFD4C /* pawns.cpp in Sources */,
-				B18F14242ACF8A23004DFD4C /* tbprobe.cpp in Sources */,
 				B14A8DD02528C8E000B5704C /* hash.cpp in Sources */,
 				B18F13FE2ACF8A23004DFD4C /* params.cpp in Sources */,
 				B1044BE826A65E560032A27F /* search.cpp in Sources */,
 				B18F143A2ACF8A23004DFD4C /* evaluate.cpp in Sources */,
+				B1D817042AD4071600203462 /* rubichess_eval.cpp in Sources */,
 				B18F193A2AD0406C004DFD4C /* optionsdict.cc in Sources */,
 				B18F19482AD0406D004DFD4C /* network_legacy.cc in Sources */,
 				B1026C092543268200603CC7 /* filesystem.posix.cc in Sources */,
 				B1026C2F2543268200603CC7 /* convolution1.cc in Sources */,
 				B18F14042ACF8A23004DFD4C /* board.cpp in Sources */,
+				B1D817E72AD4ADFB00203462 /* gzwrite.c in Sources */,
+				B1D816FE2AD4071600203462 /* rubichess_tbprobe.cpp in Sources */,
 				B14A8DCD2528C8E000B5704C /* board.cpp in Sources */,
 				B18F19442AD0406D004DFD4C /* network_blas.cc in Sources */,
 				B18F13DF2ACF8A22004DFD4C /* movepicker.c in Sources */,
@@ -4368,10 +4542,10 @@
 				B18F13E52ACF8A22004DFD4C /* tbprobe.c in Sources */,
 				B14A8B782528C76500B5704C /* ChessContentExtension.swift in Sources */,
 				B18F19372AD0406C004DFD4C /* random.cc in Sources */,
-				B18F14282ACF8A23004DFD4C /* transposition.cpp in Sources */,
 				B18F13E72ACF8A22004DFD4C /* thread.cpp in Sources */,
 				B1026C032543268200603CC7 /* histogram.cc in Sources */,
 				B14A8B662528C76500B5704C /* ChessBoard.swift in Sources */,
+				B1D816FC2AD4071600203462 /* rubichess_search.cpp in Sources */,
 				B1026C072543268200603CC7 /* logging.cc in Sources */,
 				B18F13DB2ACF8A22004DFD4C /* uci.c in Sources */,
 				B18F19322AD0406C004DFD4C /* weights_adapter.cc in Sources */,
@@ -4384,33 +4558,34 @@
 				B18F142E2ACF8A23004DFD4C /* ucioption.cpp in Sources */,
 				B1026C372543268200603CC7 /* network_legacy.cc in Sources */,
 				B18F13EE2ACF8A22004DFD4C /* tune.cpp in Sources */,
+				B1D817E22AD4ADFA00203462 /* infback.c in Sources */,
 				B18F192D2AD0406B004DFD4C /* main.cc in Sources */,
-				B18F142B2ACF8A23004DFD4C /* uci.cpp in Sources */,
 				B1026C432543268200603CC7 /* node.cc in Sources */,
 				B1044BD826A65E550032A27F /* thread.cpp in Sources */,
 				B18F19342AD0406C004DFD4C /* configfile.cc in Sources */,
 				B18F19452AD0406D004DFD4C /* se_unit.cc in Sources */,
 				B1026C462543268200603CC7 /* common.cc in Sources */,
+				B1D816FD2AD4071600203462 /* rubichess_cputest.cpp in Sources */,
 				B14A8DA02528C8E000B5704C /* see.cpp in Sources */,
 				B14A8DDF2528C8E000B5704C /* perft.c in Sources */,
 				B14A8DCE2528C8E000B5704C /* tbprobe.cpp in Sources */,
 				B18F143D2ACF8A23004DFD4C /* movegen.cpp in Sources */,
 				B1A5A6D42532ED6D0007A258 /* AboutView.swift in Sources */,
-				B19AE9C62540D6460037B09E /* search.cpp in Sources */,
 				B18F14132ACF8A23004DFD4C /* uci.c in Sources */,
 				B18F14362ACF8A23004DFD4C /* movepick.cpp in Sources */,
 				B18F13F92ACF8A23004DFD4C /* main.cpp in Sources */,
 				B1026C332543268200603CC7 /* se_unit.cc in Sources */,
+				B1D817DD2AD4ADFA00203462 /* inflate.c in Sources */,
 				B18F13F82ACF8A23004DFD4C /* pst.cpp in Sources */,
 				B18F14302ACF8A23004DFD4C /* half_ka_v2_hm.cpp in Sources */,
 				B14A8DD62528C8E000B5704C /* phash.c in Sources */,
 				B14A8DE72528C8E000B5704C /* gen.c in Sources */,
+				B1D817EB2AD4ADFB00203462 /* adler32.c in Sources */,
 				B1044BEF26A65E560032A27F /* main.cpp in Sources */,
 				B18F13ED2ACF8A22004DFD4C /* data.cpp in Sources */,
 				B14A8DE92528C8E000B5704C /* engines.cpp in Sources */,
 				B18F141D2ACF8A23004DFD4C /* tablebases.c in Sources */,
-				B19AE9C02540D6460037B09E /* utils.cpp in Sources */,
-				B19AE9C72540D6460037B09E /* transposition.cpp in Sources */,
+				B1D817012AD4071600203462 /* rubichess_book.cpp in Sources */,
 				B14A8B642528C76500B5704C /* PopupView.swift in Sources */,
 				B1026C392543268200603CC7 /* winograd_filter.cc in Sources */,
 				B1026C3A2543268200603CC7 /* activation.cc in Sources */,
@@ -4425,6 +4600,7 @@
 				B1026C3E2543268200603CC7 /* encoder.cc in Sources */,
 				B18F13DE2ACF8A22004DFD4C /* time.c in Sources */,
 				B14A8D8F2528C8E000B5704C /* time.c in Sources */,
+				B1D817062AD4071600203462 /* rubichess_texel.cpp in Sources */,
 				B18F19532AD0406E004DFD4C /* stoppers.cc in Sources */,
 				B18F19332AD0406C004DFD4C /* protomessage.cc in Sources */,
 				B18F192C2AD0406B004DFD4C /* benchmark.cc in Sources */,
@@ -4437,16 +4613,14 @@
 				B14A8D862528C8E000B5704C /* board.c in Sources */,
 				B1DA81A0255DE8530021C5DC /* MoveView.swift in Sources */,
 				B1026BFF2543268200603CC7 /* optionsparser.cc in Sources */,
-				B18F14232ACF8A23004DFD4C /* board.cpp in Sources */,
 				B14A8D7E2528C8E000B5704C /* zobrist.c in Sources */,
-				B19AE9C42540D6460037B09E /* nnue.cpp in Sources */,
 				B1026C042543268200603CC7 /* commandline.cc in Sources */,
+				B1D816FB2AD4071600203462 /* rubichess_engine.cpp in Sources */,
 				B18F14372ACF8A23004DFD4C /* tune.cpp in Sources */,
 				B18F13CC2ACF8A22004DFD4C /* movegen.c in Sources */,
 				B14A8D9D2528C8E000B5704C /* test.cpp in Sources */,
 				B14A8B8F2528C76500B5704C /* EngineData.swift in Sources */,
 				B18F193C2AD0406C004DFD4C /* syzygy.cc in Sources */,
-				B19AE9C32540D6460037B09E /* tbprobe.cpp in Sources */,
 				B14A8DD42528C8E000B5704C /* eval.c in Sources */,
 				B1026BFB2543268200603CC7 /* main.cc in Sources */,
 				B14A8B952528C76500B5704C /* GCell.swift in Sources */,
@@ -4475,18 +4649,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B18F177D2ACF8A39004DFD4C /* time.c in Sources */,
+				B1D817272AD408EF00203462 /* rubichess_texel.cpp in Sources */,
+				B1D818102AD4B1F700203462 /* uncompr.c in Sources */,
+				B1D818152AD4B1F700203462 /* adler32.c in Sources */,
 				B18F17762ACF8A39004DFD4C /* evaluate.c in Sources */,
 				B18F19F82AD04087004DFD4C /* encoder.cc in Sources */,
 				B18F17AE2ACF8A39004DFD4C /* move_list.c in Sources */,
 				B18F19EE2AD04086004DFD4C /* network_blas.cc in Sources */,
 				B18F19EB2AD04086004DFD4C /* convolution1.cc in Sources */,
 				B18F17AB2ACF8A39004DFD4C /* history.c in Sources */,
-				B18F17C62ACF8A3A004DFD4C /* search.cpp in Sources */,
 				B18F178E2ACF8A39004DFD4C /* see.cpp in Sources */,
 				B18F177E2ACF8A39004DFD4C /* movepicker.c in Sources */,
 				B1B6FEA8254423A8002B3E61 /* ArrowView.swift in Sources */,
 				B18F178B2ACF8A39004DFD4C /* test.cpp in Sources */,
 				B18F17702ACF8A39004DFD4C /* bitboards.c in Sources */,
+				B1D817242AD408EF00203462 /* rubichess_learn.cpp in Sources */,
 				B18F17A72ACF8A39004DFD4C /* eval.cpp in Sources */,
 				B18F17B92ACF8A3A004DFD4C /* tbprobe.c in Sources */,
 				B18F17A22ACF8A39004DFD4C /* bbinit.cpp in Sources */,
@@ -4496,22 +4673,22 @@
 				B18F17B32ACF8A3A004DFD4C /* search.c in Sources */,
 				B18F19D92AD04085004DFD4C /* string.cc in Sources */,
 				B18F19E92AD04086004DFD4C /* board.cc in Sources */,
-				B18F17C02ACF8A3A004DFD4C /* utils.cpp in Sources */,
 				B1B6FEB2254423A8002B3E61 /* ChessContentExtension.swift in Sources */,
 				B18F17E22ACF8A3A004DFD4C /* uci.cpp in Sources */,
 				B18F17712ACF8A39004DFD4C /* evalcache.c in Sources */,
 				B18F179B2ACF8A39004DFD4C /* position.cpp in Sources */,
 				B18F19F32AD04087004DFD4C /* writer.cc in Sources */,
 				B1B6FE9B254423A8002B3E61 /* Piece.swift in Sources */,
+				B1D8171E2AD408EF00203462 /* rubichess_cputest.cpp in Sources */,
 				B18F19DD2AD04085004DFD4C /* protomessage.cc in Sources */,
 				B18F17CC2ACF8A3A004DFD4C /* timeman.cpp in Sources */,
 				B18F1A052AD04087004DFD4C /* version.cc in Sources */,
 				B18F19EF2AD04086004DFD4C /* se_unit.cc in Sources */,
 				B1B6FE662544237F002B3E61 /* WatchOptionView.swift in Sources */,
 				B18F17A82ACF8A39004DFD4C /* uci.cpp in Sources */,
-				B18F17C92ACF8A3A004DFD4C /* eval.cpp in Sources */,
 				B18F17932ACF8A39004DFD4C /* tbprobe.cpp in Sources */,
 				B18F19D52AD04085004DFD4C /* backendbench.cc in Sources */,
+				B1D817282AD408EF00203462 /* rubichess_move.cpp in Sources */,
 				B18F17D42ACF8A3A004DFD4C /* benchmark.cpp in Sources */,
 				B1B6FE9E254423A8002B3E61 /* Book.swift in Sources */,
 				B18F19F22AD04087004DFD4C /* network_legacy.cc in Sources */,
@@ -4519,13 +4696,18 @@
 				B18F17CB2ACF8A3A004DFD4C /* thread.cpp in Sources */,
 				B1B6FE9F254423A8002B3E61 /* Types.swift in Sources */,
 				B18F178A2ACF8A39004DFD4C /* move_utils.cpp in Sources */,
+				B1D818122AD4B1F700203462 /* trees.c in Sources */,
+				B1D8180A2AD4B1F700203462 /* gzread.c in Sources */,
 				B18F17842ACF8A39004DFD4C /* tbprobe.c in Sources */,
+				B1D8180E2AD4B1F700203462 /* gzlib.c in Sources */,
 				B18F17B22ACF8A3A004DFD4C /* uci.c in Sources */,
 				B18F17D32ACF8A3A004DFD4C /* psqt.cpp in Sources */,
+				B1D818142AD4B1F700203462 /* inffast.c in Sources */,
 				B18F17D12ACF8A3A004DFD4C /* bitboard.cpp in Sources */,
 				B1B6FEA9254423A8002B3E61 /* GAllPieces.swift in Sources */,
 				B18F17B62ACF8A3A004DFD4C /* make.c in Sources */,
 				B18F19F72AD04087004DFD4C /* factory.cc in Sources */,
+				B1D817262AD408EF00203462 /* rubichess_board.cpp in Sources */,
 				B18F17992ACF8A39004DFD4C /* eval.cpp in Sources */,
 				B18F17852ACF8A39004DFD4C /* timecontrol.cpp in Sources */,
 				B18F19E12AD04086004DFD4C /* random.cc in Sources */,
@@ -4543,9 +4725,10 @@
 				B18F177F2ACF8A39004DFD4C /* tuner.c in Sources */,
 				B18F17A42ACF8A39004DFD4C /* tbprobe.cpp in Sources */,
 				B18F17BF2ACF8A3A004DFD4C /* engines.cpp in Sources */,
-				B18F17C22ACF8A3A004DFD4C /* board.cpp in Sources */,
+				B1D817232AD408EF00203462 /* rubichess_main.cpp in Sources */,
 				B18F179C2ACF8A39004DFD4C /* uci.cpp in Sources */,
 				B18F17822ACF8A39004DFD4C /* windows.c in Sources */,
+				B1D8180B2AD4B1F700203462 /* crc32.c in Sources */,
 				B18F1A022AD04087004DFD4C /* factory.cc in Sources */,
 				B18F17D72ACF8A3A004DFD4C /* tbprobe.cpp in Sources */,
 				B18F1A042AD04087004DFD4C /* params.cc in Sources */,
@@ -4561,39 +4744,45 @@
 				B18F179A2ACF8A39004DFD4C /* tb.cpp in Sources */,
 				B18F17CD2ACF8A3A004DFD4C /* ucioption.cpp in Sources */,
 				B18F19F12AD04086004DFD4C /* fully_connected_layer.cc in Sources */,
+				B1D8172A2AD408EF00203462 /* rubichess_nnue.cpp in Sources */,
 				B18F17DE2ACF8A3A004DFD4C /* material.cpp in Sources */,
-				B18F17C32ACF8A3A004DFD4C /* tbprobe.cpp in Sources */,
 				B18F179E2ACF8A39004DFD4C /* stockfishlib.cpp in Sources */,
 				B18F17D82ACF8A3A004DFD4C /* bitbase.cpp in Sources */,
 				B18F17E02ACF8A3A004DFD4C /* main.cpp in Sources */,
 				B18F17972ACF8A39004DFD4C /* pst.cpp in Sources */,
 				B18F17CF2ACF8A3A004DFD4C /* half_ka_v2_hm.cpp in Sources */,
+				B1D817222AD408EF00203462 /* rubichess_book.cpp in Sources */,
 				B18F19E72AD04086004DFD4C /* bitboard.cc in Sources */,
 				B18F19E52AD04086004DFD4C /* filesystem.posix.cc in Sources */,
 				B18F17772ACF8A39004DFD4C /* attacks.c in Sources */,
+				B1D818132AD4B1F700203462 /* gzclose.c in Sources */,
 				B18F17982ACF8A39004DFD4C /* main.cpp in Sources */,
 				B18F19FD2AD04087004DFD4C /* stoppers.cc in Sources */,
 				B18F176D2ACF8A39004DFD4C /* thread.c in Sources */,
 				B18F176B2ACF8A39004DFD4C /* movegen.c in Sources */,
 				B18F19E82AD04086004DFD4C /* position.cc in Sources */,
 				B18F1A002AD04087004DFD4C /* alphazero.cc in Sources */,
+				B1D8180C2AD4B1F700203462 /* infback.c in Sources */,
+				B1D8171F2AD408EF00203462 /* rubichess_tbprobe.cpp in Sources */,
 				B18F17D52ACF8A3A004DFD4C /* movepick.cpp in Sources */,
 				B18F19DA2AD04085004DFD4C /* numa.cc in Sources */,
+				B1D817292AD408EF00203462 /* rubichess_utils.cpp in Sources */,
 				B18F17BB2ACF8A3A004DFD4C /* pawn_eval.c in Sources */,
 				B1B6FEAF254423A8002B3E61 /* SoundMng.swift in Sources */,
+				B1D8171D2AD408EF00203462 /* rubichess_search.cpp in Sources */,
+				B1D818092AD4B1F700203462 /* deflate.c in Sources */,
 				B18F1A012AD04087004DFD4C /* timemgr.cc in Sources */,
 				B18F17DA2ACF8A3A004DFD4C /* search.cpp in Sources */,
+				B1D817252AD408EF00203462 /* rubichess_eval.cpp in Sources */,
 				B18F19E62AD04086004DFD4C /* syzygy.cc in Sources */,
 				B18F19F92AD04087004DFD4C /* cache.cc in Sources */,
 				B18F178F2ACF8A39004DFD4C /* move.cpp in Sources */,
 				B18F178D2ACF8A39004DFD4C /* tune.cpp in Sources */,
-				B18F17C82ACF8A3A004DFD4C /* main.cpp in Sources */,
 				B18F19FA2AD04087004DFD4C /* version.inc in Sources */,
 				B1B6FEB0254423A8002B3E61 /* EngineData.swift in Sources */,
 				B18F17B72ACF8A3A004DFD4C /* main.c in Sources */,
 				B18F17862ACF8A39004DFD4C /* thread.cpp in Sources */,
 				B18F17902ACF8A39004DFD4C /* search.cpp in Sources */,
-				B18F17CA2ACF8A3A004DFD4C /* uci.cpp in Sources */,
 				B18F19F42AD04087004DFD4C /* winograd_filter.cc in Sources */,
 				B18F17B52ACF8A3A004DFD4C /* perft.c in Sources */,
 				B18F17A62ACF8A39004DFD4C /* hash.cpp in Sources */,
@@ -4607,6 +4796,9 @@
 				B18F17872ACF8A39004DFD4C /* magic.cpp in Sources */,
 				B18F177B2ACF8A39004DFD4C /* search.c in Sources */,
 				B1B6FE9D254423A8002B3E61 /* ExtensionLib.swift in Sources */,
+				B1D818112AD4B1F700203462 /* gzwrite.c in Sources */,
+				B1D8171C2AD408EF00203462 /* rubichess_engine.cpp in Sources */,
+				B1D818072AD4B1F700203462 /* inflate.c in Sources */,
 				B18F19FE2AD04087004DFD4C /* common.cc in Sources */,
 				B18F178C2ACF8A39004DFD4C /* data.cpp in Sources */,
 				B18F17AC2ACF8A39004DFD4C /* phash.c in Sources */,
@@ -4625,30 +4817,32 @@
 				B18F17AA2ACF8A39004DFD4C /* eval.c in Sources */,
 				B18F19EA2AD04086004DFD4C /* uciloop.cc in Sources */,
 				B18F176F2ACF8A39004DFD4C /* history.c in Sources */,
-				B18F17C72ACF8A3A004DFD4C /* transposition.cpp in Sources */,
 				B18F19DB2AD04085004DFD4C /* optionsparser.cc in Sources */,
 				B18F19D72AD04085004DFD4C /* main.cc in Sources */,
 				B18F17D62ACF8A3A004DFD4C /* tune.cpp in Sources */,
 				B18F19F52AD04087004DFD4C /* activation.cc in Sources */,
 				B18F17D92ACF8A3A004DFD4C /* evaluate.cpp in Sources */,
 				B18F177A2ACF8A39004DFD4C /* uci.c in Sources */,
-				B18F17C42ACF8A3A004DFD4C /* nnue.cpp in Sources */,
 				B1B6FE632544237F002B3E61 /* WatchGameSetup.swift in Sources */,
+				B1D8180D2AD4B1F700203462 /* zutil.c in Sources */,
 				B1B6FE672544237F002B3E61 /* WatchContentViewExtensions.swift in Sources */,
 				B18F19E32AD04086004DFD4C /* logging.cc in Sources */,
 				B18F17A92ACF8A39004DFD4C /* move_eval.c in Sources */,
 				B18F176C2ACF8A39004DFD4C /* zobrist.c in Sources */,
+				B1D817212AD408EF00203462 /* rubichess_transposition.cpp in Sources */,
 				B18F19D82AD04085004DFD4C /* engine.cc in Sources */,
 				B18F17A52ACF8A39004DFD4C /* search.cpp in Sources */,
 				B18F176E2ACF8A39004DFD4C /* network.c in Sources */,
 				B18F17BC2ACF8A3A004DFD4C /* tablebases.c in Sources */,
 				B1B6FEAE254423A8002B3E61 /* UserData.swift in Sources */,
 				B18F17BD2ACF8A3A004DFD4C /* gen.c in Sources */,
+				B1D8180F2AD4B1F700203462 /* inftrees.c in Sources */,
 				B18F179F2ACF8A39004DFD4C /* common.cpp in Sources */,
 				B18F19E02AD04086004DFD4C /* commandline.cc in Sources */,
 				B1B6FEAD254423A8002B3E61 /* Game.swift in Sources */,
 				B18F19E42AD04086004DFD4C /* optionsdict.cc in Sources */,
 				B1B6FE642544237F002B3E61 /* ComplicationController.swift in Sources */,
+				B1D818082AD4B1F700203462 /* compress.c in Sources */,
 				B1B6FEAA254423A8002B3E61 /* GBoard.swift in Sources */,
 				B1B6FE9A254423A8002B3E61 /* Hist.swift in Sources */,
 				B18F17DF2ACF8A3A004DFD4C /* tt.cpp in Sources */,
@@ -4834,6 +5028,8 @@
 					"-DNNUE_EMBEDDING_OFF",
 					"-DUSE_NEON_1",
 					"-DUSE_POPCNT",
+					"-DUSE_ZLIB",
+					"-D_LARGEFILE64_SOURCE",
 				);
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_SWIFT_FLAGS = "-DSHOW_ADS_1";
@@ -4875,6 +5071,8 @@
 					"-DNNUE_EMBEDDING_OFF",
 					"-DUSE_NEON_1",
 					"-DUSE_POPCNT",
+					"-DUSE_ZLIB",
+					"-D_LARGEFILE64_SOURCE",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
@@ -4919,6 +5117,8 @@
 					"-DEIGEN_DONT_VECTORIZE",
 					"-DUSE_NEON_1",
 					"-DWATCH",
+					"-DUSE_ZLIB",
+					"-D_LARGEFILE64_SOURCE",
 				);
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_SWIFT_FLAGS = "-DWATCH";
@@ -4964,6 +5164,8 @@
 					"-DEIGEN_DONT_VECTORIZE",
 					"-DUSE_NEON_1",
 					"-DWATCH",
+					"-DUSE_ZLIB",
+					"-D_LARGEFILE64_SOURCE",
 				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",

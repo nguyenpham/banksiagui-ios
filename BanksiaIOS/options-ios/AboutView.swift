@@ -34,12 +34,13 @@ struct AboutView: View {
       Text("by Lc0 team (thanks)")
       #endif
       
-      #if !LC0ONLY
-      Text("NNUE network: \(network_nnue)")
-      #endif
-      #if !STOCKFISHONLY
-      Text("LC0 network: \(network_lc0)")
-      #endif
+        // warning
+//      #if !LC0ONLY
+//      Text("NNUE network: \(network_nnue)")
+//      #endif
+//      #if !STOCKFISHONLY
+//      Text("LC0 network: \(network_lc0)")
+//      #endif
 
       WebView(text: "credit", isFile: true)
       if #available(iOS 14.0, *) {

@@ -32,8 +32,7 @@ void engine_cmd(int eid, const char *cmd);
 const char *engine_getSearchMessage(int eid);
 void engine_clearAllMessages(int eid);
 
-void setStockfishNNUEPath(const char *path);
-void setLc0NetPath(const char *path);
+void setNetworkPath(int eid, const char *path);
 
 #ifdef __cplusplus
 }

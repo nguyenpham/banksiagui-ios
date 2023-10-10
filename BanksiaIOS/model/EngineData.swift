@@ -31,7 +31,9 @@ let version_lc0 = "0.26.3"
 //#endif
 
 let version_stockfish = "16"
-let network_nnue = "nn-5af11540bbfe.nnue"
+let network_sf = "nn-5af11540bbfe.nnue"
+
+let network_rubi = "nn-c257b2ebf1-20230812.nnue"
 
 let network_lc0 = "703810.pb.gz"
 
@@ -60,8 +62,8 @@ let defenchessEngineInfo = EngineInfo(name: "Defenchess", shortName: "Dc", versi
                                       frc: true, idNumb: defenchess, elo: 3280, nnue: false, bench: false)
 
 
-let rubichessEngineInfo = EngineInfo(name: "RubiChess", shortName: "Rb", version: "1.8", author: "Andreas Matthies",
-                                     frc: true, idNumb: rubichess, elo: 3296, nnue: false, bench: false)
+let rubichessEngineInfo = EngineInfo(name: "RubiChess", shortName: "Rb", version: "2.2 (20230918)", author: "Andreas Matthies",
+                                     frc: true, idNumb: rubi, elo: 3296, nnue: true, bench: false)
 let laserEngineInfo = EngineInfo(name: "Laser", shortName: "Ls", version: "1.6", author: "Jeffrey An, Michael An",
                                  frc: true, idNumb: laser, elo: 3288, nnue: false, bench: false)
 
