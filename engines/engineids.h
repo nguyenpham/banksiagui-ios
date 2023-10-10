@@ -24,7 +24,7 @@ enum {
   lc0,
   ethereal,
   xiphos,
-  rubichess,
+  rubi,
   laser,
   defenchess,
 //  igel,

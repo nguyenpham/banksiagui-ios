@@ -54,7 +54,7 @@ using namespace Stockfish;
 
 
 // Added by BanksiaGUI
-void _stockfish_initialize() {
+void stockfish_initialize() {
   UCI::init(Options);
   Tune::init();
   PSQT::init();

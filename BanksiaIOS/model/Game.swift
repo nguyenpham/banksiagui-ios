@@ -150,18 +150,18 @@ final class Game: ObservableObject {
   init() {
     read()
 
-    #if !LC0ONLY
-    if let path = Bundle.main.path(forResource: network_nnue, ofType: nil) {
-      setStockfishNNUEPath(path);
+    if let path = Bundle.main.path(forResource: network_sf, ofType: nil) {
+        setNetworkPath(Int32(stockfish), path);
     }
-    #endif
 
-    #if !STOCKFISHONLY
     if let path = Bundle.main.path(forResource: network_lc0, ofType: nil) {
-      setLc0NetPath(path);
+        setNetworkPath(Int32(lc0), path);
     }
-    #endif
+    if let path = Bundle.main.path(forResource: network_rubi, ofType: nil) {
+        setNetworkPath(Int32(rubi), path);
+    }
 
+      
     initCurrentEngine()
     
     let processInfo = ProcessInfo()
