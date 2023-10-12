@@ -19,14 +19,6 @@
 #pragma once
 
 // Select the BLAS vendor based on defines
-//#undef EIGEN_VECTORIZE_NEON
-//#define EIGEN_VECTORIZE_ZVECTOR
-//#define EIGEN_DONT_VECTORIZE
-
-#if EIGEN_DONT_VECTORIZE
-#define EIGEN_ASM_COMMENT
-#endif
-
 
 #ifdef USE_MKL
 #include <mkl.h>

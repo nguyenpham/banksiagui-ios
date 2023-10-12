@@ -32,7 +32,7 @@ static std::map<int, int> coreMap;
 
 static std::map<int, std::string> networkMap;
 
-//std::string lc0netpath;
+std::string lc0netpath;
 static std::set<int> initSet;
 static std::map<int, int> skillLevelMap;
 
@@ -113,7 +113,10 @@ void laser_uci_cmd(const char* str);
 
 
 extern "C" void setNetworkPath(int eid, const char *path) {
-  networkMap[eid] = path;
+    networkMap[eid] = path;
+    if (eid == lc0) {
+        lc0netpath = path;
+    }
 }
 
 
