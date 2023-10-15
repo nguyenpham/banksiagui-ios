@@ -36,7 +36,8 @@ let network_sf = "nn-5af11540bbfe.nnue"
 let network_rubi = "nn-c257b2ebf1-20230812.nnue"
 
 //let network_lc0 = "703810.pb.gz"      // old 6.4 MB
-let network_lc0 = "753723.pb.gz"        // new 18.8
+//let network_lc0 = "753723.pb.gz"        // new 18.8
+let network_lc0 = "791556.pb.gz"        // new 18.8
 
 struct EngineInfo : Hashable {
   let name: String
