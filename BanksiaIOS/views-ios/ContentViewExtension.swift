@@ -137,9 +137,9 @@ extension ContentView {
         VStack(spacing: 0) {
             
             /// info
-            if userData.showAnalysis && hasEngineOutput {
+            if userData.showAnalysis && engineOutput.hasEngineOutput {
                 ScrollView(.horizontal) {
-                    Text("\(depthString)\(depthString.isEmpty ? "" : "; ")\(scoreString)\(nodeString)\(timeString)\(npsString)\(nnueString)")
+                    Text(engineOutput.displayString())
                         .font(.system(size: UIDevice.current.userInterfaceIdiom == .phone ? 12 : 18))
                         .frame(width: nil, height: nil, alignment: .topLeading)
                         .lineLimit(1)
@@ -148,7 +148,7 @@ extension ContentView {
                 .background(Color(red: 0.95, green: 0.95, blue: 0.95))
                 /// pv
                 ScrollView(.horizontal) {
-                    Text("\(pvString)")
+                    Text(engineOutput.pvString)
                         .font(.system(size: UIDevice.current.userInterfaceIdiom == .phone ? 12 : 18))
                         .frame(width: nil, height: nil, alignment: .topLeading)
                         .lineLimit(1)

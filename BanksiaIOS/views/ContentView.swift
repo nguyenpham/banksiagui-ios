@@ -30,21 +30,8 @@ struct ContentView: View {
     @State var cellWidth: CGFloat = 0
     @State var geoSize = CGSize(width: 0, height: 0)
     
-    @State var hasEngineOutput = false
-    @State var pvString = ""
-    @State var scoreString = ""
-    @State var depthString = ""
-    @State var nodeString = ""
-    @State var npsString = ""
-    @State var timeString = ""
-    @State var nnueString = ""
-    
-    @State var depth = 0
-    @State var score = 0
-    @State var mating = false
-    @State var nodes: UInt64 = 0
-    @State var nps: UInt64 = 0
-    
+    @State var engineOutput = EngineOutput()
+
     @State var flip = false
     
     @State var editing = false
@@ -56,9 +43,6 @@ struct ContentView: View {
     
     @State var humanTurn = Side.white
     @State var selectedPos = -1
-    
-    @State var arrowFrom = -1
-    @State var arrowDest = -1
     
     @State var aniFrom = -1
     @State var aniDest = -1
@@ -248,7 +232,7 @@ struct ContentView: View {
                        make: { (piece, from, dest, promotion, moveTask) -> Bool in return make(piece: piece, from: from, dest: dest, promotion: promotion, moveTask: moveTask) },
                        tap: { pos in tap(pos: pos) },
                        startDragging: { pos in genLegalMovesFrom(pos: pos) },
-                       arrowFrom: userData.showAnalysisArrows ? arrowFrom : -1, arrowDest: arrowDest,
+                       arrowFrom: userData.showAnalysisArrows ? engineOutput.arrowFrom : -1, arrowDest: engineOutput.arrowDest,
                        aniFrom: aniFrom, aniDest: aniDest, aniPromotion: aniPromotion, aniTask: aniTask,
                        selectedPos: selectedPos,
                        legalSet: legalSet
@@ -350,8 +334,8 @@ struct ContentView: View {
     func clearAllMarks() {
         selectedPos = -1
         
-        arrowFrom = -1
-        arrowDest = -1
+        engineOutput.arrowFrom = -1
+        engineOutput.arrowDest = -1
         
         aniFrom = -1
         aniDest = -1

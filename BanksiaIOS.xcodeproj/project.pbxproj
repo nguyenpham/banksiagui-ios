@@ -138,6 +138,12 @@
 		B14A8DE72528C8E000B5704C /* gen.c in Sources */ = {isa = PBXBuildFile; fileRef = B14A8CDE2528C8E000B5704C /* gen.c */; };
 		B14A8DE82528C8E000B5704C /* bitboard.c in Sources */ = {isa = PBXBuildFile; fileRef = B14A8CE12528C8E000B5704C /* bitboard.c */; };
 		B14A8DE92528C8E000B5704C /* engines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B14A8CE52528C8E000B5704C /* engines.cpp */; };
+		B16A5F412AE3BA6100F6694F /* EngineOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A5F402AE3BA6100F6694F /* EngineOutput.swift */; };
+		B16A5F482AE3C33700F6694F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A5F432AE3C33700F6694F /* Game.swift */; };
+		B16A5F492AE3C33700F6694F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A5F442AE3C33700F6694F /* UserData.swift */; };
+		B16A5F4A2AE3C33700F6694F /* SoundMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A5F452AE3C33700F6694F /* SoundMng.swift */; };
+		B16A5F4B2AE3C33700F6694F /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A5F462AE3C33700F6694F /* EngineData.swift */; };
+		B16A5F4C2AE3C33700F6694F /* EngineOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A5F472AE3C33700F6694F /* EngineOutput.swift */; };
 		B18F13CC2ACF8A22004DFD4C /* movegen.c in Sources */ = {isa = PBXBuildFile; fileRef = B18F12792ACF8A20004DFD4C /* movegen.c */; };
 		B18F13CD2ACF8A22004DFD4C /* zobrist.c in Sources */ = {isa = PBXBuildFile; fileRef = B18F127A2ACF8A20004DFD4C /* zobrist.c */; };
 		B18F13CE2ACF8A22004DFD4C /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = B18F127B2ACF8A20004DFD4C /* thread.c */; };
@@ -378,10 +384,6 @@
 		B1B6FEAA254423A8002B3E61 /* GBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE8C254423A7002B3E61 /* GBoard.swift */; };
 		B1B6FEAB254423A8002B3E61 /* GCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE8D254423A7002B3E61 /* GCell.swift */; };
 		B1B6FEAC254423A8002B3E61 /* GPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE8E254423A7002B3E61 /* GPiece.swift */; };
-		B1B6FEAD254423A8002B3E61 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE90254423A7002B3E61 /* Game.swift */; };
-		B1B6FEAE254423A8002B3E61 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE91254423A7002B3E61 /* UserData.swift */; };
-		B1B6FEAF254423A8002B3E61 /* SoundMng.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE92254423A7002B3E61 /* SoundMng.swift */; };
-		B1B6FEB0254423A8002B3E61 /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE93254423A7002B3E61 /* EngineData.swift */; };
 		B1B6FEB1254423A8002B3E61 /* pieces.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B6FE94254423A7002B3E61 /* pieces.xcassets */; };
 		B1B6FEB2254423A8002B3E61 /* ChessContentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE96254423A7002B3E61 /* ChessContentExtension.swift */; };
 		B1B6FEB3254423A8002B3E61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE97254423A7002B3E61 /* ContentView.swift */; };
@@ -1004,6 +1006,12 @@
 		B14A8CE52528C8E000B5704C /* engines.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = engines.cpp; sourceTree = "<group>"; };
 		B14A8D182528C8E000B5704C /* engines-bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "engines-bridging-header.h"; sourceTree = "<group>"; };
 		B14A8D192528C8E000B5704C /* engineids.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = engineids.h; sourceTree = "<group>"; };
+		B16A5F402AE3BA6100F6694F /* EngineOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineOutput.swift; sourceTree = "<group>"; };
+		B16A5F432AE3C33700F6694F /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		B16A5F442AE3C33700F6694F /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		B16A5F452AE3C33700F6694F /* SoundMng.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundMng.swift; sourceTree = "<group>"; };
+		B16A5F462AE3C33700F6694F /* EngineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineData.swift; sourceTree = "<group>"; };
+		B16A5F472AE3C33700F6694F /* EngineOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineOutput.swift; sourceTree = "<group>"; };
 		B18F12782ACF8A20004DFD4C /* time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time.h; sourceTree = "<group>"; };
 		B18F12792ACF8A20004DFD4C /* movegen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = movegen.c; sourceTree = "<group>"; };
 		B18F127A2ACF8A20004DFD4C /* zobrist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zobrist.c; sourceTree = "<group>"; };
@@ -1526,10 +1534,6 @@
 		B1B6FE8C254423A7002B3E61 /* GBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBoard.swift; sourceTree = "<group>"; };
 		B1B6FE8D254423A7002B3E61 /* GCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCell.swift; sourceTree = "<group>"; };
 		B1B6FE8E254423A7002B3E61 /* GPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPiece.swift; sourceTree = "<group>"; };
-		B1B6FE90254423A7002B3E61 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		B1B6FE91254423A7002B3E61 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		B1B6FE92254423A7002B3E61 /* SoundMng.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundMng.swift; sourceTree = "<group>"; };
-		B1B6FE93254423A7002B3E61 /* EngineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineData.swift; sourceTree = "<group>"; };
 		B1B6FE94254423A7002B3E61 /* pieces.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = pieces.xcassets; path = BanksiaIOS/pieces.xcassets; sourceTree = SOURCE_ROOT; };
 		B1B6FE96254423A7002B3E61 /* ChessContentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChessContentExtension.swift; sourceTree = "<group>"; };
 		B1B6FE97254423A7002B3E61 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -2150,13 +2154,13 @@
 		B1026E8B2543AADD00603CC7 /* BanksiaWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B16A5F422AE3C33700F6694F /* model */,
 				B1BECFB62AD778D600FCD12B /* lc0net */,
 				B1D8173B2AD43EF600203462 /* nnuenets */,
 				B18F14452ACF8A37004DFD4C /* engines */,
 				B1B6FE75254423A7002B3E61 /* chess */,
 				B1B6FE7E254423A7002B3E61 /* data */,
 				B1B6FE89254423A7002B3E61 /* graphics */,
-				B1B6FE8F254423A7002B3E61 /* model */,
 				B1B6FE94254423A7002B3E61 /* pieces.xcassets */,
 				B1B6FE95254423A7002B3E61 /* views */,
 				B1B6FE552544237F002B3E61 /* Preview Content */,
@@ -2409,6 +2413,7 @@
 				B14A8B592528C76500B5704C /* UserData.swift */,
 				B14A8B5A2528C76500B5704C /* SoundMng.swift */,
 				B14A8B5B2528C76500B5704C /* EngineData.swift */,
+				B16A5F402AE3BA6100F6694F /* EngineOutput.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2680,6 +2685,19 @@
 			);
 			path = fathom;
 			sourceTree = "<group>";
+		};
+		B16A5F422AE3C33700F6694F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B16A5F432AE3C33700F6694F /* Game.swift */,
+				B16A5F442AE3C33700F6694F /* UserData.swift */,
+				B16A5F452AE3C33700F6694F /* SoundMng.swift */,
+				B16A5F462AE3C33700F6694F /* EngineData.swift */,
+				B16A5F472AE3C33700F6694F /* EngineOutput.swift */,
+			);
+			name = model;
+			path = BanksiaIOS/model;
+			sourceTree = SOURCE_ROOT;
 		};
 		B18F10A62ACF8A1D004DFD4C /* engines */ = {
 			isa = PBXGroup;
@@ -3529,18 +3547,6 @@
 			);
 			name = graphics;
 			path = BanksiaIOS/graphics;
-			sourceTree = SOURCE_ROOT;
-		};
-		B1B6FE8F254423A7002B3E61 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				B1B6FE90254423A7002B3E61 /* Game.swift */,
-				B1B6FE91254423A7002B3E61 /* UserData.swift */,
-				B1B6FE92254423A7002B3E61 /* SoundMng.swift */,
-				B1B6FE93254423A7002B3E61 /* EngineData.swift */,
-			);
-			name = model;
-			path = BanksiaIOS/model;
 			sourceTree = SOURCE_ROOT;
 		};
 		B1B6FE95254423A7002B3E61 /* views */ = {
@@ -4615,6 +4621,7 @@
 				B14A8D912528C8E000B5704C /* tuner.c in Sources */,
 				B14A8D862528C8E000B5704C /* board.c in Sources */,
 				B1BECD772AD76B1A00FCD12B /* lc0_stoppers.cc in Sources */,
+				B16A5F412AE3BA6100F6694F /* EngineOutput.swift in Sources */,
 				B1DA81A0255DE8530021C5DC /* MoveView.swift in Sources */,
 				B14A8D7E2528C8E000B5704C /* zobrist.c in Sources */,
 				B1BECD6B2AD76B1A00FCD12B /* lc0_factory.cc in Sources */,
@@ -4667,6 +4674,7 @@
 				B18F17702ACF8A39004DFD4C /* bitboards.c in Sources */,
 				B1D817242AD408EF00203462 /* rubichess_learn.cpp in Sources */,
 				B1BECFA52AD76B4800FCD12B /* lc0_network_record.cc in Sources */,
+				B16A5F482AE3C33700F6694F /* Game.swift in Sources */,
 				B18F17A72ACF8A39004DFD4C /* eval.cpp in Sources */,
 				B1BECF8E2AD76B4700FCD12B /* lc0_board.cc in Sources */,
 				B18F17B92ACF8A3A004DFD4C /* tbprobe.c in Sources */,
@@ -4680,6 +4688,7 @@
 				B1B6FE9B254423A8002B3E61 /* Piece.swift in Sources */,
 				B1BECF932AD76B4700FCD12B /* winograd_convolution3.cc in Sources */,
 				B1BECF8B2AD76B4700FCD12B /* lc0_position.cc in Sources */,
+				B16A5F492AE3C33700F6694F /* UserData.swift in Sources */,
 				B1D8171E2AD408EF00203462 /* rubichess_cputest.cpp in Sources */,
 				B18F17CC2ACF8A3A004DFD4C /* timeman.cpp in Sources */,
 				B1B6FE662544237F002B3E61 /* WatchOptionView.swift in Sources */,
@@ -4688,6 +4697,7 @@
 				B1D817282AD408EF00203462 /* rubichess_move.cpp in Sources */,
 				B18F17D42ACF8A3A004DFD4C /* benchmark.cpp in Sources */,
 				B1BECFA82AD76B4800FCD12B /* lc0_main.cc in Sources */,
+				B16A5F4A2AE3C33700F6694F /* SoundMng.swift in Sources */,
 				B1B6FE9E254423A8002B3E61 /* Book.swift in Sources */,
 				B18F17BE2ACF8A3A004DFD4C /* bitboard.c in Sources */,
 				B1BECF602AD76B4700FCD12B /* lc0_random.cc in Sources */,
@@ -4772,7 +4782,6 @@
 				B1BECF9E2AD76B4800FCD12B /* activation.cc in Sources */,
 				B1D817292AD408EF00203462 /* rubichess_utils.cpp in Sources */,
 				B18F17BB2ACF8A3A004DFD4C /* pawn_eval.c in Sources */,
-				B1B6FEAF254423A8002B3E61 /* SoundMng.swift in Sources */,
 				B1BECF9C2AD76B4800FCD12B /* winograd_filter.cc in Sources */,
 				B1BECFAC2AD76B4800FCD12B /* lc0_alphazero.cc in Sources */,
 				B1BECFA72AD76B4800FCD12B /* lc0_decoder.cc in Sources */,
@@ -4782,7 +4791,6 @@
 				B1D817252AD408EF00203462 /* rubichess_eval.cpp in Sources */,
 				B18F178F2ACF8A39004DFD4C /* move.cpp in Sources */,
 				B18F178D2ACF8A39004DFD4C /* tune.cpp in Sources */,
-				B1B6FEB0254423A8002B3E61 /* EngineData.swift in Sources */,
 				B1BECFA02AD76B4800FCD12B /* lc0_network_mux.cc in Sources */,
 				B18F17B72ACF8A3A004DFD4C /* main.c in Sources */,
 				B18F17862ACF8A39004DFD4C /* thread.cpp in Sources */,
@@ -4817,6 +4825,7 @@
 				B18F17B02ACF8A3A004DFD4C /* position.c in Sources */,
 				B1B6FEAC254423A8002B3E61 /* GPiece.swift in Sources */,
 				B1B6FE98254423A8002B3E61 /* Move.swift in Sources */,
+				B16A5F4B2AE3C33700F6694F /* EngineData.swift in Sources */,
 				B1BECFAF2AD76B4800FCD12B /* lc0_factory.cc in Sources */,
 				B18F17A02ACF8A39004DFD4C /* moveorder.cpp in Sources */,
 				B1BECF5D2AD76B4700FCD12B /* lc0_filesystem.posix.cc in Sources */,
@@ -4843,15 +4852,14 @@
 				B1BECF662AD76B4700FCD12B /* lc0_optionsdict.cc in Sources */,
 				B18F176E2ACF8A39004DFD4C /* network.c in Sources */,
 				B18F17BC2ACF8A3A004DFD4C /* tablebases.c in Sources */,
-				B1B6FEAE254423A8002B3E61 /* UserData.swift in Sources */,
 				B18F17BD2ACF8A3A004DFD4C /* gen.c in Sources */,
 				B1D8180F2AD4B1F700203462 /* inftrees.c in Sources */,
 				B18F179F2ACF8A39004DFD4C /* common.cpp in Sources */,
-				B1B6FEAD254423A8002B3E61 /* Game.swift in Sources */,
 				B1B6FE642544237F002B3E61 /* ComplicationController.swift in Sources */,
 				B1BECF8F2AD76B4700FCD12B /* lc0_version.cc in Sources */,
 				B1D818082AD4B1F700203462 /* compress.c in Sources */,
 				B1BECF5E2AD76B4700FCD12B /* lc0_configfile.cc in Sources */,
+				B16A5F4C2AE3C33700F6694F /* EngineOutput.swift in Sources */,
 				B1B6FEAA254423A8002B3E61 /* GBoard.swift in Sources */,
 				B1B6FE9A254423A8002B3E61 /* Hist.swift in Sources */,
 				B18F17DF2ACF8A3A004DFD4C /* tt.cpp in Sources */,

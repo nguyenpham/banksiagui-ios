@@ -374,7 +374,7 @@ struct ChessBoard {
         if (vec.count >= 4 && vec[3].count >= 2) {
             // enpassant
             let str = vec[3]
-            let pos = coordinateStringToPos(str)
+            let pos = ChessBoard.coordinateStringToPos(str)
             if (isPositionValid(pos: pos)) {
                 enpassant = pos
             }
@@ -409,12 +409,12 @@ struct ChessBoard {
     }
     
     
-    func posToCoordinateString(_ pos: Int) -> String {
+    static func posToCoordinateString(_ pos: Int) -> String {
         let row = pos / 8, col = pos % 8
         return columnNames[col] + String(8 - row)
     }
     
-    func coordinateStringToPos(_ str: String) -> Int {
+    static func coordinateStringToPos(_ str: String) -> Int {
         if str.length >= 2 {
             let colChr = str[0], rowChr = str[1]
             if colChr >= "a" && colChr <= "h" && rowChr >= "1" && rowChr <= "8",
@@ -427,7 +427,7 @@ struct ChessBoard {
         return -1
     }
     
-    func moveFromCoordiateString(_ moveString: String) -> Move {
+    static func moveFromCoordiateString(_ moveString: String) -> Move {
         let from = coordinateStringToPos(moveString)
         let dest = coordinateStringToPos(moveString.substring(fromIndex: 2))
         
@@ -510,7 +510,7 @@ struct ChessBoard {
         let range = Range(uncheckedBounds: (lower: tldStartIndex, upper: tldEndIndex))
         let destString = String(s[range])
         
-        dest = coordinateStringToPos(destString)
+        dest = ChessBoard.coordinateStringToPos(destString)
         
         if !isPositionValid(pos: dest) {
             return Move.illegalMove
@@ -538,7 +538,7 @@ struct ChessBoard {
                 s = String(s[range2])
                 
                 if (left == 2) {
-                    from = coordinateStringToPos(s)
+                    from = ChessBoard.coordinateStringToPos(s)
                 } else {
                     let ch = s[0]
                     if ch >= "0" && ch <= "9" {
@@ -588,7 +588,7 @@ struct ChessBoard {
     }
     
     func moveString_coordinate(move: Move) -> String {
-        var str = posToCoordinateString(move.from) + posToCoordinateString(move.dest)
+        var str = ChessBoard.posToCoordinateString(move.from) + ChessBoard.posToCoordinateString(move.dest)
         if move.promotion != EMPTY, let promotionType = PieceTypeStd(rawValue: move.promotion) {
             str += promotionType.getCharactor().uppercased()
         }
@@ -689,7 +689,7 @@ struct ChessBoard {
         + getFenCastleRights() + " ";
         
         if (enpassant > 0) {
-            s += posToCoordinateString(enpassant)
+            s += ChessBoard.posToCoordinateString(enpassant)
         } else {
             s +=  "-"
         }
@@ -844,7 +844,7 @@ struct ChessBoard {
             
             var move = moveFromString_san(ss)
             if move == Move.illegalMove {
-                move = moveFromCoordiateString(ss)
+                move = ChessBoard.moveFromCoordiateString(ss)
                 
                 if (move == Move.illegalMove) {
                     return false;
@@ -1859,7 +1859,7 @@ struct ChessBoard {
             }
             if (ambi) {
                 if (sameCol && sameRow) {
-                    str += posToCoordinateString(hist.move.from)
+                    str += ChessBoard.posToCoordinateString(hist.move.from)
                 } else if (sameCol) {
                     str += "\(8 - hist.move.from / 8)"
                 } else {
@@ -1876,7 +1876,7 @@ struct ChessBoard {
                 str += "x";
             }
             
-            str += posToCoordinateString(hist.move.dest);
+            str += ChessBoard.posToCoordinateString(hist.move.dest);
             
             // promotion
             if (hist.move.promotion != PieceTypeStd.empty.rawValue) {
