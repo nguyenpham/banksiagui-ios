@@ -47,7 +47,7 @@ extension ContentView {
             if (computingTask.isEmpty || !doComputingTask()) && !game.analysicOnFlyMode {
                 let arr = str.split(separator: " ")
                 if arr.count > 1 {
-                    let move = game.chessBoard.moveFromCoordiateString(String(arr[1]))
+                    let move = ChessBoard.moveFromCoordiateString(String(arr[1]))
                     aniPromotion = move.promotion
                     aniDest = move.dest
                     aniFrom = move.from
@@ -57,88 +57,7 @@ extension ContentView {
             return
         }
         
-        if (str.starts(with: "info ")) {
-            let arr = str.split(separator: " ")
-            var i = 0
-            while i < arr.count {
-                let w = arr[i]
-                if w == "pv" {
-                    i += 1
-                    var pv = ""
-                    if i < arr.count {
-                        let move = game.chessBoard.moveFromCoordiateString(String(arr[i]))
-                        arrowFrom = move.from
-                        arrowDest = move.dest
-                        while i < arr.count {
-                            pv += " " + String(arr[i])
-                            i += 1
-                        }
-                        self.pvString = "pv:\(pv)"
-                    } else {
-                        arrowFrom = -1
-                        arrowDest = -1
-                        self.pvString = ""
-                    }
-                    break
-                }
-                
-                switch w {
-                case "depth":
-                    i += 1
-                    let s = String(arr[i])
-                    depthString = "depth: " + s
-                    depth = Int(s) ?? 0
-                    
-                case "seldepth":
-                    i += 1
-                    if !depthString.isEmpty {
-                        depthString += "/" + String(arr[i])
-                    }
-                    
-                case "score":
-                    scoreString = "score: "
-                    mating = false
-                    i += 1
-                    var s = String(arr[i])
-                    if s == "cp" {
-                        i += 1
-                    } else if s == "mate" {
-                        i += 1
-                        scoreString = "M"
-                        mating = true
-                    }
-                    s = String(arr[i])
-                    score = Int(s) ?? 0
-                    scoreString += s + "; "
-                    
-                case "nodes":
-                    i += 1
-                    let s = String(arr[i])
-                    nodes = UInt64(s) ?? 0
-                    nodeString = "nodes: \(s); "
-                    
-                case "nps":
-                    i += 1
-                    let s = String(arr[i])
-                    nps = UInt64(s) ?? 0
-                    npsString = "nps: \(s); "
-                    
-                case "time":
-                    i += 1
-                    timeString = "time: " + String(arr[i]) + "; "
-                    
-                case "nnuehits":
-                    i += 1
-                    nnueString = "nnue: " + String(arr[i]) + "; "
-                    
-                default:
-                    break
-                }
-                i += 1
-            }
-            
-            hasEngineOutput = true
-        }
+        _ = engineOutput.parseStringInfor(str)
     }
     
     func genLegalMovesFrom(pos: Int) {
@@ -216,13 +135,13 @@ extension ContentView {
         if game.checkMakeMove(from: from, dest: dest, promotion: promotion, byComputer: byComputer, moveElapseInMillisecond: moveElapseInMillisecond) {
             //      game.chessBoard.printBoard()
             /// Store computing info
-            if !depthString.isEmpty && (game.analysicOnFlyMode || !game.isHumanTurn(side: game.chessBoard.side.getXSide())) {
-                game.chessBoard.histList.last?.es.depth = depth
-                game.chessBoard.histList.last?.es.score = score
-                game.chessBoard.histList.last?.es.mating = mating
+            if !engineOutput.depthString.isEmpty && (game.analysicOnFlyMode || !game.isHumanTurn(side: game.chessBoard.side.getXSide())) {
+                game.chessBoard.histList.last?.es.depth = engineOutput.depth
+                game.chessBoard.histList.last?.es.score = engineOutput.score
+                game.chessBoard.histList.last?.es.mating = engineOutput.mating
                 game.chessBoard.histList.last?.es.elapsedInMillisecond = moveElapseInMillisecond
-                game.chessBoard.histList.last?.es.nodes = nodes
-                game.chessBoard.histList.last?.es.nps = nps
+                game.chessBoard.histList.last?.es.nodes = engineOutput.nodes
+                game.chessBoard.histList.last?.es.nps = engineOutput.nps
                 assert(game.chessBoard.histList.last?.es.elapsedInMillisecond == moveElapseInMillisecond)
             }
             
@@ -248,20 +167,7 @@ extension ContentView {
     }
     
     func newGame_complete(autoGo: Bool) {
-        hasEngineOutput = false
-        pvString = ""
-        scoreString = ""
-        depthString = ""
-        nodeString = ""
-        npsString = ""
-        timeString = ""
-        nnueString = ""
-        depth = 0
-        score = 0
-        mating = false
-        nodes = 0
-        nps = 0
-        
+        engineOutput.reset()
         setupForNewMove(autoGo: autoGo)
     }
     
