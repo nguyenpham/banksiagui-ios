@@ -19,67 +19,67 @@
 import Foundation
 
 class Piece {
-  static let EMPTY: Int = PieceTypeStd.empty.rawValue;
-  static let KING: Int = PieceTypeStd.king.rawValue;
-  
-  static let emptyPiece = Piece(type: Piece.EMPTY, side: Side.none)
-
-  var type: Int;
-  var side: Side;
-
-  init(type: Int, side: Side) {
-    self.type = type
-    self.side = side
-  }
-  init(piece: Piece) {
-    self.type = piece.type
-    self.side = piece.side
-  }
-
-  func set(type: Int, side: Side) {
-    self.type = type
-    self.side = side
-  }
-  
-  func setEmpty() {
-    set(type: Piece.EMPTY, side: Side.none)
-  }
-
-  func isEmpty() -> Bool {
-      return type == Piece.EMPTY;
-  }
-
-  func isPiece(type: Int, side: Side) -> Bool {
-    return self.type == type && self.side == side;
-  }
-
-  func isValid() -> Bool {
-    return (side == Side.none && type == Piece.EMPTY) || (side != Side.none && type != Piece.EMPTY);
-  }
-
-//  bool operator == (const Piece & o) const {
-//      return type == o.type && side == o.side;
-//  }
-//  bool operator != (const Piece & o) const {
-//      return type != o.type || side != o.side;
-//  }
-
+    static let EMPTY: Int = PieceTypeStd.empty.rawValue;
+    static let KING: Int = PieceTypeStd.king.rawValue;
+    
+    static let emptyPiece = Piece(type: Piece.EMPTY, side: Side.none)
+    
+    var type: Int;
+    var side: Side;
+    
+    init(type: Int, side: Side) {
+        self.type = type
+        self.side = side
+    }
+    init(piece: Piece) {
+        self.type = piece.type
+        self.side = piece.side
+    }
+    
+    func set(type: Int, side: Side) {
+        self.type = type
+        self.side = side
+    }
+    
+    func setEmpty() {
+        set(type: Piece.EMPTY, side: Side.none)
+    }
+    
+    func isEmpty() -> Bool {
+        return type == Piece.EMPTY;
+    }
+    
+    func isPiece(type: Int, side: Side) -> Bool {
+        return self.type == type && self.side == side;
+    }
+    
+    func isValid() -> Bool {
+        return (side == Side.none && type == Piece.EMPTY) || (side != Side.none && type != Piece.EMPTY);
+    }
+    
+    //  bool operator == (const Piece & o) const {
+    //      return type == o.type && side == o.side;
+    //  }
+    //  bool operator != (const Piece & o) const {
+    //      return type != o.type || side != o.side;
+    //  }
+    
 }
 
 class TPiece : Piece
 {
-  let pos: Int
-  let flip: Bool
-  let name: String  // for id
-  let hasAni: Bool
-  init(piece: Piece, pos: Int, flip: Bool, hasAni: Bool, showLegalMark: Bool) {
-    self.pos = pos
-    self.flip = flip
-    self.hasAni = hasAni
-    
-    let p = flip ? 63 - pos : pos
-    self.name = "\(piece.type)\(piece.side)\(p)-\(hasAni)\(showLegalMark)"
-
-    super.init(piece: piece)
-  }
+    let pos: Int
+    let flip: Bool
+    let name: String  // for id
+    let hasAni: Bool
+    init(piece: Piece, pos: Int, flip: Bool, hasAni: Bool, showLegalMark: Bool) {
+        self.pos = pos
+        self.flip = flip
+        self.hasAni = hasAni
+        
+        let p = flip ? 63 - pos : pos
+        self.name = "\(piece.type)\(piece.side)\(p)-\(hasAni)\(showLegalMark)"
+        
+        super.init(piece: piece)
+    }
 }

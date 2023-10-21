@@ -40,15 +40,15 @@ let network_rubi = "nn-c257b2ebf1-20230812.nnue"
 let network_lc0 = "791556.pb.gz"        // new 18.8
 
 struct EngineInfo : Hashable {
-  let name: String
-  let shortName: String /// 2 charactors only, use for displaying on clocks in watchOS
-  let version: String
-  let author: String
-  let frc: Bool /// Fischer random chess
-  let idNumb: Int
-  let elo: Int
-  let nnue: Bool
-  let bench: Bool
+    let name: String
+    let shortName: String /// 2 charactors only, use for displaying on clocks in watchOS
+    let version: String
+    let author: String
+    let frc: Bool /// Fischer random chess
+    let idNumb: Int
+    let elo: Int
+    let nnue: Bool
+    let bench: Bool
 }
 
 let stockfishEngineInfo  = EngineInfo(name: "Stockfish", shortName: "Sf", version: version_stockfish, author: "Stockfish team",
@@ -79,40 +79,23 @@ let laserEngineInfo = EngineInfo(name: "Laser", shortName: "Ls", version: "1.6",
 
 
 final class EngineData: ObservableObject {
-  
-  //  let allEngines: [EngineInfo]
-  #if STOCKFISHONLY
-  let allEngines = [
-    stockfishEngineInfo
-  ]
-  #elseif LC0ONLY
-  let allEngines = [
-    lc0EngineInfo
-  ]
-  #elseif NNONLY
-  let allEngines = [
-    stockfishEngineInfo,
-    lc0EngineInfo,
-//    igelEngineInfo,
-//    nemorinoEngineInfo
-  ]
-  #else
-  let allEngines = [
-    stockfishEngineInfo,
-    lc0EngineInfo,
-    etherealEngineInfo,
-    xiphosEngineInfo,
-    rubichessEngineInfo,
     
-    laserEngineInfo,
-    defenchessEngineInfo,
-//    igelEngineInfo,
-//    nemorinoEngineInfo,
-//    fruitEngineInfo
-  ]
-  #endif
-  
-  init() {
-  }
-  
+    //  let allEngines: [EngineInfo]
+    let allEngines = [
+        stockfishEngineInfo,
+        lc0EngineInfo,
+        etherealEngineInfo,
+        xiphosEngineInfo,
+        rubichessEngineInfo,
+        
+        laserEngineInfo,
+        defenchessEngineInfo,
+        //    igelEngineInfo,
+        //    nemorinoEngineInfo,
+        //    fruitEngineInfo
+    ]
+    
+    init() {
+    }
+    
 }

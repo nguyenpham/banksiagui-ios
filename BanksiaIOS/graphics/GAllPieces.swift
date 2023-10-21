@@ -19,76 +19,76 @@
 import SwiftUI
 
 struct GAllPieces: View {
-  let cellwidth: CGFloat
-  @Binding var chessBoard: ChessBoard
-  let pieceStyle: PieceStyle
-  let flip: Bool
-  let editing: Bool
-  let humanSide: Side
-  let make: ((_ piece: Piece, _ from: Int, _ dest: Int, _ promotion: Int, _ task: MoveTask) -> Bool)
-  let tap: ((_ pos: Int) -> Void)
-  let startDragging: ((_ pos: Int) -> Void)
-  let arrowFrom: Int
-  let arrowDest: Int
-  let aniFrom: Int
-  let aniDest: Int
-  let aniPromotion: Int
-  let aniTask: MoveTask
-  let selectedPos: Int
-  let legalSet: Set<Int>
-  
-  var body: some View {
-    return createView()
-  }
-  
-  func createView() -> some View {
-    ZStack {
-      ForEach (chessBoard.getAllTPieces(flip: flip, aniFrom: aniFrom, legalSet: legalSet), id: \.name) { piece in
-        GPiece(piece: piece,
-               pos: piece.pos,
-               cellwidth: self.cellwidth,
-               pieceStyle: self.pieceStyle,
-               flip: self.flip,
-               editing: self.editing,
-               humanSide: self.humanSide,
-               make: { (piece, from, dest, promotion, moveTask) -> Bool in return make(piece, from, dest, promotion, moveTask) },
-               tap: { pos in self.tap(pos) },
-               startDragging: { pos in self.startDragging(pos) },
-               isArrowEnd: piece.pos == self.arrowFrom,
-               aniFrom: self.aniFrom, aniDest: self.aniDest, aniPromotion: self.aniPromotion, aniTask: self.aniTask,
-               selectedPos: self.selectedPos,
-               showLegalMark: !editing && self.legalSet.contains(piece.pos)
-        )
-      }
-      
-      if editing {
-        ForEach(0 ..< 2, id: \.self) { sd in
-          ForEach(1 ..< 7, id: \.self) { i in
-            GPiece(piece: Piece(type: i, side: Side(rawValue: sd)!),
-                   pos: 64 + i + 8 * sd,
-                   cellwidth: self.cellwidth,
-                   pieceStyle: self.pieceStyle,
-                   flip: self.flip,
-                   editing: self.editing,
-                   humanSide: self.humanSide,
-                   make: { (piece, from, dest, promotion, moveTask) -> Bool in return self.make(piece, from, dest, promotion, moveTask) },
-                   tap: { pos in self.tap(pos) },
-                   startDragging: { pos in self.startDragging(pos) },
-                   isArrowEnd: false,
-                   aniFrom: -1, aniDest: -1, aniPromotion: -1, aniTask: MoveTask.make, selectedPos: -1, showLegalMark: false
-              
-            )
-          }
-        }
-      } else {
-        if self.arrowFrom >= 0 && self.arrowDest >= 0 {
-          ArrowView(cellWidth: cellwidth, from: arrowFrom, dest: arrowDest, flip: flip)
-            .zIndex(5)
-        }
-      }
+    let cellwidth: CGFloat
+    @Binding var chessBoard: ChessBoard
+    let pieceStyle: PieceStyle
+    let flip: Bool
+    let editing: Bool
+    let humanSide: Side
+    let make: ((_ piece: Piece, _ from: Int, _ dest: Int, _ promotion: Int, _ task: MoveTask) -> Bool)
+    let tap: ((_ pos: Int) -> Void)
+    let startDragging: ((_ pos: Int) -> Void)
+    let arrowFrom: Int
+    let arrowDest: Int
+    let aniFrom: Int
+    let aniDest: Int
+    let aniPromotion: Int
+    let aniTask: MoveTask
+    let selectedPos: Int
+    let legalSet: Set<Int>
+    
+    var body: some View {
+        return createView()
     }
     
-  }
+    func createView() -> some View {
+        ZStack {
+            ForEach (chessBoard.getAllTPieces(flip: flip, aniFrom: aniFrom, legalSet: legalSet), id: \.name) { piece in
+                GPiece(piece: piece,
+                       pos: piece.pos,
+                       cellwidth: self.cellwidth,
+                       pieceStyle: self.pieceStyle,
+                       flip: self.flip,
+                       editing: self.editing,
+                       humanSide: self.humanSide,
+                       make: { (piece, from, dest, promotion, moveTask) -> Bool in return make(piece, from, dest, promotion, moveTask) },
+                       tap: { pos in self.tap(pos) },
+                       startDragging: { pos in self.startDragging(pos) },
+                       isArrowEnd: piece.pos == self.arrowFrom,
+                       aniFrom: self.aniFrom, aniDest: self.aniDest, aniPromotion: self.aniPromotion, aniTask: self.aniTask,
+                       selectedPos: self.selectedPos,
+                       showLegalMark: !editing && self.legalSet.contains(piece.pos)
+                )
+            }
+            
+            if editing {
+                ForEach(0 ..< 2, id: \.self) { sd in
+                    ForEach(1 ..< 7, id: \.self) { i in
+                        GPiece(piece: Piece(type: i, side: Side(rawValue: sd)!),
+                               pos: 64 + i + 8 * sd,
+                               cellwidth: self.cellwidth,
+                               pieceStyle: self.pieceStyle,
+                               flip: self.flip,
+                               editing: self.editing,
+                               humanSide: self.humanSide,
+                               make: { (piece, from, dest, promotion, moveTask) -> Bool in return self.make(piece, from, dest, promotion, moveTask) },
+                               tap: { pos in self.tap(pos) },
+                               startDragging: { pos in self.startDragging(pos) },
+                               isArrowEnd: false,
+                               aniFrom: -1, aniDest: -1, aniPromotion: -1, aniTask: MoveTask.make, selectedPos: -1, showLegalMark: false
+                               
+                        )
+                    }
+                }
+            } else {
+                if self.arrowFrom >= 0 && self.arrowDest >= 0 {
+                    ArrowView(cellWidth: cellwidth, from: arrowFrom, dest: arrowDest, flip: flip)
+                        .zIndex(5)
+                }
+            }
+        }
+        
+    }
 }
 
 //struct GAllPieces_Previews: PreviewProvider {

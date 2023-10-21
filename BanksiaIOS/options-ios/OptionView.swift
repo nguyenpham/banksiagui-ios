@@ -19,152 +19,152 @@
 import SwiftUI
 
 struct OptionView: View {
-  @Binding var isNavigationBarHidden: Bool
-  @EnvironmentObject private var userData: UserData
-  
-  private let cellwidth: CGFloat = 20
-  private let testString = "Rook e 4 O-O Pawn a 7 a 8 promoted to queen"
-  
-  var body: some View {
-    ZStack {
-      List {
-        Section(header: Text("General")) {
-          Toggle("Show coordinates", isOn: $userData.showCoordinates)
-          Toggle("Show legal moves", isOn: $userData.showLegalMoves)
-          Toggle("Show analysis", isOn: $userData.showAnalysis)
-          Toggle("Show analysis arrows", isOn: $userData.showAnalysisArrows)
-          Toggle("Show analysis in move list", isOn: $userData.showAnalysisMove)
-          
-          VStack {
-            HStack {
-              Text("Sound:")
-              Spacer()
-            }
-            Picker(selection: $userData.soundMode, label: Text("Sound")) {
-              ForEach (SoundMode.allCases, id:\.self) { em in
-                Text(em.getName()).tag(em.rawValue)
-              }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            
-            if userData.soundMode == SoundMode.speech.rawValue {
-              Stepper(value: $userData.speechRate, in: 1...10) {
-                HStack {
-                  Spacer()
-                  Text("Rate")
-                  Text("\(userData.speechRate) / 10")
+    @Binding var isNavigationBarHidden: Bool
+    @EnvironmentObject private var userData: UserData
+    
+    private let cellwidth: CGFloat = 20
+    private let testString = "Rook e 4 O-O Pawn a 7 a 8 promoted to queen"
+    
+    var body: some View {
+        ZStack {
+            List {
+                Section(header: Text("General")) {
+                    Toggle("Show coordinates", isOn: $userData.showCoordinates)
+                    Toggle("Show legal moves", isOn: $userData.showLegalMoves)
+                    Toggle("Show analysis", isOn: $userData.showAnalysis)
+                    Toggle("Show analysis arrows", isOn: $userData.showAnalysisArrows)
+                    Toggle("Show analysis in move list", isOn: $userData.showAnalysisMove)
+                    
+                    VStack {
+                        HStack {
+                            Text("Sound:")
+                            Spacer()
+                        }
+                        Picker(selection: $userData.soundMode, label: Text("Sound")) {
+                            ForEach (SoundMode.allCases, id:\.self) { em in
+                                Text(em.getName()).tag(em.rawValue)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                        
+                        if userData.soundMode == SoundMode.speech.rawValue {
+                            Stepper(value: $userData.speechRate, in: 1...10) {
+                                HStack {
+                                    Spacer()
+                                    Text("Rate")
+                                    Text("\(userData.speechRate) / 10")
+                                }
+                            }
+                            
+                            VStack {
+                                NavigationLink(destination: SoundNameView().environmentObject(userData)) {
+                                    Spacer()
+                                    Text("Void name: \(self.userData.speechName)")
+                                }
+                            }
+                            
+                            HStack {
+                                Spacer()
+                                ScrollView(.horizontal) {
+                                    Text(testString)
+                                        .font(.system(size: 12))
+                                        .frame(width: nil, height: nil, alignment: .topLeading)
+                                        .lineLimit(1)
+                                        .padding(2)
+                                }
+                                .background(Color(red: 0.95, green: 0.95, blue: 0.95))
+                                
+                                Button("Test", action: {
+                                    SoundMng.speak(string: testString, voiceName: self.userData.speechName, rate: self.userData.speechRate)
+                                })
+                            }
+                        }
+                    }
                 }
-              }
-              
-              VStack {
-                NavigationLink(destination: SoundNameView().environmentObject(userData)) {
-                  Spacer()
-                  Text("Void name: \(self.userData.speechName)")
-                }
-              }
-              
-              HStack {
-                Spacer()
-                ScrollView(.horizontal) {
-                  Text(testString)
-                    .font(.system(size: 12))
-                    .frame(width: nil, height: nil, alignment: .topLeading)
-                    .lineLimit(1)
-                    .padding(2)
-                }
-                .background(Color(red: 0.95, green: 0.95, blue: 0.95))
                 
-                Button("Test", action: {
-                  SoundMng.speak(string: testString, voiceName: self.userData.speechName, rate: self.userData.speechRate)
-                })
-              }
+                Section(header: Text("Graphics")) {
+                    HStack {
+                        NavigationLink(destination: OptionPieceStyle().environmentObject(userData)) {
+                            Text("Piece set")
+                            Spacer()
+                            Text(self.userData.pieceStyle.getName())
+                            HStack {
+                                GPiece(piece: Piece(type: Piece.KING, side: Side.white),
+                                       pos: 0,
+                                       cellwidth: self.cellwidth,
+                                       pieceStyle: self.userData.pieceStyle,
+                                       flip: false,
+                                       editing: false,
+                                       humanSide: Side.none,
+                                       make: { (_, _, _, _, _) -> Bool in
+                                    return false },
+                                       tap: { pos in },
+                                       startDragging: { pos in },
+                                       isArrowEnd: false,
+                                       aniFrom: -1, aniDest: -1, aniPromotion: -1, aniTask: MoveTask.make,
+                                       selectedPos: -1, showLegalMark: false
+                                       
+                                )
+                                GPiece(piece: Piece(type: Piece.KING, side: Side.black),
+                                       pos: 0,
+                                       cellwidth: self.cellwidth,
+                                       pieceStyle: self.userData.pieceStyle,
+                                       flip: false,
+                                       editing: false,
+                                       humanSide: Side.none,
+                                       make: { (_, _, _, _, _) -> Bool in
+                                    return false },
+                                       tap: { pos in },
+                                       startDragging: { pos in },
+                                       isArrowEnd: false, aniFrom: -1, aniDest: -1, aniPromotion: -1, aniTask: MoveTask.make,
+                                       selectedPos: -1, showLegalMark: false
+                                )
+                            }
+                            .padding(0)
+                            .frame(width: self.cellwidth * 2, height: self.cellwidth)
+                        }
+                    }
+                    HStack {
+                        NavigationLink(destination: OptionColorScheme().environmentObject(userData)) {
+                            Text("Board color")
+                            Spacer()
+                            Text(self.userData.cellStyle.getName())
+                            ZStack {
+                                GBoard.createALine(x: self.cellwidth / 2,
+                                                   y: self.cellwidth / 2,
+                                                   cellwidth: self.cellwidth,
+                                                   cellStyle: self.userData.cellStyle,
+                                                   count: 2,
+                                                   firstBlack: false)
+                            }
+                            .padding(0)
+                            .frame(width: self.cellwidth * 2, height: self.cellwidth)
+                        }
+                    }
+                }
+                
+                Section(header: Text("About")) {
+                    NavigationLink(destination: OptionUserName().environmentObject(userData)) {
+                        HStack {
+                            Text("User name")
+                            Spacer()
+                            Text(self.userData.userName)
+                        }
+                    }
+                    NavigationLink("About", destination: AboutView())
+                    NavigationLink("Help", destination: HelpView())
+                }
             }
-          }
         }
-        
-        Section(header: Text("Graphics")) {
-          HStack {
-            NavigationLink(destination: OptionPieceStyle().environmentObject(userData)) {
-              Text("Piece set")
-              Spacer()
-              Text(self.userData.pieceStyle.getName())
-              HStack {
-                GPiece(piece: Piece(type: Piece.KING, side: Side.white),
-                       pos: 0,
-                       cellwidth: self.cellwidth,
-                       pieceStyle: self.userData.pieceStyle,
-                       flip: false,
-                       editing: false,
-                       humanSide: Side.none,
-                       make: { (_, _, _, _, _) -> Bool in
-                        return false },
-                       tap: { pos in },
-                       startDragging: { pos in },
-                       isArrowEnd: false,
-                       aniFrom: -1, aniDest: -1, aniPromotion: -1, aniTask: MoveTask.make,
-                       selectedPos: -1, showLegalMark: false
-                       
-                )
-                GPiece(piece: Piece(type: Piece.KING, side: Side.black),
-                       pos: 0,
-                       cellwidth: self.cellwidth,
-                       pieceStyle: self.userData.pieceStyle,
-                       flip: false,
-                       editing: false,
-                       humanSide: Side.none,
-                       make: { (_, _, _, _, _) -> Bool in
-                        return false },
-                       tap: { pos in },
-                       startDragging: { pos in },
-                       isArrowEnd: false, aniFrom: -1, aniDest: -1, aniPromotion: -1, aniTask: MoveTask.make,
-                       selectedPos: -1, showLegalMark: false
-                )
-              }
-              .padding(0)
-              .frame(width: self.cellwidth * 2, height: self.cellwidth)
-            }
-          }
-          HStack {
-            NavigationLink(destination: OptionColorScheme().environmentObject(userData)) {
-              Text("Board color")
-              Spacer()
-              Text(self.userData.cellStyle.getName())
-              ZStack {
-                GBoard.createALine(x: self.cellwidth / 2,
-                                   y: self.cellwidth / 2,
-                                   cellwidth: self.cellwidth,
-                                   cellStyle: self.userData.cellStyle,
-                                   count: 2,
-                                   firstBlack: false)
-              }
-              .padding(0)
-              .frame(width: self.cellwidth * 2, height: self.cellwidth)
-            }
-          }
+        .navigationBarTitle("Options", displayMode: .inline)
+        .onAppear {
+            //      self.isNavigationBarHidden = false
         }
-        
-        Section(header: Text("About")) {
-          NavigationLink(destination: OptionUserName().environmentObject(userData)) {
-            HStack {
-              Text("User name")
-              Spacer()
-              Text(self.userData.userName)
-            }
-          }
-          NavigationLink("About", destination: AboutView())
-          NavigationLink("Help", destination: HelpView())
+        .onDisappear() {
+            self.userData.write()
+            self.isNavigationBarHidden = true
         }
-      }
     }
-    .navigationBarTitle("Options", displayMode: .inline)
-    .onAppear {
-//      self.isNavigationBarHidden = false
-    }
-    .onDisappear() {
-      self.userData.write()
-      self.isNavigationBarHidden = true
-    }
-  }
 }
 
 //struct OptionView_Previews: PreviewProvider {

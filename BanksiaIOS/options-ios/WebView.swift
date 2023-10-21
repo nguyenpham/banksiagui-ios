@@ -21,26 +21,26 @@ import SwiftUI
 import WebKit
 
 struct WebView: UIViewRepresentable {
-  let text: String
-  let isFile: Bool
-
-  func makeUIView(context: Context) -> WKWebView {
-    return WKWebView()
-  }
-
-  func updateUIView(_ uiView: WKWebView, context: Context) {
-    if isFile {
-      if let url = Bundle.main.url(forResource: text, withExtension: "html") { //, subdirectory: "data") {
-        uiView.loadFileURL(url, allowingReadAccessTo: url)
-      }
-    } else {
-      uiView.loadHTMLString(text, baseURL: nil)
+    let text: String
+    let isFile: Bool
+    
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
     }
-  }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        if isFile {
+            if let url = Bundle.main.url(forResource: text, withExtension: "html") { //, subdirectory: "data") {
+                uiView.loadFileURL(url, allowingReadAccessTo: url)
+            }
+        } else {
+            uiView.loadHTMLString(text, baseURL: nil)
+        }
+    }
 }
 
 struct Web_Previews: PreviewProvider {
     static var previews: some View {
-      WebView(text: "<html><body>hey hellooo</body></html>", isFile: false)
+        WebView(text: "<html><body>hey hellooo</body></html>", isFile: false)
     }
 }

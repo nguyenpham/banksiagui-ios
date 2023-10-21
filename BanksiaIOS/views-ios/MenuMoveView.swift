@@ -19,32 +19,32 @@
 import SwiftUI
 
 enum MenuMoveTask : Int, CaseIterable {
-  case begin, prev, next, end, takeback, cancel
-  
-  private static let allNames = ["First move", "Prev move (swipe left)", "Next move (swipe right)", "Last move", "Take back", "Cancel" ]
-  
-  func getName() -> String {
-    return MenuMoveTask.allNames[ self.rawValue ]
-  }
+    case begin, prev, next, end, takeback, cancel
+    
+    private static let allNames = ["First move", "Prev move (swipe left)", "Next move (swipe right)", "Last move", "Take back", "Cancel" ]
+    
+    func getName() -> String {
+        return MenuMoveTask.allNames[ self.rawValue ]
+    }
 }
 
 struct MenuMoveView: View {
-  let width: CGFloat
-  let menuClick: ((_ menuTask: MenuMoveTask) -> Void)
-  
-  static let menuHeight: CGFloat = 40
-  
-  var body: some View {
-    ForEach(MenuMoveTask.allCases, id: \.self) { task in
-      Button(action: { self.menuClick(task) }) {
-        Text(task.getName())
-          .foregroundColor(task == .cancel ? Color.red : (task == .takeback ? Color(red: 0.4, green: 0.1, blue: 0.1) : Color.blue))
-          .fontWeight(task == .cancel ? .bold : .regular)
-          .frame(width: self.width, height: ContentView.menuHeight, alignment: .center)
-      }
-      .cornerRadius(20.0)
-      .padding(0)
+    let width: CGFloat
+    let menuClick: ((_ menuTask: MenuMoveTask) -> Void)
+    
+    static let menuHeight: CGFloat = 40
+    
+    var body: some View {
+        ForEach(MenuMoveTask.allCases, id: \.self) { task in
+            Button(action: { self.menuClick(task) }) {
+                Text(task.getName())
+                    .foregroundColor(task == .cancel ? Color.red : (task == .takeback ? Color(red: 0.4, green: 0.1, blue: 0.1) : Color.blue))
+                    .fontWeight(task == .cancel ? .bold : .regular)
+                    .frame(width: self.width, height: ContentView.menuHeight, alignment: .center)
+            }
+            .cornerRadius(20.0)
+            .padding(0)
+        }
     }
-  }
 }
 

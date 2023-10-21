@@ -23,8 +23,8 @@ struct BanksiaIOSApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-              .environmentObject(UserData())
-              .environmentObject(Game())
+                .environmentObject(UserData())
+                .environmentObject(Game())
         }
     }
 }

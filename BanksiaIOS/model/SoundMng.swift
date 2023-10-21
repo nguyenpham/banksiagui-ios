@@ -20,116 +20,116 @@ import Foundation
 import AVFoundation
 
 enum Sound: Int, CaseIterable {
-  case move, wrong, check, capture, win, alert1, alert2
-  
-  private static let allNames = [ "move", "error", "check", "cap", "win", "alert1", "alert2" ]
-  
-  func getName() -> String {
-    return Sound.allNames[self.rawValue]
-  }
+    case move, wrong, check, capture, win, alert1, alert2
+    
+    private static let allNames = [ "move", "error", "check", "cap", "win", "alert1", "alert2" ]
+    
+    func getName() -> String {
+        return Sound.allNames[self.rawValue]
+    }
 }
 
 class SoundMng {
-  private var players = [AVAudioPlayer]()
-  static private let synthesizer = AVSpeechSynthesizer()
-  
-  init() {
-    loadSounds()
-  }
-  
-  private func loadSounds() {
-    for sound in Sound.allCases {
-      let soundURL = Bundle.main.url(forResource: sound.getName(), withExtension: "wav")!
-      if let player = try? AVAudioPlayer(contentsOf: soundURL) {
-        player.prepareToPlay()
-        players.append(player)
-      }
+    private var players = [AVAudioPlayer]()
+    static private let synthesizer = AVSpeechSynthesizer()
+    
+    init() {
+        loadSounds()
     }
-  }
-  
-  func playSound(sound: Sound){
-    players[sound.rawValue].play()
-  }
-  
-  func pos2SpeakString(pos: Int) -> String {
-    let col = pos % 8, row = pos / 8
-    return "\(columnNames[col]) \(8 - row)"
-  }
-  
-  func speak(move: MoveFull, sanString: String, speechRate: Int, speechName: String) {
-    var str = ""
-    if move == MoveFull.illegalMoveFull {
-      str = "wrong move"
-    } else
-    if sanString.isEmpty {
-      if move.piece.type == Piece.KING && abs(move.from - move.dest) == 2 {
-        str = "\(move.from < move.dest ? "short" : "long") castling"
-      } else {
-        
-        let pieceName = PieceTypeStd(rawValue: move.piece.type)?.getName() ?? ""
-        
-        str = "\(pieceName) moves"
-        str += " from \(pos2SpeakString(pos: move.from))"
-        str += " to \(pos2SpeakString(pos: move.dest))"
-        if move.promotion > PieceTypeStd.king.rawValue {
-          let promotion = PieceTypeStd(rawValue: move.promotion)?.getName() ?? ""
-          str += " and promote to \(promotion)"
+    
+    private func loadSounds() {
+        for sound in Sound.allCases {
+            let soundURL = Bundle.main.url(forResource: sound.getName(), withExtension: "wav")!
+            if let player = try? AVAudioPlayer(contentsOf: soundURL) {
+                player.prepareToPlay()
+                players.append(player)
+            }
         }
-      }
-    } else
-    if sanString == "O-O" {
-      str = "short castling"
-    } else
-    if sanString == "O-O-O" {
-      str = "long castling"
-    } else {
-      var promoting = false
-      str = "pawn"
-      for c in sanString {
-        let s = String(c)
-        if s >= "A" && s <= "Z" {
-          let piece = PieceTypeStd.charactor2PieceType(str: s)
-          if promoting {
-            str += " promoted to \(piece.getName())"
-            break
-          }
-          
-          str = piece.getName()
-          continue
+    }
+    
+    func playSound(sound: Sound){
+        players[sound.rawValue].play()
+    }
+    
+    func pos2SpeakString(pos: Int) -> String {
+        let col = pos % 8, row = pos / 8
+        return "\(columnNames[col]) \(8 - row)"
+    }
+    
+    func speak(move: MoveFull, sanString: String, speechRate: Int, speechName: String) {
+        var str = ""
+        if move == MoveFull.illegalMoveFull {
+            str = "wrong move"
+        } else
+        if sanString.isEmpty {
+            if move.piece.type == Piece.KING && abs(move.from - move.dest) == 2 {
+                str = "\(move.from < move.dest ? "short" : "long") castling"
+            } else {
+                
+                let pieceName = PieceTypeStd(rawValue: move.piece.type)?.getName() ?? ""
+                
+                str = "\(pieceName) moves"
+                str += " from \(pos2SpeakString(pos: move.from))"
+                str += " to \(pos2SpeakString(pos: move.dest))"
+                if move.promotion > PieceTypeStd.king.rawValue {
+                    let promotion = PieceTypeStd(rawValue: move.promotion)?.getName() ?? ""
+                    str += " and promote to \(promotion)"
+                }
+            }
+        } else
+        if sanString == "O-O" {
+            str = "short castling"
+        } else
+        if sanString == "O-O-O" {
+            str = "long castling"
+        } else {
+            var promoting = false
+            str = "pawn"
+            for c in sanString {
+                let s = String(c)
+                if s >= "A" && s <= "Z" {
+                    let piece = PieceTypeStd.charactor2PieceType(str: s)
+                    if promoting {
+                        str += " promoted to \(piece.getName())"
+                        break
+                    }
+                    
+                    str = piece.getName()
+                    continue
+                }
+                
+                switch s {
+                case "=":
+                    promoting = true
+                case "+":
+                    str += " check"
+                case "#":
+                    str += " checkmate"
+                default:
+                    str += " \(s)"
+                }
+            }
         }
-        
-        switch s {
-        case "=":
-          promoting = true
-        case "+":
-        str += " check"
-        case "#":
-        str += " checkmate"
+        print(str, ", sanString:", sanString)
+        SoundMng.speak(string: str, voiceName: speechName, rate: speechRate)
+    }
+    
+    static func speak(string: String, voiceName: String, rate: Int) {
+        let utterance = AVSpeechUtterance(string: string)
+        //    utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+        utterance.voice = AVSpeechSynthesisVoice(identifier: voiceName)
+        utterance.rate = Float(rate) / 10.0
+        synthesizer.speak(utterance)
+    }
+    
+    func playSound(move: MoveFull, sanString: String, soundMode: SoundMode, speechRate: Int, speechName: String) {
+        switch soundMode {
+        case SoundMode.simple:
+            playSound(sound: move == MoveFull.illegalMoveFull ? .wrong : .move)
+        case SoundMode.speech:
+            speak(move: move, sanString: sanString, speechRate: speechRate, speechName: speechName)
         default:
-          str += " \(s)"
+            break
         }
-      }
     }
-    print(str, ", sanString:", sanString)
-    SoundMng.speak(string: str, voiceName: speechName, rate: speechRate)
-  }
-  
-  static func speak(string: String, voiceName: String, rate: Int) {
-    let utterance = AVSpeechUtterance(string: string)
-    //    utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-    utterance.voice = AVSpeechSynthesisVoice(identifier: voiceName)
-    utterance.rate = Float(rate) / 10.0
-    synthesizer.speak(utterance)
-  }
-  
-  func playSound(move: MoveFull, sanString: String, soundMode: SoundMode, speechRate: Int, speechName: String) {
-    switch soundMode {
-    case SoundMode.simple:
-      playSound(sound: move == MoveFull.illegalMoveFull ? .wrong : .move)
-    case SoundMode.speech:
-      speak(move: move, sanString: sanString, speechRate: speechRate, speechName: speechName)
-    default:
-      break
-    }
-  }
 }

@@ -19,21 +19,21 @@
 import SwiftUI
 
 struct OptionUserName: View {
-  @EnvironmentObject private var userData: UserData
-  
-  var body: some View {
-    VStack {
-      TextField("User name:", text: self.$userData.userName)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
-      
-      Spacer()
+    @EnvironmentObject private var userData: UserData
+    
+    var body: some View {
+        VStack {
+            TextField("User name:", text: self.$userData.userName)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            Spacer()
+        }
+        .navigationBarTitle("User name", displayMode: .inline)
     }
-    .navigationBarTitle("User name", displayMode: .inline)
-  }
 }
 
 struct OptionUserName_Previews: PreviewProvider {
-  static var previews: some View {
-    OptionUserName()
-  }
+    static var previews: some View {
+        OptionUserName()
+    }
 }

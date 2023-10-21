@@ -20,29 +20,29 @@ import SwiftUI
 import AVFoundation
 
 struct SoundNameView: View {
-  @EnvironmentObject private var userData: UserData
-
+    @EnvironmentObject private var userData: UserData
+    
     var body: some View {
-      List (AVSpeechSynthesisVoice.speechVoices(), id:\.self) { voice in
-        HStack {
-          Text("\(voice.name)")
-          Spacer()
-          
-          if voice.name == self.userData.speechName {
-            Image(systemName: "checkmark")
-              .resizable()
-              .frame(width: 20, height: 20)
-              .foregroundColor(.green)
-              .shadow(radius: 1)
-          } else {
-            Rectangle()
-              .fill(Color.white)
-              .frame(width: 20, height: 20)
-          }
-        }.onTapGesture {
-          self.userData.speechName = voice.name
+        List (AVSpeechSynthesisVoice.speechVoices(), id:\.self) { voice in
+            HStack {
+                Text("\(voice.name)")
+                Spacer()
+                
+                if voice.name == self.userData.speechName {
+                    Image(systemName: "checkmark")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.green)
+                        .shadow(radius: 1)
+                } else {
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(width: 20, height: 20)
+                }
+            }.onTapGesture {
+                self.userData.speechName = voice.name
+            }
         }
-      }
     }
 }
 

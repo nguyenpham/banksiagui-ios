@@ -19,42 +19,30 @@
 import SwiftUI
 
 struct AboutView: View {
-  var body: some View {
-    VStack {
-      Text("Banksia GUI for iOS, version \(ContentView.version)")
-        .bold()
-      Text("by Nguyen Pham, 2020, 2021")
-        .italic()
-      #if STOCKFISHONLY
-      Text("Stockfish NNUE, version \(version_stockfish)")
-      Text("by Stockfish team (thanks)")
-      #endif
-      #if LC0ONLY
-      Text("Lc0 version \(version_lc0)")
-      Text("by Lc0 team (thanks)")
-      #endif
-      
-        // warning
-//      #if !LC0ONLY
-//      Text("NNUE network: \(network_nnue)")
-//      #endif
-//      #if !STOCKFISHONLY
-//      Text("LC0 network: \(network_lc0)")
-//      #endif
+    var body: some View {
+        VStack {
+            Text("Banksia GUI for iOS, version \(ContentView.version)")
+                .bold()
+            Text("by Nguyen Pham, 2020, 2023")
+                .italic()
+            
+            Text("Stockfish network: \(network_sf)")
+            Text("LC0 network: \(network_lc0)")
+            Text("RubiChess network: \(network_rubi)")
 
-      WebView(text: "credit", isFile: true)
-      if #available(iOS 14.0, *) {
-        Link("BanksiaGUI home page", destination: URL(string: "https://banksiagui.com/")!)
-        Link("Nguyen Pham GitHub", destination: URL(string: "https://github.com/nguyenpham/")!)
-        Link("Donate", destination: URL(string: "https://banksiagui.com/download/")!)
-      }
+            WebView(text: "credit", isFile: true)
+            if #available(iOS 14.0, *) {
+                Link("BanksiaGUI home page", destination: URL(string: "https://banksiagui.com/")!)
+                Link("Nguyen Pham GitHub", destination: URL(string: "https://github.com/nguyenpham/")!)
+                Link("Donate", destination: URL(string: "https://banksiagui.com/download/")!)
+            }
+        }
+        .navigationBarTitle("About", displayMode: .inline)
     }
-    .navigationBarTitle("About", displayMode: .inline)
-  }
 }
 
 struct AboutView_Previews: PreviewProvider {
-  static var previews: some View {
-    AboutView()
-  }
+    static var previews: some View {
+        AboutView()
+    }
 }

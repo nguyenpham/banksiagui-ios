@@ -20,63 +20,63 @@ import Foundation
 
 
 class Result {
-  var result: ResultType
-  var reason: ReasonType
-  var comment: String
-  
-  
-  init(result: ResultType = ResultType.noresult, reason: ReasonType = ReasonType.noreason, comment: String = "") {
-    self.result = result
-    self.reason = reason
-    self.comment = comment
-  }
-  
-  func reset() {
-    result = ResultType.noresult
-    reason = ReasonType.noreason
-    comment = ""
-  }
-  
-  func isNone() -> Bool {
-    return result == ResultType.noresult
-  }
-  
-  func reasonString() -> String {
-    return Result.reasonStrings[reason.rawValue]
-  }
-  
-  func toShortString() -> String {
-    return Result.resultType2String(type: result, shortFrom: true)
-  }
-  
-  func toString() -> String {
-    var str = toShortString();
-    if (reason != ReasonType.noreason) {
-      str += " (" + reasonString() + ")";
+    var result: ResultType
+    var reason: ReasonType
+    var comment: String
+    
+    
+    init(result: ResultType = ResultType.noresult, reason: ReasonType = ReasonType.noreason, comment: String = "") {
+        self.result = result
+        self.reason = reason
+        self.comment = comment
     }
-    return str;
-  }
-  
-  static let resultStrings: [String] = [
-    "*", "1-0", "1/2-1/2", "0-1"
-  ]
-  static let resultStrings_short: [String] = [
-    "*", "1-0", "0.5", "0-1"
-  ]
-  static let reasonStrings: [String] = [
-    "*", "mate", "stalemate", "repetition", "resign", "fifty moves", "insufficient material",
-    "illegal move", "timeout",
-    "adjudication by lengths", "adjudication by egtb", "adjudication by engines' scores", "adjudication by human",
-    "perpetual chase",
-    "both perpetual chases", "extra comment", "crash", "abort",
-  ]
-  
-  static func resultType2String(type: ResultType,  shortFrom: Bool) -> String {
-    var t = type.rawValue
-    if t < 0 || t > 3 {
-      t = 0
+    
+    func reset() {
+        result = ResultType.noresult
+        reason = ReasonType.noreason
+        comment = ""
     }
-    return shortFrom ? Result.resultStrings_short[t] : Result.resultStrings[t];
-  }
-  
-};
+    
+    func isNone() -> Bool {
+        return result == ResultType.noresult
+    }
+    
+    func reasonString() -> String {
+        return Result.reasonStrings[reason.rawValue]
+    }
+    
+    func toShortString() -> String {
+        return Result.resultType2String(type: result, shortFrom: true)
+    }
+    
+    func toString() -> String {
+        var str = toShortString();
+        if (reason != ReasonType.noreason) {
+            str += " (" + reasonString() + ")";
+        }
+        return str;
+    }
+    
+    static let resultStrings: [String] = [
+        "*", "1-0", "1/2-1/2", "0-1"
+    ]
+    static let resultStrings_short: [String] = [
+        "*", "1-0", "0.5", "0-1"
+    ]
+    static let reasonStrings: [String] = [
+        "*", "mate", "stalemate", "repetition", "resign", "fifty moves", "insufficient material",
+        "illegal move", "timeout",
+        "adjudication by lengths", "adjudication by egtb", "adjudication by engines' scores", "adjudication by human",
+        "perpetual chase",
+        "both perpetual chases", "extra comment", "crash", "abort",
+    ]
+    
+    static func resultType2String(type: ResultType,  shortFrom: Bool) -> String {
+        var t = type.rawValue
+        if t < 0 || t > 3 {
+            t = 0
+        }
+        return shortFrom ? Result.resultStrings_short[t] : Result.resultStrings[t];
+    }
+    
+}

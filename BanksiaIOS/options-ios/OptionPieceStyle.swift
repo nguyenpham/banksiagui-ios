@@ -19,69 +19,63 @@
 import SwiftUI
 
 struct OptionPieceStyle: View {
-  @EnvironmentObject private var userData: UserData
-  private let cellwidth: CGFloat = 36
-
-  var body: some View {
-    List (PieceStyle.allCases, id:\.self) { pieceStyle in
-      HStack {
-        Text("\(pieceStyle.getName())")
-        Spacer()
-        OptionPieceStyle.createPieces(cellwidth: self.cellwidth, pieceStyle: pieceStyle)
-        .padding(6)
-
-        if pieceStyle == self.userData.pieceStyle {
-            Image(systemName: "checkmark")
-          .resizable()
-          .frame(width: 20, height: 20)
-          .foregroundColor(.green)
-          .shadow(radius: 1)
-        } else {
-          Rectangle()
-            .fill(Color.white)
-            .frame(width: 20, height: 20)
+    @EnvironmentObject private var userData: UserData
+    private let cellwidth: CGFloat = 36
+    
+    var body: some View {
+        List (PieceStyle.allCases, id:\.self) { pieceStyle in
+            HStack {
+                Text("\(pieceStyle.getName())")
+                Spacer()
+                OptionPieceStyle.createPieces(cellwidth: self.cellwidth, pieceStyle: pieceStyle)
+                    .padding(6)
+                
+                if pieceStyle == self.userData.pieceStyle {
+                    Image(systemName: "checkmark")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.green)
+                        .shadow(radius: 1)
+                } else {
+                    Rectangle()
+                        .fill(Color.white)
+                        .frame(width: 20, height: 20)
+                }
+            }.onTapGesture {
+                self.userData.pieceStyle = pieceStyle
+            }
         }
-      }.onTapGesture {
-        self.userData.pieceStyle = pieceStyle
-      }
+        .navigationBarTitle("Piece style", displayMode: .inline)
     }
-    .navigationBarTitle("Piece style", displayMode: .inline)
-  }
-  
-  static func createPieces(cellwidth: CGFloat, pieceStyle: PieceStyle, editing: Bool = false, make: ((_ piece: Piece, _ from: Int, _ dest: Int, _ promotion: Int, _ task: MoveTask) -> Bool)? = nil) -> some View {
-    VStack {
-      OptionPieceStyle.createPieces(cellwidth: cellwidth, side: Side.white, pieceStyle: pieceStyle, editing: editing, make: make)
-      OptionPieceStyle.createPieces(cellwidth: cellwidth, side: Side.black, pieceStyle: pieceStyle, editing: editing, make: make)
+    
+    static func createPieces(cellwidth: CGFloat, pieceStyle: PieceStyle, editing: Bool = false, make: ((_ piece: Piece, _ from: Int, _ dest: Int, _ promotion: Int, _ task: MoveTask) -> Bool)? = nil) -> some View {
+        VStack {
+            OptionPieceStyle.createPieces(cellwidth: cellwidth, side: Side.white, pieceStyle: pieceStyle, editing: editing, make: make)
+            OptionPieceStyle.createPieces(cellwidth: cellwidth, side: Side.black, pieceStyle: pieceStyle, editing: editing, make: make)
+        }
+        .frame(width: cellwidth * 6, height: cellwidth * 2)
     }
-    .frame(width: cellwidth * 6, height: cellwidth * 2)
-  }
-  
-  static func createPieces(cellwidth: CGFloat, side: Side, pieceStyle: PieceStyle, editing: Bool, make: ((_ piece: Piece, _ from: Int, _ dest: Int, _ promotion: Int, _ task: MoveTask) -> Bool)? = nil) -> some View {
-    HStack {
-      ForEach (1 ..< 7) { i in
-        GPiece(piece: Piece(type: i, side: side),
-               pos: -1,
-               cellwidth: cellwidth,
-               pieceStyle: pieceStyle,
-               flip: false,
-               editing: editing,
-               humanSide: Side.none,
-               make: { (piece, from, dest, promotion, moveTask) -> Bool in
-                return make?(piece, from, dest, promotion, moveTask) ?? true },
-               tap: { pos in },
-               startDragging: { pos in },
-               isArrowEnd: false,
-               aniFrom: -1, aniDest: -1, aniPromotion: -1, aniTask: MoveTask.make, selectedPos: -1, showLegalMark: false
-        )
-      }
+    
+    static func createPieces(cellwidth: CGFloat, side: Side, pieceStyle: PieceStyle, editing: Bool, make: ((_ piece: Piece, _ from: Int, _ dest: Int, _ promotion: Int, _ task: MoveTask) -> Bool)? = nil) -> some View {
+        HStack {
+            ForEach (1 ..< 7) { i in
+                GPiece(piece: Piece(type: i, side: side),
+                       pos: -1,
+                       cellwidth: cellwidth,
+                       pieceStyle: pieceStyle,
+                       flip: false,
+                       editing: editing,
+                       humanSide: Side.none,
+                       make: { (piece, from, dest, promotion, moveTask) -> Bool in
+                    return make?(piece, from, dest, promotion, moveTask) ?? true },
+                       tap: { pos in },
+                       startDragging: { pos in },
+                       isArrowEnd: false,
+                       aniFrom: -1, aniDest: -1, aniPromotion: -1, aniTask: MoveTask.make, selectedPos: -1, showLegalMark: false
+                )
+            }
+        }
+        .padding(0)
     }
-    .padding(0)
-  }
 }
 
-//struct OptionPieceStyle_Previews: PreviewProvider {
-//  static var previews: some View {
-//    var userData = UserData()
-//    OptionPieceStyle(userData: $userData)
-//  }
-//}

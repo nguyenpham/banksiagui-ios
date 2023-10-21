@@ -19,40 +19,40 @@
 import SwiftUI
 
 enum MenuTask : Int, CaseIterable {
-  case new,
-       flip,
-       paste,
-       copy,
-       edit,
-       cancel
-  
-  private static let allNames = [
-    "New game",
-    "Flip",
-    "Paste (FEN/PGN)",
-    "Copy/Email",
-    "Edit position",
-    "Cancel" ]
-  
-  func getName() -> String {
-    return MenuTask.allNames[ self.rawValue ]
-  }
+    case new,
+         flip,
+         paste,
+         copy,
+         edit,
+         cancel
+    
+    private static let allNames = [
+        "New game",
+        "Flip",
+        "Paste (FEN/PGN)",
+        "Copy/Email",
+        "Edit position",
+        "Cancel" ]
+    
+    func getName() -> String {
+        return MenuTask.allNames[ self.rawValue ]
+    }
 }
 
 struct MenuView: View {
-  let width: CGFloat
-  let menuClick: ((_ menuTask: MenuTask) -> Void)
-
-  var body: some View {
-    ForEach(MenuTask.allCases, id: \.self) { task in
-      Button(action: { self.menuClick(task) }) {
-        Text(task.getName())
-          .foregroundColor(task == .cancel ? Color.red : Color.blue)
-          .fontWeight(task == .cancel ? .bold : .regular)
-          .frame(width: self.width, height: ContentView.menuHeight, alignment: .center)
-      }
-      .cornerRadius(20.0)
-      .padding(0)
+    let width: CGFloat
+    let menuClick: ((_ menuTask: MenuTask) -> Void)
+    
+    var body: some View {
+        ForEach(MenuTask.allCases, id: \.self) { task in
+            Button(action: { self.menuClick(task) }) {
+                Text(task.getName())
+                    .foregroundColor(task == .cancel ? Color.red : Color.blue)
+                    .fontWeight(task == .cancel ? .bold : .regular)
+                    .frame(width: self.width, height: ContentView.menuHeight, alignment: .center)
+            }
+            .cornerRadius(20.0)
+            .padding(0)
+        }
     }
-  }
 }

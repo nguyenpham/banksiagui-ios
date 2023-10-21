@@ -23,19 +23,19 @@ import Combine
 import WebKit
 
 class MoveModel: ObservableObject {
-  var clickIndex = PassthroughSubject<Int, Never>()
+    var clickIndex = PassthroughSubject<Int, Never>()
 }
 
 struct MoveView: UIViewRepresentable { //}, WebViewHandlerDelegate {
-  let chessBoard: ChessBoard
-  let displayingAt: Int
-  @ObservedObject var viewModel: MoveModel
-  @EnvironmentObject private var userData: UserData
-  @State var contentOffset = CGPoint.zero
-
-
-  /// user-scalable = yes
-  let htmlhead =
+    let chessBoard: ChessBoard
+    let displayingAt: Int
+    @ObservedObject var viewModel: MoveModel
+    @EnvironmentObject private var userData: UserData
+    @State var contentOffset = CGPoint.zero
+    
+    
+    /// user-scalable = yes
+    let htmlhead =
 """
 <html><head>
 <meta name="viewport" content="width=device-width, shrink-to-fit=NO">
@@ -50,94 +50,94 @@ a:link { text-decoration: none; }
 </style></head>
 <body>
 """
-  
-  let htmlend = "</body></html>"
-
-  func updateMoveList() -> String {
-    var str = htmlhead
-    for (i, hist) in chessBoard.histList.enumerated() {
-      let haveCounter = (i & 1) == 0
-      
-      if (haveCounter) {
-        if i == 0 {
-          str += "&nbsp;"
+    
+    let htmlend = "</body></html>"
+    
+    func updateMoveList() -> String {
+        var str = htmlhead
+        for (i, hist) in chessBoard.histList.enumerated() {
+            let haveCounter = (i & 1) == 0
+            
+            if (haveCounter) {
+                if i == 0 {
+                    str += "&nbsp;"
+                }
+                str += "<a class='\(i + 1 <= displayingAt ? "m" : "l")'>\(i / 2 + 1).</a>"
+            }
+            
+            var comment = ""
+            if userData.showAnalysisMove {
+                comment = hist.computingString()
+            }
+            
+            if !hist.comment.isEmpty && userData.showAnalysisMove {
+                if !comment.isEmpty {
+                    comment += "; "
+                }
+                comment = hist.comment
+            }
+            
+            if !comment.isEmpty {
+                comment = " <span class='comment'> {\(comment)}</span> \n"
+            }
+            
+            //        if (hist.mes != banksia::MoveEvaluationSymbol::none) {
+            //            auto es = banksia::moveEvaluationSymbol2String(hist.mes);
+            //            if (!es.empty()) {
+            //                evaluate = QString(" <span class='evaluation'>%1</span> \n").arg(es.c_str());
+            //            }
+            //        }
+            
+            let moveString = hist.sanString
+            let s = "<a class='\(i + 1 < displayingAt ? "m" : i + 1 == displayingAt ? "cur" : "l")' href='\(i)'> \(moveString) </a>\n\(comment)"
+            
+            str += s + " "; // + "&nbsp;";
         }
-        str += "<a class='\(i + 1 <= displayingAt ? "m" : "l")'>\(i / 2 + 1).</a>"
-      }
-      
-      var comment = ""
-      if userData.showAnalysisMove {
-        comment = hist.computingString()
-      }
-      
-      if !hist.comment.isEmpty && userData.showAnalysisMove {
-        if !comment.isEmpty {
-          comment += "; "
+        
+        str += htmlend
+        return str
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    func makeUIView(context: Context) -> WKWebView {
+        let webView = WKWebView()
+        webView.navigationDelegate = context.coordinator
+        webView.allowsBackForwardNavigationGestures = true
+        webView.scrollView.isScrollEnabled = true
+        return webView
+    }
+    
+    func updateUIView(_ webView: WKWebView, context: Context) {
+        DispatchQueue.main.async {
+            //      webView.scrollView.isScrollEnabled = false
+            self.contentOffset = webView.scrollView.contentOffset
+            //      webView.loadHTMLString(updateMoveList(), baseURL: nil)
         }
-        comment = hist.comment
-      }
-      
-      if !comment.isEmpty {
-        comment = " <span class='comment'> {\(comment)}</span> \n"
-      }
-      
-      //        if (hist.mes != banksia::MoveEvaluationSymbol::none) {
-      //            auto es = banksia::moveEvaluationSymbol2String(hist.mes);
-      //            if (!es.empty()) {
-      //                evaluate = QString(" <span class='evaluation'>%1</span> \n").arg(es.c_str());
-      //            }
-      //        }
-      
-      let moveString = hist.sanString
-      let s = "<a class='\(i + 1 < displayingAt ? "m" : i + 1 == displayingAt ? "cur" : "l")' href='\(i)'> \(moveString) </a>\n\(comment)"
-      
-      str += s + " "; // + "&nbsp;";
+        webView.loadHTMLString(updateMoveList(), baseURL: nil)
     }
     
-    str += htmlend
-    return str
-  }
-  
-  func makeCoordinator() -> Coordinator {
-    Coordinator(self)
-  }
-  
-  func makeUIView(context: Context) -> WKWebView {
-    let webView = WKWebView()
-    webView.navigationDelegate = context.coordinator
-    webView.allowsBackForwardNavigationGestures = true
-    webView.scrollView.isScrollEnabled = true
-    return webView
-  }
-  
-  func updateUIView(_ webView: WKWebView, context: Context) {
-    DispatchQueue.main.async {
-//      webView.scrollView.isScrollEnabled = false
-      self.contentOffset = webView.scrollView.contentOffset
-//      webView.loadHTMLString(updateMoveList(), baseURL: nil)
+    class Coordinator : NSObject, WKNavigationDelegate {
+        var parent: MoveView
+        
+        init(_ moveView: MoveView) {
+            self.parent = moveView
+        }
+        
+        func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+            decisionHandler(.allow)
+            if let url = navigationAction.request.url?.absoluteString, let num = Int(url) {
+                parent.viewModel.clickIndex.send(num)
+            }
+        }
+        
+        func webView(_ webView: WKWebView, didFinish: WKNavigation!) {
+            //      webView.scrollView.isScrollEnabled = true
+            //      DispatchQueue.main.async {
+            webView.scrollView.setContentOffset(self.parent.contentOffset, animated: true)
+            //      }
+        }
     }
-    webView.loadHTMLString(updateMoveList(), baseURL: nil)
-  }
-  
-  class Coordinator : NSObject, WKNavigationDelegate {
-    var parent: MoveView
-    
-    init(_ moveView: MoveView) {
-      self.parent = moveView
-    }
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-      decisionHandler(.allow)
-      if let url = navigationAction.request.url?.absoluteString, let num = Int(url) {
-        parent.viewModel.clickIndex.send(num)
-      }
-    }
-    
-    func webView(_ webView: WKWebView, didFinish: WKNavigation!) {
-//      webView.scrollView.isScrollEnabled = true
-//      DispatchQueue.main.async {
-        webView.scrollView.setContentOffset(self.parent.contentOffset, animated: true)
-//      }
-    }
-  }
 }
