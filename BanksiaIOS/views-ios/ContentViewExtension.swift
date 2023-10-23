@@ -380,6 +380,38 @@ extension ContentView {
         }
     }
     
+    func createMenuPopup_resetApp(size: CGSize) -> some View {
+        ZStack {
+            VStack(spacing: 40) {
+                Spacer()
+
+                Text("Engine is changed. Previous engine may let some variants in the memory. It is better to reset the app by closing it first then running it again")
+                
+                HStack {
+                    Spacer()
+                    Button("Close the app", action: {
+                        game.engineChanged = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            exit(0)
+                        }
+                    })
+                    Spacer()
+                    Button("Continue", action: {
+                        game.engineChanged = false
+                    })
+                    Spacer()
+                }
+            }
+            //.padding(EdgeInsets(top: 70, leading: 20, bottom: 40, trailing: 20))
+            .frame(width: size.width * 6 / 8, height: size.width * 6 / 8)
+            .background(Color(red: 0x3d, green: 0x5a, blue: 0x80))
+            .cornerRadius(10.0)
+            .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.13), radius: 10.0)
+        }
+    }
+
+    
+    
     func createBoardImage() -> UIImage? {
         let frame = CGRect(origin: geoBoardFrame.origin, size: CGSize(width: geoBoardFrame.width, height: geoBoardFrame.width))
         let image = UIApplication.shared.windows.first?.rootViewController?.view
@@ -433,7 +465,7 @@ extension ContentView {
         }
         
     }
-    
+
     /// Present an mail compose view controller modally in UIKit environment
     func presentMailCompose(subject: String, body: String, attach: Data?) {
         guard MFMailComposeViewController.canSendMail(),

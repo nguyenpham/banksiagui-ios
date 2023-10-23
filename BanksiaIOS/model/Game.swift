@@ -17,6 +17,7 @@
 */
 
 import SwiftUI
+import UIKit
 
 enum VarEnum {
   case turn, analysicOnFly, engine
@@ -48,10 +49,12 @@ final class Game: ObservableObject {
     @Published var benchMode = false
     @Published var benchInfo = ""
     @Published var benchComputing = ""
+    @Published var benchCores = 1
     
     @Published var uciCmd_cores = 1
     @Published var uciCmd_nnuefile = ""
     
+    @Published var engineChanged = false
     @Published var engineIdx = 0 {
         didSet {
             if engineIdx != oldValue {
@@ -150,17 +153,14 @@ final class Game: ObservableObject {
     init() {
         read()
         
-        if let path = Bundle.main.path(forResource: network_sf, ofType: nil) {
-            setNetworkPath(Int32(stockfish), path);
+        for i in 0 ..< networkNames.count {
+            let s = networkNames[i]
+            if !s.isEmpty {
+                if let path = Bundle.main.path(forResource: s, ofType: nil) {
+                    setNetworkPath(Int32(i), path);
+                }
+            }
         }
-        
-        if let path = Bundle.main.path(forResource: network_lc0, ofType: nil) {
-            setNetworkPath(Int32(lc0), path);
-        }
-        if let path = Bundle.main.path(forResource: network_rubi, ofType: nil) {
-            setNetworkPath(Int32(rubi), path);
-        }
-        
         
         initCurrentEngine()
         
@@ -251,7 +251,12 @@ final class Game: ObservableObject {
         return engineInfo.name
 #endif
     }
-    
+
+    func getEngineVersion() -> String {
+        let engineInfo = engineData.allEngines[engineIdx]
+        return engineInfo.version
+    }
+
     func newGame(fen: String = "") {
         chessBoard.setFen(fen: fen)
         chessBoard.result.reset()
@@ -631,12 +636,26 @@ final class Game: ObservableObject {
     }
     
     func benchmark(core: Int) {
+        self.benchCores = core
+        setIdleTimerDisabled(active: true)
+
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.2, qos: .default) {
             // DispatchQueue.global(qos: .userInitiated).async {
             self.initCurrentEngine();
             self.sendToEngine(cmd: self.uciBenchmark(core: core))
         }
         self.expectingBestmove = true
+    }
+    
+    // WARNING: may take much more power
+    func setIdleTimerDisabled(active: Bool) {
+        #if !os(watchOS)
+        UIApplication.shared.isIdleTimerDisabled = active
+        #endif
+    }
+
+    func benchmarkEnd() {
+        setIdleTimerDisabled(active: false)
     }
     
     func sendToEngine(cmd: String) {
@@ -659,6 +678,13 @@ final class Game: ObservableObject {
     
     func canBenchmark() -> Bool {
         return engineData.allEngines[engineIdx].bench
+    }
+    
+    class func networkName(engineIdx: Int) -> String {
+        return engineIdx >= 0 && engineIdx < networkNames.count ? networkNames[engineIdx] : ""
+    }
+    func networkName() -> String {
+        return Game.networkName(engineIdx: engineIdx)
     }
 }
 

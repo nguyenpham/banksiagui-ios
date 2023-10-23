@@ -34,6 +34,9 @@
 #include "syzygy/tbprobe.h"
 #include "nnue/evaluate_nnue.h"
 
+// Added for BanksiaGUI
+#include "engineids.h"
+void engine_message(int eid, const std::string& s);
 
 //extern bool benchworking;
 
@@ -176,6 +179,7 @@ namespace {
         if (token == "go" || token == "eval")
         {
             cerr << "\nPosition: " << cnt++ << '/' << num << " (" << pos.fen() << ")" << endl;
+            
             if (token == "go")
             {
                go(pos, is, states);
@@ -194,10 +198,19 @@ namespace {
 
     dbg_print();
 
-    cerr << "\n==========================="
-         << "\nTotal time (ms) : " << elapsed
-         << "\nNodes searched  : " << nodes
-         << "\nNodes/second    : " << 1000 * nodes / elapsed << endl;
+//    cerr << "\n==========================="
+//         << "\nTotal time (ms) : " << elapsed
+//         << "\nNodes searched  : " << nodes
+//         << "\nNodes/second    : " << 1000 * nodes / elapsed << endl;
+      
+      
+      // Added for BanksiaGUI
+      std::string s = "\n===========================\nTotal time (ms) : " + std::to_string(elapsed)
+      + "\nNodes searched  : " + std::to_string(nodes)
+      + "\nNodes/second    : " + std::to_string(1000 * nodes / elapsed);
+      
+      engine_message(stockfish, s);
+      engine_message(stockfish, "bench END");
   }
 
   // The win rate model returns the probability of winning (in per mille units) given an

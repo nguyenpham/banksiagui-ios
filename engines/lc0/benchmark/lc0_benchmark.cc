@@ -41,125 +41,131 @@ namespace {
 const int kDefaultThreads = 2;
 
 const OptionId kThreadsOptionId{"threads", "Threads",
-                                "Number of (CPU) worker threads to use.", 't'};
+    "Number of (CPU) worker threads to use.", 't'};
 const OptionId kNodesId{"nodes", "", "Number of nodes to run as a benchmark."};
 const OptionId kMovetimeId{"movetime", "",
-                           "Benchmark time allocation, in milliseconds."};
+    "Benchmark time allocation, in milliseconds."};
 const OptionId kFenId{"fen", "", "Benchmark position FEN."};
 const OptionId kNumPositionsId{"num-positions", "",
-                               "The number of benchmark positions to test."};
+    "The number of benchmark positions to test."};
 }  // namespace
 
 void Benchmark::Run(const std::string& networkPath) {
-  OptionsParser options;
-  NetworkFactory::PopulateOptions(&options);
-  options.Add<IntOption>(kThreadsOptionId, 1, 128) = kDefaultThreads;
-  options.Add<IntOption>(kNNCacheSizeId, 0, 999999999) = 200000;
-  SearchParams::Populate(&options);
-
-  options.Add<IntOption>(kNodesId, -1, 999999999) = -1;
-  options.Add<IntOption>(kMovetimeId, -1, 999999999) = 10000;
-  options.Add<StringOption>(kFenId) = "";
-  options.Add<IntOption>(kNumPositionsId, 1, 34) = 34;
-
-  // Added by BanksiaGUI
-  if (!networkPath.empty()) {
-    options.SetUciOption("WeightsFile", networkPath);
-  }
-
-  if (!options.ProcessAllFlags()) return;
-
-  try {
-    auto option_dict = options.GetOptionsDict();
-
-    auto network = NetworkFactory::LoadNetwork(option_dict);
-
-    const int visits = option_dict.Get<int>(kNodesId);
-    const int movetime = option_dict.Get<int>(kMovetimeId);
-    const std::string fen = option_dict.Get<std::string>(kFenId);
-    int num_positions = option_dict.Get<int>(kNumPositionsId);
-
-    std::vector<std::double_t> times;
-    std::vector<std::int64_t> playouts;
-    std::uint64_t cnt = 1;
-
-    if (fen.length() > 0) {
-      positions = {fen};
-      num_positions = 1;
+    OptionsParser options;
+    NetworkFactory::PopulateOptions(&options);
+    options.Add<IntOption>(kThreadsOptionId, 1, 128) = kDefaultThreads;
+    options.Add<IntOption>(kNNCacheSizeId, 0, 999999999) = 200000;
+    SearchParams::Populate(&options);
+    
+    options.Add<IntOption>(kNodesId, -1, 999999999) = -1;
+    options.Add<IntOption>(kMovetimeId, -1, 999999999) = 10000;
+    options.Add<StringOption>(kFenId) = "";
+    options.Add<IntOption>(kNumPositionsId, 1, 34) = 34;
+    
+    // Added by BanksiaGUI
+    if (!networkPath.empty()) {
+        options.SetUciOption("WeightsFile", networkPath);
     }
-    std::vector<std::string> testing_positions(
-        positions.cbegin(), positions.cbegin() + num_positions);
-
-    for (std::string position : testing_positions) {
-      std::cout << "\nPosition: " << cnt++ << "/" << testing_positions.size()
-                << " " << position << std::endl;
-
-      auto stopper = std::make_unique<ChainedSearchStopper>();
-      if (movetime > -1) {
-        stopper->AddStopper(std::make_unique<TimeLimitStopper>(movetime));
-      }
-      if (visits > -1) {
-        stopper->AddStopper(std::make_unique<VisitsStopper>(visits, false));
-      }
-
-      NNCache cache;
-      cache.SetCapacity(option_dict.Get<int>(kNNCacheSizeId));
-
-      NodeTree tree;
-      tree.ResetToPosition(position, {});
-
-      const auto start = std::chrono::steady_clock::now();
-      auto search = std::make_unique<Search>(
-          tree, network.get(),
-          std::make_unique<CallbackUciResponder>(
-              std::bind(&Benchmark::OnBestMove, this, std::placeholders::_1),
-              std::bind(&Benchmark::OnInfo, this, std::placeholders::_1)),
-          MoveList(), start, std::move(stopper), false, false, option_dict,
-          &cache, nullptr);
-      search->StartThreads(option_dict.Get<int>(kThreadsOptionId));
-      search->Wait();
-      const auto end = std::chrono::steady_clock::now();
-
-      const auto time =
-          std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-      times.push_back(time.count());
-      playouts.push_back(search->GetTotalPlayouts());
-    }
-
-    const auto total_playouts =
+    
+    if (!options.ProcessAllFlags()) return;
+    
+    try {
+        auto option_dict = options.GetOptionsDict();
+        
+        auto network = NetworkFactory::LoadNetwork(option_dict);
+        
+        const int visits = option_dict.Get<int>(kNodesId);
+        const int movetime = option_dict.Get<int>(kMovetimeId);
+        const std::string fen = option_dict.Get<std::string>(kFenId);
+        int num_positions = option_dict.Get<int>(kNumPositionsId);
+        
+        std::vector<std::double_t> times;
+        std::vector<std::int64_t> playouts;
+        std::uint64_t cnt = 1;
+        
+        if (fen.length() > 0) {
+            positions = {fen};
+            num_positions = 1;
+        }
+        std::vector<std::string> testing_positions(
+                                                   positions.cbegin(), positions.cbegin() + num_positions);
+        
+        for (std::string position : testing_positions) {
+            //      std::cout << "\nPosition: " << cnt++ << "/" << testing_positions.size()
+            //                << " " << position << std::endl;
+            
+            std::string s = "Position: " + std::to_string(cnt++) + "/" 
+            + std::to_string(testing_positions.size())
+            + " " + position;
+            engine_message(lc0, s);
+            
+            auto stopper = std::make_unique<ChainedSearchStopper>();
+            if (movetime > -1) {
+                stopper->AddStopper(std::make_unique<TimeLimitStopper>(movetime));
+            }
+            if (visits > -1) {
+                stopper->AddStopper(std::make_unique<VisitsStopper>(visits, false));
+            }
+            
+            NNCache cache;
+            cache.SetCapacity(option_dict.Get<int>(kNNCacheSizeId));
+            
+            NodeTree tree;
+            tree.ResetToPosition(position, {});
+            
+            const auto start = std::chrono::steady_clock::now();
+            auto search = std::make_unique<Search>(
+                                                   tree, network.get(),
+                                                   std::make_unique<CallbackUciResponder>(
+                                                                                          std::bind(&Benchmark::OnBestMove, this, std::placeholders::_1),
+                                                                                          std::bind(&Benchmark::OnInfo, this, std::placeholders::_1)),
+                                                   MoveList(), start, std::move(stopper), false, false, option_dict,
+                                                   &cache, nullptr);
+            search->StartThreads(option_dict.Get<int>(kThreadsOptionId));
+            search->Wait();
+            const auto end = std::chrono::steady_clock::now();
+            
+            const auto time =
+            std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+            times.push_back(time.count());
+            playouts.push_back(search->GetTotalPlayouts());
+        }
+        
+        const auto total_playouts =
         std::accumulate(playouts.begin(), playouts.end(), 0);
-    const auto total_time = std::accumulate(times.begin(), times.end(), 0);
-//    std::cout << "\n==========================="
-//              << "\nTotal time (ms) : " << total_time
-//              << "\nNodes searched  : " << total_playouts
-//              << "\nNodes/second    : "
-//              << std::lround(1000.0 * total_playouts / (total_time + 1))
-//              << std::endl;
-      
-    engine_message(lc0, "Total time (ms) : " + std::to_string(total_time));
-    engine_message(lc0, "Nodes searched  : " + std::to_string(total_playouts));
-    engine_message(lc0, "Nodes/second    : " + std::to_string(std::lround(1000.0 * total_playouts / (total_time + 1))));
-  
-    engine_message(lc0, "bench END");
-
-  } catch (Exception& ex) {
-    std::cerr << ex.what() << std::endl;
-  }
+        const auto total_time = std::accumulate(times.begin(), times.end(), 0);
+        //    std::cout << "\n==========================="
+        //              << "\nTotal time (ms) : " << total_time
+        //              << "\nNodes searched  : " << total_playouts
+        //              << "\nNodes/second    : "
+        //              << std::lround(1000.0 * total_playouts / (total_time + 1))
+        //              << std::endl;
+        
+        engine_message(lc0, "Total time (ms) : " + std::to_string(total_time));
+        engine_message(lc0, "Nodes searched  : " + std::to_string(total_playouts));
+        engine_message(lc0, "Nodes/second    : " + std::to_string(std::lround(1000.0 * total_playouts / (total_time + 1))));
+        
+        engine_message(lc0, "bench END");
+        
+    } catch (Exception& ex) {
+        std::cerr << ex.what() << std::endl;
+    }
 }
 
 void Benchmark::OnBestMove(const BestMoveInfo& move) {
-  std::cout << "bestmove " << move.bestmove.as_string() << std::endl;
+    //  std::cout << "bestmove " << move.bestmove.as_string() << std::endl;
+    engine_message(lc0, "bestmove " + move.bestmove.as_string());
 }
 
 void Benchmark::OnInfo(const std::vector<ThinkingInfo>& infos) {
-  std::string line = "Benchmark time " + std::to_string(infos[0].time);
-  line += " ms, " + std::to_string(infos[0].nodes) + " nodes, ";
-  line += std::to_string(infos[0].nps) + " nps";
-  if (!infos[0].pv.empty()) line += ", move " + infos[0].pv[0].as_string();
-//  std::cout << line << std::endl;
+    std::string line = "Benchmark time " + std::to_string(infos[0].time);
+    line += " ms, " + std::to_string(infos[0].nodes) + " nodes, ";
+    line += std::to_string(infos[0].nps) + " nps";
+    if (!infos[0].pv.empty()) line += ", move " + infos[0].pv[0].as_string();
+    //  std::cout << line << std::endl;
     
-  engine_message(lc0, line);
-
+    engine_message(lc0, line);
+    
 }
 
 }  // namespace lczero

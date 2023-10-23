@@ -18,6 +18,10 @@
 
 #include "rubichess_RubiChess.h"
 
+// Add by BanksiaGUI
+#include "engineids.h"
+void engine_message(int eid, const std::string& s);
+
 using namespace rubichess;
 
 void generateEpd(string egn)
@@ -315,7 +319,10 @@ static void benchTableItem(bool bToErr, int i, benchmarkstruct *bm)
     }
         
     snprintf(str, 256, "Bench # %3d (%14s / %2d): %s  %6s%9s %3d ply %10f sec. %10lld nodes %10lld nps\n", i, bm->name.c_str(), bm->depth, solvedstr[bm->solved].c_str(), bm->move.c_str(), score.c_str(), bm->depthAtExit, (float)bm->time / (float)en.frequency, bm->nodes, bm->nodes * en.frequency / bm->time);
-    guiCom << str;
+//    guiCom << str;
+    
+    engine_message(rubi, str);
+
     if (bToErr)
         guiCom.switchStream();
 }
@@ -326,11 +333,13 @@ static void benchTableFooder(bool bToErr, long long totaltime, long long totalno
         guiCom.switchStream();
     int totaltests = totalsolved[0] + totalsolved[1];
     double fSolved = totaltests ? 100.0 * totalsolved[1] / (double)totaltests : 0.0;
-    guiCom << "=============================================================================================================\n";
+    engine_message(rubi, "=============================================================================================================\n");
     char str[256];
     snprintf(str, 256, "Overall:                  %4d/%3d = %4.1f%%                    %10f sec. %10lld nodes %*lld nps\n",
         totalsolved[1], totaltests, fSolved, ((float)totaltime / (float)en.frequency), totalnodes, 10, totalnodes * en.frequency / totaltime);
-    guiCom << str;
+//    guiCom << str;
+    engine_message(rubi, str);
+
     if (bToErr)
         guiCom.switchStream();
 }
@@ -371,8 +380,11 @@ void engine::bench(int constdepth, string epdfilename, int consttime, int startn
     {
         epdfile.open(epdfilename, ifstream::in);
         bGetFromEpd = epdfile.is_open();
-        if (!bGetFromEpd)
-            guiCom << "Cannot open file " + epdfilename + " for reading.\n";
+        if (!bGetFromEpd) {
+//            guiCom << "Cannot open file " + epdfilename + " for reading.\n";
+            engine_message(rubi, "Cannot open file " + epdfilename + " for reading.\n");
+
+        }
     }
 
     int i = 0;
@@ -436,8 +448,10 @@ void engine::bench(int constdepth, string epdfilename, int consttime, int startn
             communicate("go movetime " + to_string(tm * 1000));
         else if (dp)
             communicate("go depth " + to_string(dp));
-        else
-            guiCom << "No depth and no movetime. Skipping.\n";
+        else {
+//            guiCom << "No depth and no movetime. Skipping.\n";
+            engine_message(rubi, "No depth and no movetime. Skipping.\n");
+        }
 
         searchWaitStop(false);
         endtime = getTime();
@@ -482,9 +496,19 @@ void engine::bench(int constdepth, string epdfilename, int consttime, int startn
     {
         benchTableFooder(!openbench, totaltime, totalnodes, totalSolved);
         if (openbench) {
-            guiCom << "Time  : " + to_string(totaltime * 1000 / en.frequency) + "\n";
-            guiCom << "Nodes : " + to_string(totalnodes) + "\n";
-            guiCom << "NPS   : " + to_string(totalnodes * en.frequency / totaltime) + "\n";
+//            guiCom << "Time  : " + to_string(totaltime * 1000 / en.frequency) + "\n";
+//            guiCom << "Nodes : " + to_string(totalnodes) + "\n";
+//            guiCom << "NPS   : " + to_string(totalnodes * en.frequency / totaltime) + "\n";
+//            
+//            guiCom << "bench END";
+            
+
+            std::string s = "Time  : " + to_string(totaltime * 1000 / en.frequency) + "\n"
+            + "Nodes : " + to_string(totalnodes) + "\n"
+            + "NPS   : " + to_string(totalnodes * en.frequency / totaltime) + "\n";
+
+            engine_message(rubi, s);
+            engine_message(rubi, "bench END");
         }
     }
 }

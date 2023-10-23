@@ -31,13 +31,19 @@ let version_lc0 = "0.30"
 //#endif
 
 let version_stockfish = "16"
-let network_sf = "nn-5af11540bbfe.nnue"
 
-let network_rubi = "nn-c257b2ebf1-20230812.nnue"
+//let network_sf = "nn-5af11540bbfe.nnue"
+//let network_rubi = "nn-c257b2ebf1-20230812.nnue"
+
+let networkNames = [
+    "nn-5af11540bbfe.nnue",         // Stockfish
+    "791556.pb.gz",                 // Lc0
+    "nn-c257b2ebf1-20230812.nnue",  // RubiChess
+]
 
 //let network_lc0 = "703810.pb.gz"      // old 6.4 MB
 //let network_lc0 = "753723.pb.gz"        // new 18.8
-let network_lc0 = "791556.pb.gz"        // new 18.8
+//let network_lc0 = "791556.pb.gz"        // new 18.8
 
 struct EngineInfo : Hashable {
     let name: String
@@ -56,19 +62,20 @@ let stockfishEngineInfo  = EngineInfo(name: "Stockfish", shortName: "Sf", versio
 let lc0EngineInfo  = EngineInfo(name: "Lc0", shortName: "Lc", version: version_lc0, author: "LeelaChessZero team",
                                       frc: true, idNumb: lc0, elo: 3500, nnue: false, bench: true)
 
-let etherealEngineInfo = EngineInfo(name: "Ethereal", shortName: "Et", version: "12.50", author: "Andrew Grant",
-                                    frc: true, idNumb: ethereal, elo: 3365, nnue: false, bench: false)
-let xiphosEngineInfo = EngineInfo(name: "Xiphos", shortName: "Xp", version: "0.5", author: "Milos Tatarevic",
-                                  frc: true, idNumb: xiphos, elo: 3339, nnue: false, bench: false)
-let defenchessEngineInfo = EngineInfo(name: "Defenchess", shortName: "Dc", version: "2.2", author: "Can Cetin, Dogac Eldenk",
-                                      frc: true, idNumb: defenchess, elo: 3280, nnue: false, bench: false)
-
-
 let rubichessEngineInfo = EngineInfo(name: "RubiChess", shortName: "Rb", version: "2.2 (20230918)", author: "Andreas Matthies",
-                                     frc: true, idNumb: rubi, elo: 3296, nnue: true, bench: false)
-let laserEngineInfo = EngineInfo(name: "Laser", shortName: "Ls", version: "1.6", author: "Jeffrey An, Michael An",
-                                 frc: true, idNumb: laser, elo: 3288, nnue: false, bench: false)
+                                     frc: true, idNumb: rubi, elo: 3296, nnue: true, bench: true)
 
+//let etherealEngineInfo = EngineInfo(name: "Ethereal", shortName: "Et", version: "12.50", author: "Andrew Grant",
+//                                    frc: true, idNumb: ethereal, elo: 3365, nnue: false, bench: false)
+//let xiphosEngineInfo = EngineInfo(name: "Xiphos", shortName: "Xp", version: "0.5", author: "Milos Tatarevic",
+//                                  frc: true, idNumb: xiphos, elo: 3339, nnue: false, bench: false)
+//let defenchessEngineInfo = EngineInfo(name: "Defenchess", shortName: "Dc", version: "2.2", author: "Can Cetin, Dogac Eldenk",
+//                                      frc: true, idNumb: defenchess, elo: 3280, nnue: false, bench: false)
+//
+//
+//let laserEngineInfo = EngineInfo(name: "Laser", shortName: "Ls", version: "1.6", author: "Jeffrey An, Michael An",
+//                                 frc: true, idNumb: laser, elo: 3288, nnue: false, bench: false)
+//
 //let igelEngineInfo = EngineInfo(name: "Igel", shortName: "Ig", version: "2.6", author: "Medvedev, Shcherbyna",
 //                                frc: true, idNumb: igel, elo: 3240, nnue: true, bench: false)
 
@@ -80,22 +87,22 @@ let laserEngineInfo = EngineInfo(name: "Laser", shortName: "Ls", version: "1.6",
 
 final class EngineData: ObservableObject {
     
-    //  let allEngines: [EngineInfo]
     let allEngines = [
         stockfishEngineInfo,
         lc0EngineInfo,
-        etherealEngineInfo,
-        xiphosEngineInfo,
         rubichessEngineInfo,
         
-        laserEngineInfo,
-        defenchessEngineInfo,
-        //    igelEngineInfo,
-        //    nemorinoEngineInfo,
-        //    fruitEngineInfo
+        
+//        etherealEngineInfo,
+//        xiphosEngineInfo,
+//        
+//        laserEngineInfo,
+//        defenchessEngineInfo,
+//            igelEngineInfo,
+//            nemorinoEngineInfo,
+//            fruitEngineInfo
     ]
     
     init() {
     }
-    
 }

@@ -113,7 +113,12 @@ struct ContentView: View {
             }
             .onReceive(self.timer) { _ in
                 while let s = game.getSearchMessage() {
-                    processEngineOutput(s)
+                    let list = s.split(separator: "\n")
+                    for str in list {
+                        if !str.isEmpty {
+                            processEngineOutput(String(str))
+                        }
+                    }
                 }
                 
                 self.timeCouter += 1
@@ -156,6 +161,10 @@ struct ContentView: View {
             }
             .popup(isPresented: $showingPopup_move, type: .floater(), position: .bottom, closeOnTap: false) {
                 createMenuPopup_move(size: geoSize)
+            }
+            .popup(isPresented: $game.engineChanged, type: .floater(), position: .bottom, closeOnTap: false) {
+//                game.engineChanged = false
+                createMenuPopup_resetApp(size: geoSize)
             }
 #endif
         

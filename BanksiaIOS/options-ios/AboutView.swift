@@ -26,9 +26,9 @@ struct AboutView: View {
             Text("by Nguyen Pham, 2020, 2023")
                 .italic()
             
-            Text("Stockfish network: \(network_sf)")
-            Text("LC0 network: \(network_lc0)")
-            Text("RubiChess network: \(network_rubi)")
+            Text("Stockfish network: \(Game.networkName(engineIdx: stockfish))")
+            Text("LC0 network: \(Game.networkName(engineIdx: lc0))")
+            Text("RubiChess network: \(Game.networkName(engineIdx: rubi))")
 
             WebView(text: "credit", isFile: true)
             if #available(iOS 14.0, *) {

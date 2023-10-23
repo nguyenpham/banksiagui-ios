@@ -22,9 +22,11 @@
 enum {
   stockfish,
   lc0,
+  rubi,
+    
+    
   ethereal,
   xiphos,
-  rubi,
   laser,
   defenchess,
 //  igel,

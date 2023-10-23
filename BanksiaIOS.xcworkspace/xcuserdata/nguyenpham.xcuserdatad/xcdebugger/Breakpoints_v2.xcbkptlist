@@ -14,8 +14,8 @@
             filePath = "BanksiaIOS/views/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "createPromotionPopup(size:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "BanksiaIOS/views/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "createPromotionPopup(size:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "BanksiaIOS/views/ChessContentExtension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "make(piece:from:dest:promotion:moveTask:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "BanksiaIOS/model/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "594"
-            endingLineNumber = "594"
+            startingLineNumber = "601"
+            endingLineNumber = "601"
             landmarkName = "checkMakeMove(from:dest:promotion:byComputer:moveElapseInMillisecond:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "BanksiaIOS/views/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
             landmarkName = "tap(pos:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "BanksiaIOS/model/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "570"
-            endingLineNumber = "570"
+            startingLineNumber = "577"
+            endingLineNumber = "577"
             landmarkName = "parsePGN(chessBoard:string:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "BanksiaIOS/views-ios/ContentViewExtension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "445"
-            endingLineNumber = "445"
+            startingLineNumber = "477"
+            endingLineNumber = "477"
             landmarkName = "presentMailCompose(subject:body:attach:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,10 +158,10 @@
             filePath = "engines/engines.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
-            landmarkName = "engine_cmd(eid, cmd)"
-            landmarkType = "9">
+            startingLineNumber = "288"
+            endingLineNumber = "288"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -174,8 +174,8 @@
             filePath = "engines/engines.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
             landmarkName = "engine_cmd(eid, cmd)"
             landmarkType = "9">
          </BreakpointContent>
@@ -335,9 +335,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "296"
-            endingLineNumber = "296"
-            landmarkName = "engine_cmd(eid, cmd)"
-            landmarkType = "9">
+            endingLineNumber = "296">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -383,9 +381,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "292"
-            endingLineNumber = "292"
-            landmarkName = "engine_cmd(eid, cmd)"
-            landmarkType = "9">
+            endingLineNumber = "292">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -503,39 +499,39 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4FD70D2B-F417-482A-93BD-1D72B3A288E8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BanksiaIOS/model/Game.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "init()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "82FE42E7-54A8-4EB6-84B4-BE5F0C48CF95"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BanksiaIOS/model/Game.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "init()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "832B34D5-67E3-43D8-8725-9E6A0864A581"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "engines/engines.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "engine_initialize(eid, coreNumber, skillLevel, nnueMode)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0BC1624E-A169-4DC7-A5EA-AAAC22D15DCA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BanksiaIOS/model/Game.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "335E10AE-8D1B-4E46-B9DE-7C9CC1941A8A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -551,38 +547,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0BC1624E-A169-4DC7-A5EA-AAAC22D15DCA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BanksiaIOS/model/Game.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "init()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "335E10AE-8D1B-4E46-B9DE-7C9CC1941A8A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "engines/engines.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "engine_initialize(eid, coreNumber, skillLevel, nnueMode)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "40A6AD7A-3DED-4125-A0FD-3DEDA6C9D73C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -590,9 +554,9 @@
             filePath = "engines/engines.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "sendOptionLc0Network(eid)"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "sendOptionNNUE_Rubi()"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -606,8 +570,8 @@
             filePath = "BanksiaIOS/model/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "read()"
             landmarkType = "7">
          </BreakpointContent>
@@ -622,8 +586,8 @@
             filePath = "BanksiaIOS/model/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "read()"
             landmarkType = "7">
          </BreakpointContent>
@@ -686,8 +650,8 @@
             filePath = "BanksiaIOS/model/EngineData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "EngineInfo"
             landmarkType = "14">
          </BreakpointContent>
@@ -702,8 +666,8 @@
             filePath = "BanksiaIOS/views/ChessContentExtension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "checkMakeMove(from:dest:promotion:byComputer:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -718,8 +682,8 @@
             filePath = "BanksiaIOS/views/ChessContentExtension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "checkMakeMove(from:dest:promotion:byComputer:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -750,8 +714,8 @@
             filePath = "BanksiaIOS/views/ChessContentExtension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "make(piece:from:dest:promotion:moveTask:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -798,8 +762,8 @@
             filePath = "BanksiaIOS/views/ChessContentExtension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "newGame()"
             landmarkType = "7">
          </BreakpointContent>
@@ -814,9 +778,9 @@
             filePath = "BanksiaIOS/model/Game.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "631"
-            endingLineNumber = "631"
-            landmarkName = "computerGo()"
+            startingLineNumber = "638"
+            endingLineNumber = "638"
+            landmarkName = "benchmark(core:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -830,8 +794,8 @@
             filePath = "BanksiaIOS/views/ChessContentExtension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "processEngineOutput(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -846,8 +810,8 @@
             filePath = "BanksiaIOS/views/ChessContentExtension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "processEngineOutput(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -866,6 +830,22 @@
             endingLineNumber = "64"
             landmarkName = "ContentView"
             landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F30810C-2CB5-4CF5-9F56-093233442A33"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BanksiaIOS/options-ios/Benchmark.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

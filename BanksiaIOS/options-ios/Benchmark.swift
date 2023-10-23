@@ -22,19 +22,19 @@ struct Benchmark: View {
     @Binding var isNavigationBarHidden: Bool
     @EnvironmentObject private var game: Game
     @State var benchmarkInfo = ""
-    @State private var extraInfo = ""
     @State private var computing = false
     
     var body: some View {
         VStack {
-            if game.getEngineIdNumb() == stockfish && game.maxcores > 1 && !computing {
+            if game.getEngineIdNumb() != lc0 
+                && game.maxcores > 1
+                && !computing {
                 Button("Standard benchmark", action: {
                     startBenchmark()
                 })
                 .padding()
                 
                 Button("Benchmark with \(game.maxcores) threads", action: {
-                    extraInfo = " (\(game.maxcores) threads)"
                     startBenchmark(core: game.maxcores)
                 })
                 .padding()
@@ -42,6 +42,9 @@ struct Benchmark: View {
                 Spacer()
             }
             
+            Text(getExtraInfo())
+                .font(.system(.body, design: .monospaced))
+
             if !game.benchComputing.isEmpty {
                 Text(game.benchInfo.isEmpty ? "Computing..." : game.benchInfo)
                     .font(.system(.body, design: .monospaced))
@@ -57,7 +60,7 @@ struct Benchmark: View {
                 }
             }
         }
-        .navigationBarTitle("Benchmark\(extraInfo)", displayMode: .inline)
+        .navigationBarTitle("Benchmark \(game.getEngineDisplayName())", displayMode: .inline)
         .onAppear {
             isNavigationBarHidden = false
             
@@ -66,7 +69,7 @@ struct Benchmark: View {
             game.benchComputing = ""
             game.benchMode = true
             
-            if game.getEngineIdNumb() != stockfish || game.maxcores <= 1 {
+            if game.getEngineIdNumb() == lc0 || game.maxcores <= 1 {
                 startBenchmark()
             }
         }
@@ -79,6 +82,20 @@ struct Benchmark: View {
         }
     }
     
+    func getExtraInfo() -> String {
+        var s =  "Version: \(game.getEngineVersion())"
+
+        if game.engineIdx != lc0 {
+            s += "\nThreads: \(game.benchCores)"
+        }
+        
+        let network = game.networkName()
+        if !network.isEmpty {
+            s += "\nNetwork: \(network)"
+        }
+        return s
+    }
+
     func startBenchmark(core: Int = 1) {
         computing = true
         game.benchmark(core: core)

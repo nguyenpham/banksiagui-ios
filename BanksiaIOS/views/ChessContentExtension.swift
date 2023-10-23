@@ -23,15 +23,26 @@ import UIKit
 extension ContentView {
     
     func processEngineOutput(_ str: String) {
-        
+        assert(!str.isEmpty && !str.contains("\n"))
         if game.benchMode {
-            if str.starts(with: "Total") || str.starts(with: "Nodes") {
-                if !game.benchInfo.isEmpty {
-                    game.benchInfo += "\n"
+            let benchmarkKeywords = [
+                "Total", "Nodes",
+                "Time", "NPS" // Rubi
+            ]
+            
+            for s in benchmarkKeywords {
+                if str.starts(with: s) {
+                    if !game.benchInfo.isEmpty {
+                        game.benchInfo += "\n"
+                    }
+                    game.benchInfo += str
+                    return
                 }
-                game.benchInfo += str
-            } else if str.starts(with: "bench END") {
+            }
+
+            if str.starts(with: "bench END") {
                 game.benchMode = false;
+                game.benchmarkEnd()
             } else {
                 if game.benchComputing.length > 32 * 1024 {
                     game.benchComputing = game.benchComputing.substring(fromIndex: 8 * 1024)

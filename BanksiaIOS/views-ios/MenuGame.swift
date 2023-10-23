@@ -31,6 +31,7 @@ struct GameSetup: View {
     //      }
     //    }
     //  }
+    @State private var oldEngineIdx = 0
     
     var body: some View {
         List {
@@ -165,27 +166,27 @@ struct GameSetup: View {
                     }
                 }
                 
-                if game.getEngineIdNumb() == stockfish {
-                    VStack {
-                        HStack {
-                            Text("Evaluation")
-                            Spacer()
-                        }
-                        Picker(selection: $game.evalNNUEMode, label: Text("Evaluation")) {
-                            ForEach (EvaluationMode.allCases, id:\.self) { em in
-                                Text(em.getName()).tag(em.rawValue)
-                            }
-                        }.pickerStyle(SegmentedPickerStyle())
-                    }
-                    
-                    Stepper(value: $game.skillLevel, in: 0...20) {
-                        HStack {
-                            Text("Skill level")
-                            Spacer()
-                            Text("\(game.skillLevel)")
-                        }
-                    }
-                }
+//                if game.getEngineIdNumb() == stockfish {
+//                    VStack {
+//                        HStack {
+//                            Text("Evaluation")
+//                            Spacer()
+//                        }
+//                        Picker(selection: $game.evalNNUEMode, label: Text("Evaluation")) {
+//                            ForEach (EvaluationMode.allCases, id:\.self) { em in
+//                                Text(em.getName()).tag(em.rawValue)
+//                            }
+//                        }.pickerStyle(SegmentedPickerStyle())
+//                    }
+//                    
+//                    Stepper(value: $game.skillLevel, in: 0...20) {
+//                        HStack {
+//                            Text("Skill level")
+//                            Spacer()
+//                            Text("\(game.skillLevel)")
+//                        }
+//                    }
+//                }
                 
                 Toggle("Use opening books", isOn: $game.bookMode)
                 
@@ -208,11 +209,14 @@ struct GameSetup: View {
         }
         .navigationBarTitle("Level", displayMode: .inline)
         .onAppear {
+            oldEngineIdx = game.engineIdx
+            game.engineChanged = false
             nodeString = "\(game.timer_nodes)"
             //      self.isNavigationBarHidden = false
         }
         .onDisappear() {
             self.game.write()
+            game.engineChanged = oldEngineIdx != game.engineIdx
         }
     }
     
