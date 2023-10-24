@@ -26,8 +26,8 @@ struct Benchmark: View {
     
     var body: some View {
         VStack {
-            if game.getEngineIdNumb() != lc0 
-                && game.maxcores > 1
+            //if game.getEngineIdNumb() != lc0
+            if game.maxcores > 1
                 && !computing {
                 Button("Standard benchmark", action: {
                     startBenchmark()
@@ -69,7 +69,8 @@ struct Benchmark: View {
             game.benchComputing = ""
             game.benchMode = true
             
-            if game.getEngineIdNumb() == lc0 || game.maxcores <= 1 {
+            //if game.getEngineIdNumb() == lc0 || game.maxcores <= 1 {
+            if game.maxcores <= 1 {
                 startBenchmark()
             }
         }
