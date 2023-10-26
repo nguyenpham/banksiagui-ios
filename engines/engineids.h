@@ -23,12 +23,11 @@ enum {
   stockfish,
   lc0,
   rubi,
-    
-    
-  ethereal,
-  xiphos,
-  laser,
-  defenchess,
+
+//  ethereal,
+//  xiphos,
+//  laser,
+//  defenchess,
 //  igel,
 //  nemorino,
 //  fruit

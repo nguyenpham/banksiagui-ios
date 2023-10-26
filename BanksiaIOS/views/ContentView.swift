@@ -162,10 +162,12 @@ struct ContentView: View {
             .popup(isPresented: $showingPopup_move, type: .floater(), position: .bottom, closeOnTap: false) {
                 createMenuPopup_move(size: geoSize)
             }
-            .popup(isPresented: $game.engineChanged, type: .floater(), position: .bottom, closeOnTap: false) {
-//                game.engineChanged = false
-                createMenuPopup_resetApp(size: geoSize)
-            }
+//            .popup(isPresented: $game.engineChanged, type: .floater(), position: .bottom, closeOnTap: false) {
+////                game.engineChanged = false
+////                createMenuPopup_resetApp(size: geoSize)
+//                
+//                createAlert_resetApp()
+//            }
 #endif
         
     }

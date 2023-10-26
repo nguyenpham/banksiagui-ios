@@ -27,10 +27,12 @@ extern "C" {
 #endif
 
 
-void engine_initialize(int eid, int coreNumber, int skillLevel, int nnueMode);
+void engine_initialize(int eid, int coreNumber);
 void engine_cmd(int eid, const char *cmd);
 const char *engine_getSearchMessage(int eid);
 void engine_clearAllMessages(int eid);
+
+void lc0_bench(int cores);
 
 void setNetworkPath(int eid, const char *path);
 

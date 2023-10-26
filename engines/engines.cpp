@@ -26,6 +26,7 @@
 
 #include "engines-bridging-header.h"
 
+#define HashSize  "128"
 
 static std::map<int, std::vector<std::string>> searchMsgMap;
 static std::map<int, int> coreMap;
@@ -34,7 +35,6 @@ static std::map<int, std::string> networkMap;
 
 std::string lc0netpath;
 static std::set<int> initSet;
-static std::map<int, int> skillLevelMap;
 
 static std::mutex searchMsgVecMutex;
 
@@ -87,36 +87,18 @@ void lc0_cmd(const char *cmd);
 void lc0_cleanup();
 
 
-extern "C" void ethereal_initialize();
-extern "C" void ethereal_uci_cmd(const char* str);
-extern "C" void xiphos_initialize();
-extern "C" void xiphos_uci_cmd(const char* str);
-
 void rubichess_initialize();
 void rubichess_uci_cmd(const char* str);
 void rubichess_cleanup();
 
-void depenchess_initialize();
-void depenchess_uci_cmd(const char* str);
 
-void laser_initialize();
-void laser_uci_cmd(const char* str);
-
-//void igel_initialize();
-//void igel_uci_cmd(const char* str);
-
-//void nemorino_initialize();
-//void nemorino_uci_cmd(const char* str);
-
-
-extern "C" void setNetworkPath(int eid, const char *path) {
+extern "C" void setNetworkPath(int eid, const char *path)
+{
     networkMap[eid] = path;
     if (eid == lc0) {
         lc0netpath = path;
     }
 }
-
-
 
 void sendOptionLc0Network(int eid)
 {
@@ -143,19 +125,14 @@ void sendOptionNNUE_Rubi()
     engine_cmd(rubi, cmd.c_str());
 }
 
-void sendSkillLevel(int eid, int skillLevel)
+void engine_initialize(int eid, int coreNumber)
 {
-    auto cmd = "setoption name Skill Level value " + std::to_string(skillLevel);
-    engine_cmd(eid, cmd.c_str());
-}
-
-void engine_initialize(int eid, int coreNumber, int skillLevel, int nnueMode)
-{
+    
 #ifndef USE_NEON
-//        #pragma message ("WARNING: NEON is NOT defined")
-        #warning("WARNING: NEON is NOT defined")
+    //        #pragma message ("WARNING: NEON is NOT defined")
+    std::cout<< "WARNING: NEON is NOT defined" << std::endl;
 #endif
-
+    
     if (initSet.find(eid) == initSet.end()) {
         initSet.insert(eid);
         
@@ -175,67 +152,25 @@ void engine_initialize(int eid, int coreNumber, int skillLevel, int nnueMode)
                 sendOptionNNUE_Rubi();
                 break;
                 
-                
-                //      case igel:
-                //        igel_initialize();  /// Threads, Hash, Ponder, EvalFile, Skill level
-                //        sendOptionNNUE(eid);
-                //        break;
-                
-                //      case nemorino:
-                //        nemorino_initialize();  /// Threads, Hash, Ponder, EvalFile
-                //        sendOptionNNUE(eid);
-                //        break;
-                
-//            case ethereal:
-//                ethereal_initialize();  /// Threads, Hash, Ponder
-//                break;
-//                
-//            case xiphos:
-//                xiphos_initialize();  /// Threads, Hash, Ponder
-//                break;
-//                
-//            case laser:
-//                laser_initialize();  /// Threads, Hash, Ponder
-//                break;
-//                
-//            case defenchess:
-//                depenchess_initialize();  /// Threads, Hash, Ponder
-//                break;
-                
-                
             default:
                 break;
         }
         
-#define HashSize  "128"
-        auto cmd = std::string("setoption name hash value ") + HashSize;
-        engine_cmd(eid, cmd.c_str());
-    }
-    
-    if (coreMap.find(eid) == coreMap.end() || coreMap[eid] != coreNumber) {
-        coreMap[eid] = coreNumber;
-        std::string cmd = "setoption name threads value " + std::to_string(coreNumber);
-        engine_cmd(eid, cmd.c_str());
-    }
-    
-    if (eid == stockfish) {
-        if (skillLevelMap.find(eid) == skillLevelMap.end() || skillLevelMap[eid] != skillLevel) {
-            skillLevelMap[eid] = skillLevel;
-            sendSkillLevel(eid, skillLevel);
-        }
-        
-        static int sfnnueMode = -1;
-        if (sfnnueMode != nnueMode) {
-            sfnnueMode = nnueMode;
-            std::string cmd = "setoption name Use NNUE value " + std::to_string(nnueMode);
+        if (eid != lc0) { // lc0 has not option hash
+            auto cmd = std::string("setoption name hash value ") + HashSize;
             engine_cmd(eid, cmd.c_str());
         }
     }
     
+    if (coreMap.find(eid) == coreMap.end()
+        || coreMap[eid] != coreNumber) {
+        coreMap[eid] = coreNumber;
+        std::string cmd = "setoption name threads value " + std::to_string(coreNumber);
+        engine_cmd(eid, cmd.c_str());
+    }
 }
-
-void engine_cmd(int eid, const char *cmd)
-{
+                 
+void engine_cmd(int eid, const char *cmd) {
     switch (eid) {
         case stockfish:
             stockfish_cmd(cmd);
@@ -248,35 +183,6 @@ void engine_cmd(int eid, const char *cmd)
         case rubi:
             rubichess_uci_cmd(cmd);
             break;
-            
-
-//        case ethereal:
-//            ethereal_uci_cmd(cmd);
-//            break;
-//            
-//        case xiphos:
-//            xiphos_uci_cmd(cmd);
-//            break;
-//            
-//        case laser:
-//            laser_uci_cmd(cmd);
-//            break;
-//            
-//        case defenchess:
-//            depenchess_uci_cmd(cmd);
-//            break;
-            
-            //    case igel:
-            //      igel_uci_cmd(cmd);
-            //      break;
-            
-            //    case nemorino:
-            //      nemorino_uci_cmd(cmd);
-            //      break;
-            //
-            //    case fruit:
-            //      fruit_uci_cmd(cmd);
-            //      break;
             
         default:
             break;

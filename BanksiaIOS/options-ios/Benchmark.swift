@@ -26,11 +26,11 @@ struct Benchmark: View {
     
     var body: some View {
         VStack {
-            //if game.getEngineIdNumb() != lc0
-            if game.maxcores > 1
+            if game.getEngineIdNumb() != lc0
+                && game.maxcores > 2
                 && !computing {
-                Button("Standard benchmark", action: {
-                    startBenchmark()
+                Button("Benchmark with 2 threads", action: {
+                    startBenchmark(core: 2)
                 })
                 .padding()
                 
@@ -69,8 +69,7 @@ struct Benchmark: View {
             game.benchComputing = ""
             game.benchMode = true
             
-            //if game.getEngineIdNumb() == lc0 || game.maxcores <= 1 {
-            if game.maxcores <= 1 {
+            if game.getEngineIdNumb() == lc0 || game.maxcores <= 1 {
                 startBenchmark()
             }
         }
@@ -97,7 +96,7 @@ struct Benchmark: View {
         return s
     }
 
-    func startBenchmark(core: Int = 1) {
+    func startBenchmark(core: Int = 2) {
         computing = true
         game.benchmark(core: core)
     }

@@ -48,23 +48,24 @@ class Lc0 {
 private:
     EngineLoop engineLoop;
     Benchmark* benchmark = nullptr;
-
+    
 public:
     Lc0() {
         try {
             InitializeMagicBitboards();
-
+            
             CommandLine::RegisterMode("uci", "(default) Act as UCI engine");
             CommandLine::RegisterMode("benchmark", "Quick benchmark");
-
+            
             // Consuming optional "uci" mode.
             CommandLine::ConsumeCommand("uci");
-
+            
             // Ordinary UCI engine.
             engineLoop.RunLoop();
-
-            doCmd("setoption name MinibatchSize value 8");
+            
+            doCmd("setoption name MinibatchSize value 7");
             doCmd("setoption name MaxPrefetch value 0");
+            doCmd("setoption name TaskWorkers value 0");
             doCmd("uci");
         } catch (std::exception& e) {
             std::cerr << "Unhandled exception: " << e.what() << std::endl;
@@ -79,17 +80,28 @@ public:
         }
     }
     
+    // Added for Banksia GUI
     void doCmd(const char *cmd)
     {
-      if (memcmp(cmd, "bench", strlen("bench")) == 0) {
+        if (memcmp(cmd, "bench", strlen("bench")) == 0) {
+            if (benchmark) delete benchmark;
+            benchmark = new lczero::Benchmark();
+            benchmark->Run(lc0netpath, 2);
+        } else {
+            engineLoop.RunCmd(cmd);
+        }
+    }
+    
+    void doBench(int cores)
+    {
+        printf("lczero, doBench, cores=%d\n", cores);
+        
         if (benchmark) delete benchmark;
         benchmark = new lczero::Benchmark();
-        benchmark->Run(lc0netpath);
-      } else {
-        engineLoop.RunCmd(cmd);
-      }
+        benchmark->Run(lc0netpath, cores);
+        
     }
-
+    
 };
 
 static Lc0* lc0 = nullptr;
@@ -98,6 +110,13 @@ void lc0_cmd(const char *cmd)
 {
     if (lc0) {
         lc0->doCmd(cmd);
+    }
+}
+
+extern "C" void lc0_bench(int cores)
+{
+    if (lc0) {
+        lc0->doBench(cores);
     }
 }
 

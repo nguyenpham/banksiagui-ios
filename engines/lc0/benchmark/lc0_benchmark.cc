@@ -38,7 +38,8 @@ void engine_message(int eid, const std::string& s);
 
 namespace lczero {
 namespace {
-const int kDefaultThreads = 2;
+
+//const int kDefaultThreads = 2;
 
 const OptionId kThreadsOptionId{"threads", "Threads",
     "Number of (CPU) worker threads to use.", 't'};
@@ -50,10 +51,13 @@ const OptionId kNumPositionsId{"num-positions", "",
     "The number of benchmark positions to test."};
 }  // namespace
 
-void Benchmark::Run(const std::string& networkPath) {
+void Benchmark::Run(const std::string& networkPath, int cores) {
     OptionsParser options;
     NetworkFactory::PopulateOptions(&options);
-    options.Add<IntOption>(kThreadsOptionId, 1, 128) = kDefaultThreads;
+    options.Add<IntOption>(kThreadsOptionId, 1, 128) = cores; //kDefaultThreads;
+    
+    printf("Lc0, Benchmark::Run, cores=%d\n", cores);
+    
     options.Add<IntOption>(kNNCacheSizeId, 0, 999999999) = 200000;
     SearchParams::Populate(&options);
     

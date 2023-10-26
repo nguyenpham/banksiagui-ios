@@ -19,31 +19,23 @@
 import SwiftUI
 
 let version_lc0 = "0.30"
-
-// Warning: watchOS limit the app size only 75MB, the new net makes the app over that limit (108MB)
-// we must use the older net to reduce the size
-//#if os(watchOS)
-//let version_stockfish = "13 dev"
-//let network_nnue = "nn-03744f8d56d8.nnue"
-//#else
-//let version_stockfish = "14 dev"
-//let network_nnue = "nn-9e3c6298299a.nnue"
-//#endif
-
 let version_stockfish = "16"
 
-//let network_sf = "nn-5af11540bbfe.nnue"
-//let network_rubi = "nn-c257b2ebf1-20230812.nnue"
+#if os(watchOS)
+let networkNames = [
+    "nn-5af11540bbfe.nnue",         // Stockfish
+    "703810.pb.gz",                 // Lc0: old, small net 6.4 MB, for Watch
+    "nn-c257b2ebf1-20230812.nnue",  // RubiChess
+]
 
+#else
 let networkNames = [
     "nn-5af11540bbfe.nnue",         // Stockfish
     "791556.pb.gz",                 // Lc0
     "nn-c257b2ebf1-20230812.nnue",  // RubiChess
 ]
 
-//let network_lc0 = "703810.pb.gz"      // old 6.4 MB
-//let network_lc0 = "753723.pb.gz"        // new 18.8
-//let network_lc0 = "791556.pb.gz"        // new 18.8
+#endif
 
 struct EngineInfo : Hashable {
     let name: String
@@ -65,44 +57,11 @@ let lc0EngineInfo  = EngineInfo(name: "Lc0", shortName: "Lc", version: version_l
 let rubichessEngineInfo = EngineInfo(name: "RubiChess", shortName: "Rb", version: "2.2 (20230918)", author: "Andreas Matthies",
                                      frc: true, idNumb: rubi, elo: 3296, nnue: true, bench: true)
 
-//let etherealEngineInfo = EngineInfo(name: "Ethereal", shortName: "Et", version: "12.50", author: "Andrew Grant",
-//                                    frc: true, idNumb: ethereal, elo: 3365, nnue: false, bench: false)
-//let xiphosEngineInfo = EngineInfo(name: "Xiphos", shortName: "Xp", version: "0.5", author: "Milos Tatarevic",
-//                                  frc: true, idNumb: xiphos, elo: 3339, nnue: false, bench: false)
-//let defenchessEngineInfo = EngineInfo(name: "Defenchess", shortName: "Dc", version: "2.2", author: "Can Cetin, Dogac Eldenk",
-//                                      frc: true, idNumb: defenchess, elo: 3280, nnue: false, bench: false)
-//
-//
-//let laserEngineInfo = EngineInfo(name: "Laser", shortName: "Ls", version: "1.6", author: "Jeffrey An, Michael An",
-//                                 frc: true, idNumb: laser, elo: 3288, nnue: false, bench: false)
-//
-//let igelEngineInfo = EngineInfo(name: "Igel", shortName: "Ig", version: "2.6", author: "Medvedev, Shcherbyna",
-//                                frc: true, idNumb: igel, elo: 3240, nnue: true, bench: false)
-
-//let nemorinoEngineInfo = EngineInfo(name: "Nemorino", shortName: "Nm", version: "6", author: "Christian Günther",
-//                                    frc: true, idNumb: nemorino, elo: 3149, nnue: true, bench: false)
-//let fruitEngineInfo = EngineInfo(name: "Fruit", shortName: "Fr", version: "2.1", author: "Fabien Letouzey",
-//                                 frc: true, idNumb: fruit, elo: 2200, nnue: false, bench: false)
-
-
 final class EngineData: ObservableObject {
     
     let allEngines = [
         stockfishEngineInfo,
         lc0EngineInfo,
         rubichessEngineInfo,
-        
-        
-//        etherealEngineInfo,
-//        xiphosEngineInfo,
-//        
-//        laserEngineInfo,
-//        defenchessEngineInfo,
-//            igelEngineInfo,
-//            nemorinoEngineInfo,
-//            fruitEngineInfo
     ]
-    
-    init() {
-    }
 }

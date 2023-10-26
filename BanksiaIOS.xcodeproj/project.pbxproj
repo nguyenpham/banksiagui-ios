@@ -61,7 +61,6 @@
 		B1B605CA25443678002B3E61 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19AF68D2542E4210037B09E /* Accelerate.framework */; };
 		B1B605CB25443681002B3E61 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B19AFD33254310DF0037B09E /* libz.tbd */; };
 		B1B6FE3C2544233E002B3E61 /* BsWatchAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B6FE3B2544233E002B3E61 /* BsWatchAssets.xcassets */; };
-		B1B6FE602544237F002B3E61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B6FE562544237F002B3E61 /* Preview Assets.xcassets */; };
 		B1B6FE612544237F002B3E61 /* WatchAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B6FE572544237F002B3E61 /* WatchAssets.xcassets */; };
 		B1B6FE622544237F002B3E61 /* WatchAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE592544237F002B3E61 /* WatchAboutView.swift */; };
 		B1B6FE632544237F002B3E61 /* WatchGameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B6FE5A2544237F002B3E61 /* WatchGameSetup.swift */; };
@@ -99,14 +98,6 @@
 		B1BECB472AD7692800FCD12B /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BECB462AD7692800FCD12B /* Metal.framework */; };
 		B1C02B092528D43600665CA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C02B072528D43600665CA6 /* LaunchScreen.storyboard */; };
 		B1C02BA725294BEE00665CA6 /* BanksiaWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B1C02BA625294BEE00665CA6 /* BanksiaWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B1C618012AE7CD0C0076C755 /* nn-5af11540bbfe.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1C615932AE7CD0A0076C755 /* nn-5af11540bbfe.nnue */; };
-		B1C618022AE7CD0C0076C755 /* nn-5af11540bbfe.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1C615932AE7CD0A0076C755 /* nn-5af11540bbfe.nnue */; };
-		B1C618032AE7CD0C0076C755 /* nn-9e3c6298299a.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1C615942AE7CD0A0076C755 /* nn-9e3c6298299a.nnue */; };
-		B1C618042AE7CD0C0076C755 /* nn-9e3c6298299a.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1C615942AE7CD0A0076C755 /* nn-9e3c6298299a.nnue */; };
-		B1C618052AE7CD0C0076C755 /* 791556.pb.gz in Resources */ = {isa = PBXBuildFile; fileRef = B1C615952AE7CD0A0076C755 /* 791556.pb.gz */; };
-		B1C618062AE7CD0C0076C755 /* 791556.pb.gz in Resources */ = {isa = PBXBuildFile; fileRef = B1C615952AE7CD0A0076C755 /* 791556.pb.gz */; };
-		B1C618072AE7CD0C0076C755 /* nn-c257b2ebf1-20230812.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1C615962AE7CD0A0076C755 /* nn-c257b2ebf1-20230812.nnue */; };
-		B1C618082AE7CD0C0076C755 /* nn-c257b2ebf1-20230812.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1C615962AE7CD0A0076C755 /* nn-c257b2ebf1-20230812.nnue */; };
 		B1C618092AE7CD0C0076C755 /* lc0_benchmark.cc in Sources */ = {isa = PBXBuildFile; fileRef = B1C6159B2AE7CD0A0076C755 /* lc0_benchmark.cc */; };
 		B1C6180A2AE7CD0C0076C755 /* lc0_benchmark.cc in Sources */ = {isa = PBXBuildFile; fileRef = B1C6159B2AE7CD0A0076C755 /* lc0_benchmark.cc */; };
 		B1C6180B2AE7CD0C0076C755 /* lc0_filesystem.posix.cc in Sources */ = {isa = PBXBuildFile; fileRef = B1C615A32AE7CD0A0076C755 /* lc0_filesystem.posix.cc */; };
@@ -162,7 +153,6 @@
 		B1C6187A2AE7CD0D0076C755 /* network_blas.cc in Sources */ = {isa = PBXBuildFile; fileRef = B1C6173A2AE7CD0B0076C755 /* network_blas.cc */; };
 		B1C6187B2AE7CD0D0076C755 /* se_unit.cc in Sources */ = {isa = PBXBuildFile; fileRef = B1C6173B2AE7CD0B0076C755 /* se_unit.cc */; };
 		B1C6187C2AE7CD0D0076C755 /* se_unit.cc in Sources */ = {isa = PBXBuildFile; fileRef = B1C6173B2AE7CD0B0076C755 /* se_unit.cc */; };
-		B1C6187D2AE7CD0D0076C755 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B1C6173E2AE7CD0B0076C755 /* README.md */; };
 		B1C6187F2AE7CD0D0076C755 /* fully_connected_layer.cc in Sources */ = {isa = PBXBuildFile; fileRef = B1C617402AE7CD0B0076C755 /* fully_connected_layer.cc */; };
 		B1C618802AE7CD0D0076C755 /* fully_connected_layer.cc in Sources */ = {isa = PBXBuildFile; fileRef = B1C617402AE7CD0B0076C755 /* fully_connected_layer.cc */; };
 		B1C618812AE7CD0D0076C755 /* lc0_network_random.cc in Sources */ = {isa = PBXBuildFile; fileRef = B1C617422AE7CD0B0076C755 /* lc0_network_random.cc */; };
@@ -330,6 +320,12 @@
 		B1C619B72AE7E49E0076C755 /* uci.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1C619862AE7E49D0076C755 /* uci.cpp */; };
 		B1C619B82AE7E49E0076C755 /* endgame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1C619872AE7E49D0076C755 /* endgame.cpp */; };
 		B1C619B92AE7E49E0076C755 /* endgame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1C619872AE7E49D0076C755 /* endgame.cpp */; };
+		B1C619BF2AE929CE0076C755 /* nn-5af11540bbfe.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1C619BB2AE929CE0076C755 /* nn-5af11540bbfe.nnue */; };
+		B1C619C02AE929CE0076C755 /* nn-5af11540bbfe.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1C619BB2AE929CE0076C755 /* nn-5af11540bbfe.nnue */; };
+		B1C619C12AE929CE0076C755 /* 791556.pb.gz in Resources */ = {isa = PBXBuildFile; fileRef = B1C619BC2AE929CE0076C755 /* 791556.pb.gz */; };
+		B1C619C32AE929CE0076C755 /* nn-c257b2ebf1-20230812.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1C619BD2AE929CE0076C755 /* nn-c257b2ebf1-20230812.nnue */; };
+		B1C619C42AE929CE0076C755 /* nn-c257b2ebf1-20230812.nnue in Resources */ = {isa = PBXBuildFile; fileRef = B1C619BD2AE929CE0076C755 /* nn-c257b2ebf1-20230812.nnue */; };
+		B1C619C62AE929CE0076C755 /* 703810.pb.gz in Resources */ = {isa = PBXBuildFile; fileRef = B1C619BE2AE929CE0076C755 /* 703810.pb.gz */; };
 		B1DA819C255DE8530021C5DC /* GExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA8194255DE8520021C5DC /* GExtensions.swift */; };
 		B1DA819D255DE8530021C5DC /* ContentViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA8195255DE8520021C5DC /* ContentViewExtension.swift */; };
 		B1DA819E255DE8530021C5DC /* BannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DA8196255DE8520021C5DC /* BannerVC.swift */; };
@@ -552,7 +548,6 @@
 		B1044BD526A65E550032A27F /* position.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = position.cpp; sourceTree = "<group>"; };
 		B1044BD626A65E550032A27F /* uci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uci.cpp; sourceTree = "<group>"; };
 		B1044BD726A65E550032A27F /* endgame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = endgame.cpp; sourceTree = "<group>"; };
-		B1400C052AD809D700B5C8C1 /* 791556.pb.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = 791556.pb.gz; sourceTree = "<group>"; };
 		B14A8A992528C48900B5704C /* BanksiaIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BanksiaIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14A8AA32528C48C00B5704C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B14A8AA52528C48C00B5704C /* BsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BsInfo.plist; sourceTree = "<group>"; };
@@ -838,10 +833,6 @@
 		B1C02B9D25294BEA00665CA6 /* BanksiaWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BanksiaWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C02BA625294BEE00665CA6 /* BanksiaWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BanksiaWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C03317252996F200665CA6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B1C615932AE7CD0A0076C755 /* nn-5af11540bbfe.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-5af11540bbfe.nnue"; sourceTree = "<group>"; };
-		B1C615942AE7CD0A0076C755 /* nn-9e3c6298299a.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-9e3c6298299a.nnue"; sourceTree = "<group>"; };
-		B1C615952AE7CD0A0076C755 /* 791556.pb.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = 791556.pb.gz; sourceTree = "<group>"; };
-		B1C615962AE7CD0A0076C755 /* nn-c257b2ebf1-20230812.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-c257b2ebf1-20230812.nnue"; sourceTree = "<group>"; };
 		B1C6159A2AE7CD0A0076C755 /* lc0_benchmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lc0_benchmark.h; sourceTree = "<group>"; };
 		B1C6159B2AE7CD0A0076C755 /* lc0_benchmark.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lc0_benchmark.cc; sourceTree = "<group>"; };
 		B1C6159C2AE7CD0A0076C755 /* lc0_engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lc0_engine.h; sourceTree = "<group>"; };
@@ -1370,6 +1361,10 @@
 		B1C619852AE7E49D0076C755 /* position.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = position.cpp; sourceTree = "<group>"; };
 		B1C619862AE7E49D0076C755 /* uci.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uci.cpp; sourceTree = "<group>"; };
 		B1C619872AE7E49D0076C755 /* endgame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = endgame.cpp; sourceTree = "<group>"; };
+		B1C619BB2AE929CE0076C755 /* nn-5af11540bbfe.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-5af11540bbfe.nnue"; sourceTree = "<group>"; };
+		B1C619BC2AE929CE0076C755 /* 791556.pb.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = 791556.pb.gz; sourceTree = "<group>"; };
+		B1C619BD2AE929CE0076C755 /* nn-c257b2ebf1-20230812.nnue */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nn-c257b2ebf1-20230812.nnue"; sourceTree = "<group>"; };
+		B1C619BE2AE929CE0076C755 /* 703810.pb.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = 703810.pb.gz; sourceTree = "<group>"; };
 		B1DA8194255DE8520021C5DC /* GExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GExtensions.swift; sourceTree = "<group>"; };
 		B1DA8195255DE8520021C5DC /* ContentViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewExtension.swift; sourceTree = "<group>"; };
 		B1DA8196255DE8520021C5DC /* BannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerVC.swift; sourceTree = "<group>"; };
@@ -1760,8 +1755,8 @@
 			isa = PBXGroup;
 			children = (
 				B1C03317252996F200665CA6 /* README.md */,
+				B1C619BA2AE929CE0076C755 /* nets */,
 				B1C615972AE7CD0A0076C755 /* engines */,
-				B1C615922AE7CD0A0076C755 /* nets */,
 				B14A8A9B2528C48900B5704C /* BanksiaIOS */,
 				B1026E882543AADD00603CC7 /* BanksiaWatch */,
 				B1026E8B2543AADD00603CC7 /* BanksiaWatch Extension */,
@@ -1786,7 +1781,6 @@
 			children = (
 				B14A8B3C2528C76500B5704C /* views */,
 				B1DA8193255DE8520021C5DC /* views-ios */,
-				B1B6060625446320002B3E61 /* lc0net */,
 				B1A5A6C12532ED6C0007A258 /* options-ios */,
 				B14A8B5D2528C76500B5704C /* graphics */,
 				B1C02B062528D43600665CA6 /* Base.lproj */,
@@ -2223,14 +2217,6 @@
 			path = "options-ios";
 			sourceTree = "<group>";
 		};
-		B1B6060625446320002B3E61 /* lc0net */ = {
-			isa = PBXGroup;
-			children = (
-				B1400C052AD809D700B5C8C1 /* 791556.pb.gz */,
-			);
-			path = lc0net;
-			sourceTree = SOURCE_ROOT;
-		};
 		B1B6FE552544237F002B3E61 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -2338,17 +2324,6 @@
 				B1C02B072528D43600665CA6 /* LaunchScreen.storyboard */,
 			);
 			path = Base.lproj;
-			sourceTree = "<group>";
-		};
-		B1C615922AE7CD0A0076C755 /* nets */ = {
-			isa = PBXGroup;
-			children = (
-				B1C615932AE7CD0A0076C755 /* nn-5af11540bbfe.nnue */,
-				B1C615942AE7CD0A0076C755 /* nn-9e3c6298299a.nnue */,
-				B1C615952AE7CD0A0076C755 /* 791556.pb.gz */,
-				B1C615962AE7CD0A0076C755 /* nn-c257b2ebf1-20230812.nnue */,
-			);
-			path = nets;
 			sourceTree = "<group>";
 		};
 		B1C615972AE7CD0A0076C755 /* engines */ = {
@@ -3374,6 +3349,17 @@
 			path = incbin;
 			sourceTree = "<group>";
 		};
+		B1C619BA2AE929CE0076C755 /* nets */ = {
+			isa = PBXGroup;
+			children = (
+				B1C619BB2AE929CE0076C755 /* nn-5af11540bbfe.nnue */,
+				B1C619BC2AE929CE0076C755 /* 791556.pb.gz */,
+				B1C619BD2AE929CE0076C755 /* nn-c257b2ebf1-20230812.nnue */,
+				B1C619BE2AE929CE0076C755 /* 703810.pb.gz */,
+			);
+			path = nets;
+			sourceTree = "<group>";
+		};
 		B1DA8193255DE8520021C5DC /* views-ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -3498,19 +3484,17 @@
 				B1C618752AE7CD0D0076C755 /* winograd_transform.ispc in Resources */,
 				B14A8B832528C76500B5704C /* fruit.bin in Resources */,
 				B14A8B872528C76500B5704C /* alert1.wav in Resources */,
+				B1C619C12AE929CE0076C755 /* 791556.pb.gz in Resources */,
 				B1C02B092528D43600665CA6 /* LaunchScreen.storyboard in Resources */,
-				B1C618052AE7CD0C0076C755 /* 791556.pb.gz in Resources */,
 				B1C618732AE7CD0D0076C755 /* layer_norm.ispc in Resources */,
 				B14A8B822528C76500B5704C /* help.html in Resources */,
-				B1C6187D2AE7CD0D0076C755 /* README.md in Resources */,
-				B1C618012AE7CD0C0076C755 /* nn-5af11540bbfe.nnue in Resources */,
 				B14A8B852528C76500B5704C /* move.wav in Resources */,
-				B1C618032AE7CD0C0076C755 /* nn-9e3c6298299a.nnue in Resources */,
 				B14A8B842528C76500B5704C /* win.wav in Resources */,
 				B14A8B902528C76500B5704C /* pieces.xcassets in Resources */,
-				B1C618072AE7CD0C0076C755 /* nn-c257b2ebf1-20230812.nnue in Resources */,
+				B1C619C32AE929CE0076C755 /* nn-c257b2ebf1-20230812.nnue in Resources */,
 				B14A8B882528C76500B5704C /* check.wav in Resources */,
 				B14A8B812528C76500B5704C /* credit.html in Resources */,
+				B1C619BF2AE929CE0076C755 /* nn-5af11540bbfe.nnue in Resources */,
 				B14A8B772528C76500B5704C /* BsIcon.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3528,21 +3512,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1C6188C2AE7CD0D0076C755 /* activation.ispc in Resources */,
-				B1C618062AE7CD0C0076C755 /* 791556.pb.gz in Resources */,
+				B1C619C02AE929CE0076C755 /* nn-5af11540bbfe.nnue in Resources */,
 				B1B6FEA2254423A8002B3E61 /* move.wav in Resources */,
 				B1B6FE612544237F002B3E61 /* WatchAssets.xcassets in Resources */,
 				B1B6FEA3254423A8002B3E61 /* alert2.wav in Resources */,
 				B1B6FEA5254423A8002B3E61 /* check.wav in Resources */,
 				B1B6FEA1254423A8002B3E61 /* win.wav in Resources */,
 				B1B6FEA6254423A8002B3E61 /* error.wav in Resources */,
-				B1B6FE602544237F002B3E61 /* Preview Assets.xcassets in Resources */,
-				B1C618082AE7CD0C0076C755 /* nn-c257b2ebf1-20230812.nnue in Resources */,
-				B1C618022AE7CD0C0076C755 /* nn-5af11540bbfe.nnue in Resources */,
+				B1C619C42AE929CE0076C755 /* nn-c257b2ebf1-20230812.nnue in Resources */,
 				B1B6FEA7254423A8002B3E61 /* cap.wav in Resources */,
 				B1B6FEB1254423A8002B3E61 /* pieces.xcassets in Resources */,
 				B1B6FEA4254423A8002B3E61 /* alert1.wav in Resources */,
 				B1C618742AE7CD0D0076C755 /* layer_norm.ispc in Resources */,
-				B1C618042AE7CD0C0076C755 /* nn-9e3c6298299a.nnue in Resources */,
+				B1C619C62AE929CE0076C755 /* 703810.pb.gz in Resources */,
 				B1B6FEA0254423A8002B3E61 /* fruit.bin in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4022,7 +4004,6 @@
 				MARKETING_VERSION = 1.1;
 				OTHER_CFLAGS = (
 					"-DNO_PEXT",
-					"-DEVAL_NNUE=1",
 					"-DNNUE_EMBEDDING_OFF",
 					"-DUSE_NEON",
 					"-DUSE_POPCNT",
@@ -4065,7 +4046,6 @@
 				MARKETING_VERSION = 1.1;
 				OTHER_CFLAGS = (
 					"-DNO_PEXT",
-					"-DEVAL_NNUE=1",
 					"-DNNUE_EMBEDDING_OFF",
 					"-DUSE_NEON",
 					"-DUSE_POPCNT",
@@ -4110,10 +4090,9 @@
 				OTHER_CFLAGS = (
 					"-DNO_PEXT",
 					"-DNNUE_EMBEDDING_OFF",
-					"-DEVAL_NNUE=1",
 					"-DUSE_POPCNT",
 					"-DEIGEN_DONT_VECTORIZE",
-					"-DUSE_NEON_1",
+					"-DUSE_NEON",
 					"-DWATCH",
 					"-DUSE_ZLIB",
 					"-D_LARGEFILE64_SOURCE",
@@ -4157,10 +4136,9 @@
 				OTHER_CFLAGS = (
 					"-DNO_PEXT",
 					"-DNNUE_EMBEDDING_OFF",
-					"-DEVAL_NNUE=1",
 					"-DUSE_POPCNT",
 					"-DEIGEN_DONT_VECTORIZE",
-					"-DUSE_NEON_1",
+					"-DUSE_NEON",
 					"-DWATCH",
 					"-DUSE_ZLIB",
 					"-D_LARGEFILE64_SOURCE",

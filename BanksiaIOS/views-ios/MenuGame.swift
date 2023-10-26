@@ -24,13 +24,6 @@ struct GameSetup: View {
     @EnvironmentObject private var game: Game
     
     @State private var nodeString = ""
-    //  {
-    //    didSet {
-    //      if nodeString != oldValue {
-    //        game.timer_nodes = Int(nodeString) ?? 0
-    //      }
-    //    }
-    //  }
     @State private var oldEngineIdx = 0
     
     var body: some View {
@@ -165,29 +158,7 @@ struct GameSetup: View {
                         }
                     }
                 }
-                
-//                if game.getEngineIdNumb() == stockfish {
-//                    VStack {
-//                        HStack {
-//                            Text("Evaluation")
-//                            Spacer()
-//                        }
-//                        Picker(selection: $game.evalNNUEMode, label: Text("Evaluation")) {
-//                            ForEach (EvaluationMode.allCases, id:\.self) { em in
-//                                Text(em.getName()).tag(em.rawValue)
-//                            }
-//                        }.pickerStyle(SegmentedPickerStyle())
-//                    }
-//                    
-//                    Stepper(value: $game.skillLevel, in: 0...20) {
-//                        HStack {
-//                            Text("Skill level")
-//                            Spacer()
-//                            Text("\(game.skillLevel)")
-//                        }
-//                    }
-//                }
-                
+                                
                 Toggle("Use opening books", isOn: $game.bookMode)
                 
                 if game.canBenchmark() {
@@ -210,15 +181,32 @@ struct GameSetup: View {
         .navigationBarTitle("Level", displayMode: .inline)
         .onAppear {
             oldEngineIdx = game.engineIdx
-            game.engineChanged = false
             nodeString = "\(game.timer_nodes)"
             //      self.isNavigationBarHidden = false
         }
-        .onDisappear() {
-            self.game.write()
-            game.engineChanged = oldEngineIdx != game.engineIdx
-        }
+//        .onDisappear() {
+//            self.game.write()
+//            
+//            if oldEngineIdx != game.engineIdx {
+//                showResetAlert()
+//            }
+//        }
     }
+    
+    func showResetAlert() {
+        let alert = UIAlertController(title: "Close to reset", message: "The chess engine is changed. Previous one may still take some memory. It is better to reset the app by closing it then running it again", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Close app", style: .default, handler: { _ in
+            exit(0)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { _ in
+            alert.dismissAlert()
+        }))
+        
+        alert.presentAlert()
+    }
+
     
     func turnView(turn: Turn) -> some View {
         HStack {
@@ -266,6 +254,10 @@ struct GameSetup: View {
         }.onTapGesture {
             self.game.engineIdx = index
             self.game.write()
+            
+            if oldEngineIdx != game.engineIdx {
+                showResetAlert()
+            }
         }
     }
 }

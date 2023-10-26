@@ -39,9 +39,7 @@ final class Game: ObservableObject {
     
     @Published var maxcores = 1
     @Published var cores = 2
-    @Published var skillLevel = 20
     
-    @Published var evalNNUEMode = 2
     @Published var bookMode = true
     
     @Published var expectingBestmove = false
@@ -54,7 +52,6 @@ final class Game: ObservableObject {
     @Published var uciCmd_cores = 1
     @Published var uciCmd_nnuefile = ""
     
-    @Published var engineChanged = false
     @Published var engineIdx = 0 {
         didSet {
             if engineIdx != oldValue {
@@ -206,20 +203,10 @@ final class Game: ObservableObject {
         timer_nodes = max(1, defaults.integer(forKey: "timer_nodes"))
         timer_movetime = max(1, defaults.integer(forKey: "timer_movetime"))
         
-        skillLevel = defaults.integer(forKey: "skills")
-        evalNNUEMode = defaults.integer(forKey: "evalMode")
         bookMode = defaults.bool(forKey: "bookMode")
         
         engineIdx = min(engineData.allEngines.count - 1, max(0, defaults.integer(forKey: "engineIdx")))
         print("engineIdx", engineIdx, "engineData.allEngines.count", engineData.allEngines.count, engineData.allEngines[0].idNumb)
-        
-#if STOCKFISHONLY
-        print("STOCKFISHONLY")
-#endif
-        
-#if LC0ONLY
-        print("LC0ONLY")
-#endif
     }
     
     func write() {
@@ -235,8 +222,6 @@ final class Game: ObservableObject {
         defaults.set(timer_nodes, forKey: "timer_nodes")
         defaults.set(timer_movetime, forKey: "timer_movetime")
         
-        defaults.set(skillLevel, forKey: "skills")
-        defaults.set(evalNNUEMode, forKey: "evalMode")
         defaults.set(bookMode, forKey: "bookMode")
         defaults.set(engineIdx, forKey: "engineIdx")
         
@@ -312,6 +297,11 @@ final class Game: ObservableObject {
         return cmd
     }
     
+    func uciSendOption(name: String, value: Int) {
+        let cmd = "setoption name \(name) value \(value)"
+        sendToEngine(cmd: cmd)
+    }
+    
     func uciGo() -> String {
         var cmd = "go "
         if analysicOnFlyMode {
@@ -333,10 +323,16 @@ final class Game: ObservableObject {
         return cmd
     }
     
+    // SF  : bench [hashsize] [cores]
+    // Lc0 : bench
+    // Rubi: bench, threads may set separately
     func uciBenchmark(core: Int) -> String {
         var cmd = "bench"
-        if core > 1 {
-            cmd += " 16 \(core)"
+        if engineIdx == stockfish {
+            cmd += " 128"
+            if core > 1 {
+                cmd += " \(core)"
+            }
         }
         return cmd
     }
@@ -623,7 +619,11 @@ final class Game: ObservableObject {
     }
     
     func initCurrentEngine() {
-        engine_initialize(getEngineIdNumb(), Int32(self.cores), Int32(self.skillLevel), Int32(self.evalNNUEMode))
+        initCurrentEngine(core: self.cores)
+    }
+
+    func initCurrentEngine(core: Int) {
+        engine_initialize(getEngineIdNumb(), Int32(core))
     }
     
     func computerGo() {
@@ -640,9 +640,13 @@ final class Game: ObservableObject {
         setIdleTimerDisabled(active: true)
 
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.2, qos: .default) {
-            // DispatchQueue.global(qos: .userInitiated).async {
-            self.initCurrentEngine();
-            self.sendToEngine(cmd: self.uciBenchmark(core: core))
+            self.initCurrentEngine(core: self.benchCores);
+            
+            if self.engineIdx == lc0 {
+                lc0_bench(Int32(core))
+            } else {
+                self.sendToEngine(cmd: self.uciBenchmark(core: core))
+            }
         }
         self.expectingBestmove = true
     }

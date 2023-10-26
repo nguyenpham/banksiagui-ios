@@ -79,7 +79,7 @@ class Benchmark{
   };
 
     // modified by BanksiaGUI
-  void Run(const std::string& networkPath);
+  void Run(const std::string& networkPath, int cores = 2);
 
   void OnBestMove(const BestMoveInfo& move);
   void OnInfo(const std::vector<ThinkingInfo>& infos);

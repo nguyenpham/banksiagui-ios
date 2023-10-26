@@ -13,7 +13,8 @@
 
 - Apple watch
 <img src="bsgwatch.png" width="600">
-<img src="watch.jpg" width="300">
+<img src="watch.jpg" height="300">
+<img src="engineswatch.jpg" height="300">
 
 
 ## Tech
@@ -28,7 +29,7 @@ Some chess engines are integrated and can run well under Banksia GUI. Their info
 
 ## Compile
 ### Simulators
-Simulators can't be compiled with flag -DUSE_NEON. Remove that flag for both iOS and AppleWatch before compiling.
+Simulators can't be compiled with flag -DUSE_NEON. Remove or change name that flag for both iOS and AppleWatch before compiling.
 
 
 ## Release on AppStore
@@ -67,14 +68,9 @@ If you download and use BanksiaGUI app on AppStore you already help me. You may 
 Banksia GUI for iOS was written by Nguyen Pham (axchess at yahoo dot com). Banksia GUI for iOS is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 All integrated chess engines are open-source with GNU license or similar:
-- Stockfish, version: 14dev, authosr: Stockfish team, link: https://github.com/official-stockfish/Stockfish
-- LeelaChess Zero (Lc0), version: 0.26.3, authors: LeelaChessZero team, link: https://github.com/LeelaChessZero/lc0
-- Ethereal, version: 12.50, authors: Andrew Grant, link: https://github.com/AndyGrant/Ethereal
-- Xiphos, version: 0.5, authors: Milos Tatarevic, link: https://github.com/milostatarevic/xiphos
-- Defenchess, version: 2.2, authors: Can Cetin, Dogac Eldenk, link: https://github.com/cetincan0/Defenchess
-- RubiChess, version: 1.8, authors: Andreas Matthies, link: https://github.com/Matthies/RubiChess
-- Laser, version: 1.6, authosr: Jeffrey An, Michael An, link: https://github.com/jeffreyan11/laser-chess-engine
-- Igel, version: 2.6, authors: Medvedev, Shcherbyna, link: https://github.com/vshcherbyna/igel
+- Stockfish, version: 16, authosr: Stockfish team, link: https://github.com/official-stockfish/Stockfish
+- LeelaChess Zero (Lc0), version: 0.30, authors: LeelaChessZero team, link: https://github.com/LeelaChessZero/lc0
+- RubiChess, version: 2.2, authors: Andreas Matthies, link: https://github.com/Matthies/RubiChess
 
 
 ## History

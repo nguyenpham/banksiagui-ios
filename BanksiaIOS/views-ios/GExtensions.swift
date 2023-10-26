@@ -27,3 +27,15 @@ extension UIView {
         }
     }
 }
+
+extension UIAlertController {
+    func presentAlert() {
+        DispatchQueue.main.async {
+            UIApplication.shared.windows.first?.rootViewController?.present(self, animated: true, completion: nil)
+        }
+    }
+
+    func dismissAlert() {
+        UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+}

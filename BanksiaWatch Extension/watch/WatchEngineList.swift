@@ -19,27 +19,102 @@
 import SwiftUI
 
 struct WatchEngineList: View {
-  @EnvironmentObject var game: Game
-  
-  var body: some View {
-    let withIndex = game.engineData.allEngines.enumerated().map({ $0 })
-    return List(withIndex, id: \.element.name) { index, enginInfo in
-      
-//    List (game.engineData.allEngines, id:\.self) { enginInfo in
-      HStack {
-        Text("\(enginInfo.name) (\(enginInfo.shortName))")
-        Spacer()
-        WatchGameSetup.selectedMark(selected: index == self.game.engineIdx)
-      }.onTapGesture {
-        self.game.engineIdx = index
-        self.game.write()
-      }
+    @EnvironmentObject var game: Game
+    
+    @State var showBenchmark = false
+    @State private var extraInfo = ""
+    
+    @State private var oldEngineIdx = 0
+    
+    var body: some View {
+        ScrollView {
+            if oldEngineIdx != game.engineIdx {
+                Text("Warning: the app will be reset because engine changed")
+                    .foregroundColor(.red)
+                    .font(.system(size: 12))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            
+            ForEach (0 ..< game.engineData.allEngines.count) { index in
+                engineView(index)
+            }
+            
+            if showBenchmark {
+                benchmarkView()
+            }
+            Button(showBenchmark ? "Hide benchmark" : "Benchmark", action: {
+                showBenchmark.toggle()
+            })
+        }
+        .onAppear {
+            oldEngineIdx = game.engineIdx
+        }
+        .onDisappear() {
+            if oldEngineIdx != game.engineIdx {
+                exit(0)
+            }
+        }
+        
     }
-  }
+    
+    func engineView(_ index: Int) -> some View {
+        VStack {
+            let enginInfo = self.game.engineData.allEngines[index]
+            HStack {
+                Text("\(index + 1). \(enginInfo.name)")
+                Spacer()
+                WatchGameSetup.selectedMark(selected: index == self.game.engineIdx)
+            }
+            HStack {
+                Text("ver \(enginInfo.version), by: \(enginInfo.author)\n\(Game.networkName(engineIdx: enginInfo.idNumb))")
+                    .foregroundColor(Color.gray)
+                    .font(.system(size: 11))
+                Spacer()
+            }
+        }.onTapGesture {
+            self.game.engineIdx = index
+            self.game.write()
+        }
+    }
+    
+    func benchmarkView() -> some View {
+        VStack {
+            Text(game.benchInfo.isEmpty ? "Computing\(extraInfo)..." : game.benchInfo)
+                .foregroundColor(Color.black)
+                .frame(width: nil, height: nil, alignment: .topLeading)
+                .background(Color(red: 0.95, green: 0.95, blue: 0.95))
+            
+            ScrollView(.vertical) {
+                Text(game.benchComputing)
+                    .font(.system(size: 10))
+                    .foregroundColor(Color.yellow)
+                    .frame(width: nil, height: nil, alignment: .topLeading)
+                    .padding(6)
+            }
+        }
+        .onAppear {
+            game.benchInfo = ""
+            game.benchComputing = ""
+            game.benchMode = true
+            
+            if game.getEngineIdNumb() == stockfish {
+                extraInfo = " (\(game.maxcores) threads)"
+            } else {
+                extraInfo = ""
+            }
+            
+            game.benchmark(core: game.maxcores)
+        }
+        .onDisappear() {
+            if game.benchMode {
+                game.sendUciStop()
+            }
+        }
+    }
 }
 
 struct EngineSelector_Previews: PreviewProvider {
-  static var previews: some View {
-    WatchEngineList()
-  }
+    static var previews: some View {
+        WatchEngineList()
+    }
 }
