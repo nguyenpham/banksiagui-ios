@@ -224,6 +224,10 @@ struct ContentView: View {
     
     func createViews_Board(cellWidth: CGFloat) -> some View {
         ZStack {
+            GBoard.createAccessibilityLabels(cellwidth: cellWidth)
+            .frame(width: cellWidth * 8, height: cellWidth * (editing ? 10 : 8))
+
+
             GBoard(cellwidth: cellWidth,
                    cellStyle: userData.cellStyle,
                    showCoordinates: userData.showCoordinates,
@@ -233,7 +237,8 @@ struct ContentView: View {
                    selectedPos: selectedPos
             )
             .frame(width: cellWidth * 8, height: cellWidth * (editing ? 10 : 8))
-            
+            .accessibility(hidden: true)
+
             GAllPieces(cellwidth: cellWidth,
                        chessBoard: $game.displayingChessBoard,
                        pieceStyle: userData.pieceStyle,
@@ -249,6 +254,8 @@ struct ContentView: View {
                        legalSet: legalSet
             )
             .frame(width: cellWidth * 8, height: cellWidth * (editing ? 10 : 8))
+            .accessibility(hidden: true)
+
         }
         .gesture(LongPressGesture(minimumDuration: 1.0)
             .onEnded({ _ in
@@ -260,6 +267,7 @@ struct ContentView: View {
             }))
     }
     
+
     func createClockString(side: Side, timeLeft: Int) -> String {
         var str = ""
         if game.isHumanTurn(side: side) {

@@ -20,12 +20,24 @@
 ## Tech
 The project uses Swift + Swiftui - the latest technology which could be used to develop user interface for all Apple platforms (iOS, macOS, Apple Watch)
 
+## Mave a move
+Users could use tap-tap or drag-drop to make a move. On an Apple Watch, use tap-tap only.
 
 ## Engines
 Typically a chess engine can’t work independently (as an independent app) under iOS system. Thus it must be integrated to a chess GUI (BanksiaGUI) by coding, both the chess GUI and that engines code must be changed to. 
 
 Some chess engines are integrated and can run well under Banksia GUI. Their information is in Licenses/Credits.
 
+## Voice control
+You may play, make move by using your voice. The app supports voice control in simple way. This feature is available on iOS/iPad but not watchOS.
+### Active voice control
+You may go to Settings or tell Siri, says, "Siri, turn voice control on".
+
+### Show all square names
+Just say: "Show names"
+
+### Mave a move
+It uses tap-tap to make move. To tap a square, you could say "tap" + the square name. For exaple, to make a move e2-e4: "tap E2 tap E4".
 
 ## Compile
 ### Simulators
