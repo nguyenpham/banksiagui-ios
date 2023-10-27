@@ -91,8 +91,3 @@ struct GAllPieces: View {
     }
 }
 
-//struct GAllPieces_Previews: PreviewProvider {
-//  static var previews: some View {
-//    GAllPieces(cellwidth: 20, chessBoard: ChessBoard(), pieceStyle: .silver)
-//  }
-//}

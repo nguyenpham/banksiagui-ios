@@ -50,6 +50,17 @@ struct GBoard: View {
         }
     }
     
+    static func createAccessibilityLabels(cellwidth: CGFloat) -> some View {
+        ForEach(0 ..< 64) { i in
+            Rectangle()
+                .fill(Color.white.opacity(0.01))
+                .frame(width: cellwidth, height: cellwidth)
+                .position(x: CGFloat(i % 8) * cellwidth + cellwidth / 2,
+                          y: CGFloat(i / 8) * cellwidth + cellwidth / 2)
+                .accessibilityLabel(Text(ChessBoard.posToCoordinateString(i)))
+        }
+    }
+
     func isBlack(_ i: Int) -> Bool {
         return ((i >> 3 + i) & 1) != 0
     }
